@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thermal Video Analyzer</title>
+    <title>Gold: Thermal Analysis</title>
     <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
     <style>
         * {
@@ -13,8 +13,8 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #f5f5f5;
             min-height: 100vh;
             padding: 20px;
         }
@@ -29,20 +29,23 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #2c3e50;
             color: white;
             padding: 30px;
             text-align: center;
+            border-bottom: 3px solid #3498db;
         }
 
         .header h1 {
-            font-size: 2.5em;
+            font-size: 2em;
             margin-bottom: 10px;
+            font-weight: 500;
         }
 
         .header p {
-            font-size: 1.1em;
+            font-size: 1em;
             opacity: 0.9;
+            font-weight: 400;
         }
 
         .content {
@@ -63,7 +66,7 @@
         .control-group label {
             display: block;
             margin-bottom: 8px;
-            font-weight: 600;
+            font-weight: 500;
             color: #333;
         }
 
@@ -79,21 +82,20 @@
 
         .control-group select:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: #3498db;
         }
 
         .control-group button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #3498db;
             color: white;
             border: none;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: 500;
             margin-top: 10px;
         }
 
         .control-group button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            background: #2980b9;
         }
 
         .control-group button:disabled {
@@ -107,7 +109,7 @@
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 20px;
-            border: 2px dashed #667eea;
+            border: 2px dashed #3498db;
         }
 
         .upload-section h3 {
@@ -130,18 +132,17 @@
         .file-input-label {
             display: block;
             padding: 15px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #3498db;
             color: white;
             text-align: center;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s;
-            font-weight: 600;
+            font-weight: 500;
         }
 
         .file-input-label:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            background: #2980b9;
         }
 
         .file-name {
@@ -173,19 +174,17 @@
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #3498db;
             transition: width 0.3s;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-weight: bold;
+            font-weight: 500;
         }
 
         .video-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            display: block;
             margin-bottom: 30px;
         }
 
@@ -201,9 +200,13 @@
         }
 
         video {
-            width: 100%;
+            width: 60%;
+            max-width: 600px;
+            min-height: 300px;
             border-radius: 8px;
             background: black;
+            display: block;
+            margin: 0 auto;
         }
 
         .results {
@@ -240,8 +243,8 @@
 
         .result-card .value {
             font-size: 1.8em;
-            font-weight: bold;
-            color: #667eea;
+            font-weight: 500;
+            color: #3498db;
         }
 
         .result-card .unit {
@@ -251,7 +254,7 @@
         }
 
         .grade-display {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            background: #27ae60;
             color: white;
             padding: 20px;
             border-radius: 10px;
@@ -260,13 +263,15 @@
         }
 
         .grade-display h2 {
-            font-size: 2.5em;
+            font-size: 2em;
             margin-bottom: 5px;
+            font-weight: 500;
         }
 
         .grade-display p {
-            font-size: 1.2em;
+            font-size: 1em;
             opacity: 0.95;
+            font-weight: 400;
         }
 
         .plots {
@@ -293,7 +298,7 @@
 
         .spinner {
             border: 4px solid #f3f3f3;
-            border-top: 4px solid #667eea;
+            border-top: 4px solid #3498db;
             border-radius: 50%;
             width: 50px;
             height: 50px;
@@ -333,9 +338,9 @@
         }
 
         .reference-table th {
-            background: #667eea;
+            background: #3498db;
             color: white;
-            font-weight: 600;
+            font-weight: 500;
         }
 
         .reference-table tr:hover {
@@ -387,7 +392,7 @@
 
         .impurity-stat-card .stat-value {
             font-size: 2em;
-            font-weight: bold;
+            font-weight: 500;
             color: #333;
         }
 
@@ -404,9 +409,9 @@
         }
 
         .impurity-table th {
-            background: #667eea;
+            background: #3498db;
             color: white;
-            font-weight: 600;
+            font-weight: 500;
             position: sticky;
             top: 0;
         }
@@ -420,7 +425,7 @@
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.85em;
-            font-weight: bold;
+            font-weight: 500;
         }
 
         .status-badge.ruled-out {
@@ -438,7 +443,7 @@
             padding: 3px 10px;
             border-radius: 15px;
             font-size: 0.8em;
-            font-weight: 600;
+            font-weight: 500;
         }
 
         .likelihood-badge.high {
@@ -470,13 +475,13 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🔥 Thermal Video Analyzer</h1>
+            <h1>Gold: Thermal Analysis</h1>
             <p>Real-time thermal conductivity analysis with interactive graphs</p>
         </div>
 
         <div class="content">
             <div class="upload-section">
-                <h3>📤 Upload Your Video</h3>
+                <h3>Upload Your Video</h3>
                 <div class="file-input-wrapper">
                     <input type="file" id="videoFile" accept="video/mp4,video/avi,video/mov,video/x-msvideo">
                     <label for="videoFile" class="file-input-label">
@@ -493,12 +498,6 @@
 
             <div class="controls">
                 <div class="control-group">
-                    <label for="videoSelect">Or Select from Available Videos:</label>
-                    <select id="videoSelect">
-                        <option value="">Loading videos...</option>
-                    </select>
-                </div>
-                <div class="control-group">
                     <button id="analyzeBtn">Analyze Video</button>
                 </div>
             </div>
@@ -512,77 +511,26 @@
             <div class="video-section">
                 <div class="video-container">
                     <h2>Video Preview</h2>
-                    <video id="videoPlayer" controls></video>
-                </div>
-                <div class="results" id="results" style="display: none;">
-                    <h2>Analysis Results</h2>
-                    <div class="grade-display" id="gradeDisplay"></div>
-                    <div class="result-grid" id="resultGrid"></div>
+                    <video id="videoPlayer" controls preload="metadata">
+                        <source id="videoSource" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
 
             <div class="plots" id="plots" style="display: none;">
-                <div class="impurity-section">
-                    <h3>🔬 Impurity Analysis - Rule Out Table</h3>
-                    <div class="impurity-stats">
-                        <div class="impurity-stat-card possible">
-                            <h4>Possible Impurities</h4>
-                            <div class="stat-value" id="possibleCount">0</div>
-                        </div>
-                        <div class="impurity-stat-card ruled-out">
-                            <h4>Ruled Out</h4>
-                            <div class="stat-value" id="ruledOutCount">0</div>
-                        </div>
-                    </div>
-                    <table class="impurity-table" id="impurityTable">
-                        <thead>
-                            <tr>
-                                <th>Impurity</th>
-                                <th>Thermal Conductivity (W/m·K)</th>
-                                <th>Expected Cooling Rate (s⁻¹)</th>
-                                <th>Status</th>
-                                <th>Likelihood</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody id="impurityTableBody">
-                        </tbody>
-                    </table>
-                </div>
-
                 <div class="plot-container">
                     <div id="tempPlot"></div>
                 </div>
                 <div class="plot-container">
                     <div id="coolingPlot"></div>
                 </div>
-                <div class="plot-container">
-                    <h3>Reference Values</h3>
-                    <table class="reference-table" id="referenceTable"></table>
-                </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Load available videos on page load
-        async function loadVideos() {
-            try {
-                const response = await fetch('/list_videos');
-                const data = await response.json();
-                const select = document.getElementById('videoSelect');
-                select.innerHTML = '<option value="">Select a video...</option>';
-                data.videos.forEach(video => {
-                    const option = document.createElement('option');
-                    option.value = JSON.stringify(video);
-                    const label = video.source === 'uploaded' ? `📤 ${video.name}` : `🎬 ${video.name}`;
-                    option.textContent = label;
-                    select.appendChild(option);
-                });
-            } catch (error) {
-                showError('Failed to load videos: ' + error.message);
-            }
-        }
+        let currentUploadedVideo = null;
 
         // File upload handling
         document.getElementById('videoFile').addEventListener('change', async function(e) {
@@ -615,27 +563,39 @@
 
                 // Upload complete
                 xhr.addEventListener('load', () => {
+                    console.log('Upload response status:', xhr.status);
+                    console.log('Upload response:', xhr.responseText);
+
                     if (xhr.status === 200) {
                         const result = JSON.parse(xhr.responseText);
-                        progressFill.textContent = '✓ Upload Complete!';
+                        progressFill.textContent = 'Upload Complete';
+                        currentUploadedVideo = {
+                            name: result.filename,
+                            source: 'uploaded'
+                        };
+
+                        // Set video player source
+                        const videoPlayer = document.getElementById('videoPlayer');
+                        const videoSource = document.getElementById('videoSource');
+                        const videoUrl = '/uploads/' + result.filename;
+
+                        console.log('Setting video URL to:', videoUrl);
+                        videoSource.src = videoUrl;
+                        videoPlayer.load();
+
+                        // Add error handler
+                        videoPlayer.addEventListener('error', function(e) {
+                            console.error('Video error:', e);
+                            console.error('Video error code:', videoPlayer.error ? videoPlayer.error.code : 'unknown');
+                            showError('Video playback error. Check console for details.');
+                        });
+
+                        videoPlayer.addEventListener('loadeddata', function() {
+                            console.log('Video loaded successfully!');
+                        });
+
                         setTimeout(() => {
                             progressDiv.classList.remove('active');
-                            // Reload video list
-                            loadVideos();
-                            // Auto-select the uploaded video
-                            setTimeout(() => {
-                                const select = document.getElementById('videoSelect');
-                                for (let i = 0; i < select.options.length; i++) {
-                                    if (select.options[i].value) {
-                                        const optData = JSON.parse(select.options[i].value);
-                                        if (optData.name === result.filename && optData.source === 'uploaded') {
-                                            select.selectedIndex = i;
-                                            select.dispatchEvent(new Event('change'));
-                                            break;
-                                        }
-                                    }
-                                }
-                            }, 500);
                         }, 1000);
                     } else {
                         const error = JSON.parse(xhr.responseText);
@@ -658,32 +618,18 @@
             }
         });
 
-        // Update video player when selection changes
-        document.getElementById('videoSelect').addEventListener('change', function() {
-            const videoValue = this.value;
-            if (videoValue) {
-                const video = JSON.parse(videoValue);
-                const videoPath = video.source === 'uploaded'
-                    ? '/uploads/' + video.name
-                    : '/videos/' + video.name;
-                document.getElementById('videoPlayer').src = videoPath;
-            }
-        });
-
         // Analyze button click
         document.getElementById('analyzeBtn').addEventListener('click', async function() {
-            const videoValue = document.getElementById('videoSelect').value;
-            if (!videoValue) {
-                showError('Please select or upload a video first');
+            if (!currentUploadedVideo) {
+                showError('Please upload a video first');
                 return;
             }
 
-            const video = JSON.parse(videoValue);
+            const video = currentUploadedVideo;
 
             // Show loading
             document.getElementById('loading').classList.add('active');
             document.getElementById('errorMsg').classList.remove('active');
-            document.getElementById('results').style.display = 'none';
             document.getElementById('plots').style.display = 'none';
             this.disabled = true;
 
@@ -724,46 +670,8 @@
         function displayResults(data) {
             const { analysis, reference_values, temp_plot, cooling_plot, video_info } = data;
 
-            // Show results section
-            document.getElementById('results').style.display = 'block';
+            // Show plots section only
             document.getElementById('plots').style.display = 'block';
-
-            // Display grade
-            const gradeDisplay = document.getElementById('gradeDisplay');
-            gradeDisplay.innerHTML = `
-                <h2>${analysis.estimated_grade} Gold</h2>
-                <p>${analysis.estimated_purity.toFixed(1)}% Purity</p>
-                <p>Confidence: ${analysis.confidence.toFixed(1)}%</p>
-            `;
-
-            // Display result cards
-            const resultGrid = document.getElementById('resultGrid');
-            resultGrid.innerHTML = `
-                <div class="result-card">
-                    <h3>Cooling Rate</h3>
-                    <div class="value">${analysis.cooling_rate.toFixed(3)}<span class="unit">s⁻¹</span></div>
-                </div>
-                <div class="result-card">
-                    <h3>Peak Temp</h3>
-                    <div class="value">${analysis.peak_temp.toFixed(1)}<span class="unit">°C</span></div>
-                </div>
-                <div class="result-card">
-                    <h3>Temp Drop</h3>
-                    <div class="value">${analysis.temp_delta.toFixed(1)}<span class="unit">°C</span></div>
-                </div>
-                <div class="result-card">
-                    <h3>R² Score</h3>
-                    <div class="value">${analysis.r_squared.toFixed(4)}</div>
-                </div>
-                <div class="result-card">
-                    <h3>Peak Time</h3>
-                    <div class="value">${analysis.peak_time.toFixed(1)}<span class="unit">s</span></div>
-                </div>
-                <div class="result-card">
-                    <h3>Duration</h3>
-                    <div class="value">${video_info.duration.toFixed(1)}<span class="unit">s</span></div>
-                </div>
-            `;
 
             // Plot temperature vs time
             Plotly.newPlot('tempPlot', temp_plot.data, temp_plot.layout, {
@@ -780,64 +688,7 @@
                 modeBarButtonsToRemove: ['lasso2d', 'select2d'],
                 displaylogo: false
             });
-
-            // Display reference table
-            const referenceTable = document.getElementById('referenceTable');
-            let tableHTML = `
-                <thead>
-                    <tr>
-                        <th>Grade</th>
-                        <th>Purity (%)</th>
-                        <th>Cooling Rate (s⁻¹)</th>
-                        <th>Thermal Conductivity (W/m·K)</th>
-                    </tr>
-                </thead>
-                <tbody>
-            `;
-
-            for (const [grade, props] of Object.entries(reference_values)) {
-                const isMatch = grade === analysis.estimated_grade;
-                tableHTML += `
-                    <tr style="${isMatch ? 'background: #ffffcc; font-weight: bold;' : ''}">
-                        <td>${grade}</td>
-                        <td>${props.purity}</td>
-                        <td>${props.k_rate}</td>
-                        <td>${props.k_thermal}</td>
-                    </tr>
-                `;
-            }
-
-            tableHTML += '</tbody>';
-            referenceTable.innerHTML = tableHTML;
-
-            // Display impurity analysis
-            document.getElementById('possibleCount').textContent = analysis.possible_impurities_count;
-            document.getElementById('ruledOutCount').textContent = analysis.ruled_out_impurities_count;
-
-            const impurityTableBody = document.getElementById('impurityTableBody');
-            let impurityHTML = '';
-
-            analysis.impurity_analysis.forEach(impurity => {
-                const statusClass = impurity.status === 'RULED OUT' ? 'ruled-out' : 'possible';
-                const likelihoodClass = impurity.likelihood.toLowerCase();
-
-                impurityHTML += `
-                    <tr>
-                        <td><strong>${impurity.name}</strong></td>
-                        <td>${impurity.k_thermal}</td>
-                        <td>${impurity.k_rate_range}</td>
-                        <td><span class="status-badge ${statusClass}">${impurity.status}</span></td>
-                        <td><span class="likelihood-badge ${likelihoodClass}">${impurity.likelihood}</span></td>
-                        <td>${impurity.description}</td>
-                    </tr>
-                `;
-            });
-
-            impurityTableBody.innerHTML = impurityHTML;
         }
-
-        // Load videos on page load
-        loadVideos();
     </script>
 </body>
 </html>
