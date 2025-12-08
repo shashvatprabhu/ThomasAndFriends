@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thermal Video Analyzer</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .controls {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .control-group {
+            margin-bottom: 15px;
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .control-group select,
+        .control-group button {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+
+        .control-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .control-group button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .control-group button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .control-group button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .upload-section {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px dashed #667eea;
+        }
+
+        .upload-section h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-input-wrapper input[type=file] {
+            position: absolute;
+            left: -9999px;
+        }
+
+        .file-input-label {
+            display: block;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .file-input-label:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .file-name {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .upload-progress {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .upload-progress.active {
+            display: block;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 25px;
+            background: #f3f3f3;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .video-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .video-container {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .video-container h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 8px;
+            background: black;
+        }
+
+        .results {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .results h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .result-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-card h3 {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .result-card .value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .result-card .unit {
+            font-size: 0.9em;
+            color: #999;
+            margin-left: 5px;
+        }
+
+        .grade-display {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .grade-display h2 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+
+        .grade-display p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .plots {
+            margin-top: 30px;
+        }
+
+        .plot-container {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error {
+            display: none;
+            background: #ff4444;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .error.active {
+            display: block;
+        }
+
+        .reference-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .reference-table th,
+        .reference-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .reference-table th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+
+        .reference-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .impurity-section {
+            margin-top: 30px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .impurity-section h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .impurity-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .impurity-stat-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .impurity-stat-card.possible {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+        }
+
+        .impurity-stat-card.ruled-out {
+            background: #d4edda;
+            border: 2px solid #28a745;
+        }
+
+        .impurity-stat-card h4 {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .impurity-stat-card .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .impurity-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .impurity-table th,
+        .impurity-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .impurity-table th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+
+        .impurity-table tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+
+        .status-badge.ruled-out {
+            background: #28a745;
+            color: white;
+        }
+
+        .status-badge.possible {
+            background: #ffc107;
+            color: #333;
+        }
+
+        .likelihood-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        .likelihood-badge.high {
+            background: #ff4444;
+            color: white;
+        }
+
+        .likelihood-badge.medium {
+            background: #ff9800;
+            color: white;
+        }
+
+        .likelihood-badge.zero {
+            background: #28a745;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .video-section {
+                grid-template-columns: 1fr;
+            }
+
+            .result-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔥 Thermal Video Analyzer</h1>
+            <p>Real-time thermal conductivity analysis with interactive graphs</p>
+        </div>
+
+        <div class="content">
+            <div class="upload-section">
+                <h3>📤 Upload Your Video</h3>
+                <div class="file-input-wrapper">
+                    <input type="file" id="videoFile" accept="video/mp4,video/avi,video/mov,video/x-msvideo">
+                    <label for="videoFile" class="file-input-label">
+                        Choose Video File (MP4, AVI, MOV, MKV)
+                    </label>
+                </div>
+                <div class="file-name" id="fileName">No file selected</div>
+                <div class="upload-progress" id="uploadProgress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill">0%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label for="videoSelect">Or Select from Available Videos:</label>
+                    <select id="videoSelect">
+                        <option value="">Loading videos...</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <button id="analyzeBtn">Analyze Video</button>
+                </div>
+            </div>
+
+            <div class="error" id="errorMsg"></div>
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Analyzing video... This may take a moment.</p>
+            </div>
+
+            <div class="video-section">
+                <div class="video-container">
+                    <h2>Video Preview</h2>
+                    <video id="videoPlayer" controls></video>
+                </div>
+                <div class="results" id="results" style="display: none;">
+                    <h2>Analysis Results</h2>
+                    <div class="grade-display" id="gradeDisplay"></div>
+                    <div class="result-grid" id="resultGrid"></div>
+                </div>
+            </div>
+
+            <div class="plots" id="plots" style="display: none;">
+                <div class="impurity-section">
+                    <h3>🔬 Impurity Analysis - Rule Out Table</h3>
+                    <div class="impurity-stats">
+                        <div class="impurity-stat-card possible">
+                            <h4>Possible Impurities</h4>
+                            <div class="stat-value" id="possibleCount">0</div>
+                        </div>
+                        <div class="impurity-stat-card ruled-out">
+                            <h4>Ruled Out</h4>
+                            <div class="stat-value" id="ruledOutCount">0</div>
+                        </div>
+                    </div>
+                    <table class="impurity-table" id="impurityTable">
+                        <thead>
+                            <tr>
+                                <th>Impurity</th>
+                                <th>Thermal Conductivity (W/m·K)</th>
+                                <th>Expected Cooling Rate (s⁻¹)</th>
+                                <th>Status</th>
+                                <th>Likelihood</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody id="impurityTableBody">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="plot-container">
+                    <div id="tempPlot"></div>
+                </div>
+                <div class="plot-container">
+                    <div id="coolingPlot"></div>
+                </div>
+                <div class="plot-container">
+                    <h3>Reference Values</h3>
+                    <table class="reference-table" id="referenceTable"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load available videos on page load
+        async function loadVideos() {
+            try {
+                const response = await fetch('/list_videos');
+                const data = await response.json();
+                const select = document.getElementById('videoSelect');
+                select.innerHTML = '<option value="">Select a video...</option>';
+                data.videos.forEach(video => {
+                    const option = document.createElement('option');
+                    option.value = JSON.stringify(video);
+                    const label = video.source === 'uploaded' ? `📤 ${video.name}` : `🎬 ${video.name}`;
+                    option.textContent = label;
+                    select.appendChild(option);
+                });
+            } catch (error) {
+                showError('Failed to load videos: ' + error.message);
+            }
+        }
+
+        // File upload handling
+        document.getElementById('videoFile').addEventListener('change', async function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            document.getElementById('fileName').textContent = file.name;
+
+            const formData = new FormData();
+            formData.append('video', file);
+
+            // Show progress
+            const progressDiv = document.getElementById('uploadProgress');
+            const progressFill = document.getElementById('progressFill');
+            progressDiv.classList.add('active');
+            progressFill.style.width = '0%';
+            progressFill.textContent = '0%';
+
+            try {
+                const xhr = new XMLHttpRequest();
+
+                // Upload progress
+                xhr.upload.addEventListener('progress', (e) => {
+                    if (e.lengthComputable) {
+                        const percent = Math.round((e.loaded / e.total) * 100);
+                        progressFill.style.width = percent + '%';
+                        progressFill.textContent = percent + '%';
+                    }
+                });
+
+                // Upload complete
+                xhr.addEventListener('load', () => {
+                    if (xhr.status === 200) {
+                        const result = JSON.parse(xhr.responseText);
+                        progressFill.textContent = '✓ Upload Complete!';
+                        setTimeout(() => {
+                            progressDiv.classList.remove('active');
+                            // Reload video list
+                            loadVideos();
+                            // Auto-select the uploaded video
+                            setTimeout(() => {
+                                const select = document.getElementById('videoSelect');
+                                for (let i = 0; i < select.options.length; i++) {
+                                    if (select.options[i].value) {
+                                        const optData = JSON.parse(select.options[i].value);
+                                        if (optData.name === result.filename && optData.source === 'uploaded') {
+                                            select.selectedIndex = i;
+                                            select.dispatchEvent(new Event('change'));
+                                            break;
+                                        }
+                                    }
+                                }
+                            }, 500);
+                        }, 1000);
+                    } else {
+                        const error = JSON.parse(xhr.responseText);
+                        showError('Upload failed: ' + (error.error || 'Unknown error'));
+                        progressDiv.classList.remove('active');
+                    }
+                });
+
+                xhr.addEventListener('error', () => {
+                    showError('Upload failed: Network error');
+                    progressDiv.classList.remove('active');
+                });
+
+                xhr.open('POST', '/upload');
+                xhr.send(formData);
+
+            } catch (error) {
+                showError('Upload failed: ' + error.message);
+                progressDiv.classList.remove('active');
+            }
+        });
+
+        // Update video player when selection changes
+        document.getElementById('videoSelect').addEventListener('change', function() {
+            const videoValue = this.value;
+            if (videoValue) {
+                const video = JSON.parse(videoValue);
+                const videoPath = video.source === 'uploaded'
+                    ? '/uploads/' + video.name
+                    : '/videos/' + video.name;
+                document.getElementById('videoPlayer').src = videoPath;
+            }
+        });
+
+        // Analyze button click
+        document.getElementById('analyzeBtn').addEventListener('click', async function() {
+            const videoValue = document.getElementById('videoSelect').value;
+            if (!videoValue) {
+                showError('Please select or upload a video first');
+                return;
+            }
+
+            const video = JSON.parse(videoValue);
+
+            // Show loading
+            document.getElementById('loading').classList.add('active');
+            document.getElementById('errorMsg').classList.remove('active');
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('plots').style.display = 'none';
+            this.disabled = true;
+
+            try {
+                const response = await fetch('/analyze', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        video_path: video.name,
+                        video_source: video.source
+                    })
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error || 'Analysis failed');
+                }
+
+                const data = await response.json();
+                displayResults(data);
+
+            } catch (error) {
+                showError('Analysis failed: ' + error.message);
+            } finally {
+                document.getElementById('loading').classList.remove('active');
+                this.disabled = false;
+            }
+        });
+
+        function showError(message) {
+            const errorDiv = document.getElementById('errorMsg');
+            errorDiv.textContent = message;
+            errorDiv.classList.add('active');
+        }
+
+        function displayResults(data) {
+            const { analysis, reference_values, temp_plot, cooling_plot, video_info } = data;
+
+            // Show results section
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('plots').style.display = 'block';
+
+            // Display grade
+            const gradeDisplay = document.getElementById('gradeDisplay');
+            gradeDisplay.innerHTML = `
+                <h2>${analysis.estimated_grade} Gold</h2>
+                <p>${analysis.estimated_purity.toFixed(1)}% Purity</p>
+                <p>Confidence: ${analysis.confidence.toFixed(1)}%</p>
+            `;
+
+            // Display result cards
+            const resultGrid = document.getElementById('resultGrid');
+            resultGrid.innerHTML = `
+                <div class="result-card">
+                    <h3>Cooling Rate</h3>
+                    <div class="value">${analysis.cooling_rate.toFixed(3)}<span class="unit">s⁻¹</span></div>
+                </div>
+                <div class="result-card">
+                    <h3>Peak Temp</h3>
+                    <div class="value">${analysis.peak_temp.toFixed(1)}<span class="unit">°C</span></div>
+                </div>
+                <div class="result-card">
+                    <h3>Temp Drop</h3>
+                    <div class="value">${analysis.temp_delta.toFixed(1)}<span class="unit">°C</span></div>
+                </div>
+                <div class="result-card">
+                    <h3>R² Score</h3>
+                    <div class="value">${analysis.r_squared.toFixed(4)}</div>
+                </div>
+                <div class="result-card">
+                    <h3>Peak Time</h3>
+                    <div class="value">${analysis.peak_time.toFixed(1)}<span class="unit">s</span></div>
+                </div>
+                <div class="result-card">
+                    <h3>Duration</h3>
+                    <div class="value">${video_info.duration.toFixed(1)}<span class="unit">s</span></div>
+                </div>
+            `;
+
+            // Plot temperature vs time
+            Plotly.newPlot('tempPlot', temp_plot.data, temp_plot.layout, {
+                responsive: true,
+                displayModeBar: true,
+                modeBarButtonsToRemove: ['lasso2d', 'select2d'],
+                displaylogo: false
+            });
+
+            // Plot normalized cooling curve
+            Plotly.newPlot('coolingPlot', cooling_plot.data, cooling_plot.layout, {
+                responsive: true,
+                displayModeBar: true,
+                modeBarButtonsToRemove: ['lasso2d', 'select2d'],
+                displaylogo: false
+            });
+
+            // Display reference table
+            const referenceTable = document.getElementById('referenceTable');
+            let tableHTML = `
+                <thead>
+                    <tr>
+                        <th>Grade</th>
+                        <th>Purity (%)</th>
+                        <th>Cooling Rate (s⁻¹)</th>
+                        <th>Thermal Conductivity (W/m·K)</th>
+                    </tr>
+                </thead>
+                <tbody>
+            `;
+
+            for (const [grade, props] of Object.entries(reference_values)) {
+                const isMatch = grade === analysis.estimated_grade;
+                tableHTML += `
+                    <tr style="${isMatch ? 'background: #ffffcc; font-weight: bold;' : ''}">
+                        <td>${grade}</td>
+                        <td>${props.purity}</td>
+                        <td>${props.k_rate}</td>
+                        <td>${props.k_thermal}</td>
+                    </tr>
+                `;
+            }
+
+            tableHTML += '</tbody>';
+            referenceTable.innerHTML = tableHTML;
+
+            // Display impurity analysis
+            document.getElementById('possibleCount').textContent = analysis.possible_impurities_count;
+            document.getElementById('ruledOutCount').textContent = analysis.ruled_out_impurities_count;
+
+            const impurityTableBody = document.getElementById('impurityTableBody');
+            let impurityHTML = '';
+
+            analysis.impurity_analysis.forEach(impurity => {
+                const statusClass = impurity.status === 'RULED OUT' ? 'ruled-out' : 'possible';
+                const likelihoodClass = impurity.likelihood.toLowerCase();
+
+                impurityHTML += `
+                    <tr>
+                        <td><strong>${impurity.name}</strong></td>
+                        <td>${impurity.k_thermal}</td>
+                        <td>${impurity.k_rate_range}</td>
+                        <td><span class="status-badge ${statusClass}">${impurity.status}</span></td>
+                        <td><span class="likelihood-badge ${likelihoodClass}">${impurity.likelihood}</span></td>
+                        <td>${impurity.description}</td>
+                    </tr>
+                `;
+            });
+
+            impurityTableBody.innerHTML = impurityHTML;
+        }
+
+        // Load videos on page load
+        loadVideos();
+    </script>
+</body>
+</html>
