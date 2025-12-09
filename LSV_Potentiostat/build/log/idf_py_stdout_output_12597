@@ -1,0 +1,1209 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7112
+load:0x40078000,len:15716
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (29) boot: ESP-IDF cab6f10 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 10 2025 00:59:30[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (34) boot: chip revision: v3.1[0m
+[0;32mI (37) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (42) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (51) boot: Enabling RNG early entropy source...[0m
+[0;32mI (57) boot: Partition Table:[0m
+[0;32mI (60) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (67) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (75) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (82) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (94) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0cdb0h ( 52656) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cdd8 vaddr=3ffb0000 size=022cch (  8908) load[0m
+[0;32mI (125) esp_image: segment 2: paddr=0001f0ac vaddr=40080000 size=00f6ch (  3948) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=15838h ( 88120) map[0m
+[0;32mI (168) esp_image: segment 4: paddr=00035860 vaddr=40080f6c size=0cffch ( 53244) load[0m
+[0;32mI (197) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (197) boot: Disabling RNG early entropy source...[0m
+[0;32mI (209) cpu_start: Multicore app[0m
+[0;32mI (210) cpu_start: Pro cpu up.[0m
+[0;32mI (210) cpu_start: Starting app cpu, entry point is 0x40081338[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (227) cpu_start: Pro cpu start user code[0m
+[0;32mI (227) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (227) cpu_start: Application information:[0m
+[0;32mI (232) cpu_start: Project name:     lsv_potentiostat[0m
+[0;32mI (237) cpu_start: App version:      6922589-dirty[0m
+[0;32mI (243) cpu_start: Compile time:     Dec 10 2025 00:59:25[0m
+[0;32mI (249) cpu_start: ELF file SHA256:  5cc5d895f84e10ce...[0m
+[0;32mI (255) cpu_start: ESP-IDF:          cab6f10[0m
+[0;32mI (260) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (265) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (269) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (274) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (282) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (287) heap_init: At 3FFB3518 len 0002CAE8 (178 KiB): DRAM[0m
+[0;32mI (294) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (300) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (307) heap_init: At 4008DF68 len 00012098 (72 KiB): IRAM[0m
+[0;32mI (314) spi_flash: detected chip: generic[0m
+[0;32mI (317) spi_flash: flash io: dio[0m
+[0;33mW (321) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (335) app_start: Starting scheduler on CPU0[0m
+[0;32mI (339) app_start: Starting scheduler on CPU1[0m
+[0;32mI (339) main_task: Started on CPU0[0m
+[0;32mI (349) main_task: Calling app_main()[0m
+[0;32mI (369) LSV_SCAN: ╔═══════════════════════════════════════╗[0m
+[0;32mI (379) LSV_SCAN: ║  LSV POTENTIOSTAT - ESP32-WROOM-32E   ║[0m
+[0;32mI (379) LSV_SCAN: ║  Gold Purity Analyzer                 ║[0m
+[0;32mI (389) LSV_SCAN: ║  Smart India Hackathon 2025           ║[0m
+[0;32mI (399) LSV_SCAN: ╚═══════════════════════════════════════╝[0m
+[0;32mI (409) LSV_SCAN: Initializing I2C bus...[0m
+[0;32mI (419) I2C_DEVICES: I2C initialized on GPIO21 (SDA) and GPIO22 (SCL)[0m
+[0;32mI (419) LSV_SCAN: Initializing MCP4725 DAC...[0m
+[0;32mI (429) I2C_DEVICES: MCP4725 found at address 0x60[0m
+[0;32mI (429) LSV_SCAN: Initializing ADS1115 ADC...[0m
+[0;32mI (439) I2C_DEVICES: ADS1115 found at address 0x48[0m
+[0;32mI (439) I2C_DEVICES: Config register: 0xC383[0m
+[0;32mI (449) LSV_SCAN: DAC set to 0.000V (safe state)[0m
+[0;32mI (449) LSV_SCAN: System ready![0m
+[0;32mI (459) MAIN: ═══════════════════════════════════════════════════════════[0m
+[0;32mI (469) MAIN: PRE-SCAN CHECKLIST[0m
+[0;32mI (479) MAIN: ═══════════════════════════════════════════════════════════[0m
+[0;32mI (499) MAIN: [0m
+[0;32mI (499) MAIN: Please verify before starting scan:[0m
+[0;32mI (499) MAIN: [0m
+[0;32mI (509) MAIN: ☐ Electrodes properly positioned[0m
+[0;32mI (509) MAIN:   • Working Electrode (WE): Gold sample or test electrode[0m
+[0;32mI (519) MAIN:   • Reference Electrode (RE): Copper wire or graphite[0m
+[0;32mI (529) MAIN:   • Counter Electrode (CE): Copper wire or graphite[0m
+[0;32mI (529) MAIN: [0m
+[0;32mI (539) MAIN: ☐ Electrodes submerged in electrolyte[0m
+[0;32mI (539) MAIN:   • Depth: 2-3 cm below surface[0m
+[0;32mI (549) MAIN:   • Electrolyte: 0.1M KCl or 0.5M H₂SO₄[0m
+[0;32mI (549) MAIN:   • Volume: At least 50-100 mL[0m
+[0;32mI (559) MAIN: [0m
+[0;32mI (559) MAIN: ☐ Electrodes NOT touching each other[0m
+[0;32mI (569) MAIN:   • Maintain 1-2 cm spacing between electrodes[0m
+[0;32mI (569) MAIN: [0m
+[0;32mI (569) MAIN: ☐ Beaker on stable, non-conductive surface[0m
+[0;32mI (579) MAIN:   • Prevent spills and electrical shorts[0m
+[0;32mI (589) MAIN: [0m
+[0;32mI (589) MAIN: ═══════════════════════════════════════════════════════════
+[0m
+[0;32mI (609) MAIN: Starting first scan in 10 seconds...[0m
+[0;32mI (609) MAIN:   10...[0m
+[0;32mI (1619) MAIN:   9...[0m
+[0;32mI (2619) MAIN:   8...[0m
+[0;32mI (3619) MAIN:   7...[0m
+[0;32mI (4619) MAIN:   6...[0m
+[0;32mI (5619) MAIN:   5...[0m
+[0;32mI (6619) MAIN:   4...[0m
+[0;32mI (7619) MAIN:   3...[0m
+[0;32mI (8619) MAIN:   2...[0m
+[0;32mI (9619) MAIN:   1...[0m
+[0;32mI (10619) MAIN:   GO!
+[0m
+[0;32mI (10619) MAIN: 
+
+[0m
+[0;32mI (10619) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (10629) MAIN: ║  SCAN #1                                                 ║[0m
+[0;32mI (10639) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (10649) MAIN: [0m
+[0;32mI (10659) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (10669) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (10669) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (10689) LSV_SCAN: Voltage range: 0.000V to 0.600V[0m
+[0;32mI (10689) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (10699) LSV_SCAN: Settle time: 80ms per step[0m
+[0;32mI (10699) LSV_SCAN: Total data points: 61[0m
+[0;32mI (10709) LSV_SCAN: Estimated scan time: 4.9 seconds
+[0m
+[0;32mI (10709) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (10719) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (10819) LSV_SCAN:    0.000    |     0.030    | [0m
+[0;32mI (11629) LSV_SCAN:    0.090    |     0.010    | [0m
+[0;32mI (12529) LSV_SCAN:    0.190    |    -0.010    | [0m
+[0;32mI (13429) LSV_SCAN:    0.290    |    -0.030    | [0m
+[0;32mI (14329) LSV_SCAN:    0.390    |    -0.040    | [0m
+[0;32mI (15229) LSV_SCAN:    0.490    |    -0.060    | [0m
+[0;32mI (16129) LSV_SCAN:    0.590    |    -0.070    | [0m
+[0;32mI (16319) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (16319) LSV_SCAN: Scan complete - 61 data points collected[0m
+[0;32mI (16319) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (16339) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (16349) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (16349) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (16369) PEAK_ANALYSIS: Scanning for copper peak (0.00V to 0.25V):[0m
+[0;32mI (16379) PEAK_ANALYSIS: ✗ No significant copper peak detected[0m
+[0;32mI (16379) PEAK_ANALYSIS:   → Sample may be pure gold or low-Cu alloy
+[0m
+[0;32mI (16389) PEAK_ANALYSIS: Scanning for silver peak (0.30V to 0.55V):[0m
+[0;32mI (16399) PEAK_ANALYSIS: ✗ No significant silver peak detected[0m
+[0;32mI (16399) PEAK_ANALYSIS:   → Sample may contain minimal silver
+[0m
+[0;32mI (16409) PEAK_ANALYSIS: ───────────────────────────────────────[0m
+[0;32mI (16419) PEAK_ANALYSIS: Total peaks detected: 0[0m
+[0;32mI (16429) PEAK_ANALYSIS: Combined peak magnitude: 0.000 µA[0m
+[0;32mI (16439) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (16449) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (16459) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (16469) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (16479) KARAT_ESTIMATION: Total peak magnitude: 0.000 µA
+[0m
+[0;32mI (16489) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (16499) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (16509) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (16519) KARAT_ESTIMATION: Estimated purity: 24K (100.0% gold)[0m
+[0;32mI (16529) KARAT_ESTIMATION: Classification: Pure Gold[0m
+[0;32mI (16529) KARAT_ESTIMATION: Confidence level: 30%
+[0m
+[0;32mI (16539) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (16539) KARAT_ESTIMATION:   No significant oxidation peaks detected.[0m
+[0;32mI (16549) KARAT_ESTIMATION:   Sample appears to be pure gold (24K) with[0m
+[0;32mI (16559) KARAT_ESTIMATION:   minimal or no alloy metals.
+[0m
+[0;32mI (16559) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (16579) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (16579) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (16589) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (16599) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (16599) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (16719) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (16719) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (16729) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (16749) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (16749) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (16759) MAIN: ════════════════════════════════════════════════════════════
+
+[0m
+[0;32mI (22779) MAIN: 
+
+[0m
+[0;32mI (22779) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (22789) MAIN: ║  SCAN #2                                                 ║[0m
+[0;32mI (22789) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (22809) MAIN: [0m
+[0;32mI (22809) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (22829) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (22829) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (22839) LSV_SCAN: Voltage range: 0.000V to 0.600V[0m
+[0;32mI (22849) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (22849) LSV_SCAN: Settle time: 80ms per step[0m
+[0;32mI (22859) LSV_SCAN: Total data points: 61[0m
+[0;32mI (22859) LSV_SCAN: Estimated scan time: 4.9 seconds
+[0m
+[0;32mI (22869) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (22879) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (22979) LSV_SCAN:    0.000    |     0.030    | [0m
+[0;32mI (23789) LSV_SCAN:    0.090    |     0.010    | [0m
+[0;32mI (24689) LSV_SCAN:    0.190    |    -0.010    | [0m
+[0;32mI (25589) LSV_SCAN:    0.290    |    -0.030    | [0m
+[0;32mI (26489) LSV_SCAN:    0.390    |    -0.040    | [0m
+[0;32mI (27389) LSV_SCAN:    0.490    |    -0.050    | [0m
+[0;32mI (28289) LSV_SCAN:    0.590    |    -0.070    | [0m
+[0;32mI (28479) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (28479) LSV_SCAN: Scan complete - 61 data points collected[0m
+[0;32mI (28479) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (28499) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (28509) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (28509) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (28529) PEAK_ANALYSIS: Scanning for copper peak (0.00V to 0.25V):[0m
+[0;32mI (28539) PEAK_ANALYSIS: ✗ No significant copper peak detected[0m
+[0;32mI (28539) PEAK_ANALYSIS:   → Sample may be pure gold or low-Cu alloy
+[0m
+[0;32mI (28549) PEAK_ANALYSIS: Scanning for silver peak (0.30V to 0.55V):[0m
+[0;32mI (28559) PEAK_ANALYSIS: ✗ No significant silver peak detected[0m
+[0;32mI (28559) PEAK_ANALYSIS:   → Sample may contain minimal silver
+[0m
+[0;32mI (28569) PEAK_ANALYSIS: ───────────────────────────────────────[0m
+[0;32mI (28579) PEAK_ANALYSIS: Total peaks detected: 0[0m
+[0;32mI (28589) PEAK_ANALYSIS: Combined peak magnitude: 0.000 µA[0m
+[0;32mI (28599) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (28609) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (28619) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (28629) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (28639) KARAT_ESTIMATION: Total peak magnitude: 0.000 µA
+[0m
+[0;32mI (28649) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (28659) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (28669) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (28679) KARAT_ESTIMATION: Estimated purity: 24K (100.0% gold)[0m
+[0;32mI (28689) KARAT_ESTIMATION: Classification: Pure Gold[0m
+[0;32mI (28689) KARAT_ESTIMATION: Confidence level: 30%
+[0m
+[0;32mI (28699) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (28699) KARAT_ESTIMATION:   No significant oxidation peaks detected.[0m
+[0;32mI (28709) KARAT_ESTIMATION:   Sample appears to be pure gold (24K) with[0m
+[0;32mI (28719) KARAT_ESTIMATION:   minimal or no alloy metals.
+[0m
+[0;32mI (28719) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (28739) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (28739) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (28749) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (28759) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (28759) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (28879) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (28879) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (28889) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (28909) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (28909) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (28919) MAIN: ════════════════════════════════════════════════════════════
+
+[0m
+[0;32mI (34939) MAIN: 
+
+[0m
+[0;32mI (34939) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (34949) MAIN: ║  SCAN #3                                                 ║[0m
+[0;32mI (34949) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (34969) MAIN: [0m
+[0;32mI (34969) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (34989) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (34989) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (34999) LSV_SCAN: Voltage range: 0.000V to 0.600V[0m
+[0;32mI (35009) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (35009) LSV_SCAN: Settle time: 80ms per step[0m
+[0;32mI (35019) LSV_SCAN: Total data points: 61[0m
+[0;32mI (35019) LSV_SCAN: Estimated scan time: 4.9 seconds
+[0m
+[0;32mI (35029) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (35039) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (35139) LSV_SCAN:    0.000    |     0.030    | [0m
+[0;32mI (35949) LSV_SCAN:    0.090    |     0.010    | [0m
+[0;32mI (36849) LSV_SCAN:    0.190    |    -0.010    | [0m
+[0;32mI (37749) LSV_SCAN:    0.290    |    -0.030    | [0m
+[0;32mI (38649) LSV_SCAN:    0.390    |    -0.040    | [0m
+[0;32mI (39549) LSV_SCAN:    0.490    |    -0.060    | [0m
+[0;32mI (40449) LSV_SCAN:    0.590    |    -0.070    | [0m
+[0;32mI (40639) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (40639) LSV_SCAN: Scan complete - 61 data points collected[0m
+[0;32mI (40639) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (40659) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (40669) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (40669) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (40689) PEAK_ANALYSIS: Scanning for copper peak (0.00V to 0.25V):[0m
+[0;32mI (40699) PEAK_ANALYSIS: ✗ No significant copper peak detected[0m
+[0;32mI (40699) PEAK_ANALYSIS:   → Sample may be pure gold or low-Cu alloy
+[0m
+[0;32mI (40709) PEAK_ANALYSIS: Scanning for silver peak (0.30V to 0.55V):[0m
+[0;32mI (40719) PEAK_ANALYSIS: ✗ No significant silver peak detected[0m
+[0;32mI (40719) PEAK_ANALYSIS:   → Sample may contain minimal silver
+[0m
+[0;32mI (40729) PEAK_ANALYSIS: ───────────────────────────────────────[0m
+[0;32mI (40739) PEAK_ANALYSIS: Total peaks detected: 0[0m
+[0;32mI (40749) PEAK_ANALYSIS: Combined peak magnitude: 0.000 µA[0m
+[0;32mI (40759) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (40769) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (40779) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (40789) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (40799) KARAT_ESTIMATION: Total peak magnitude: 0.000 µA
+[0m
+[0;32mI (40809) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (40819) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (40829) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (40839) KARAT_ESTIMATION: Estimated purity: 24K (100.0% gold)[0m
+[0;32mI (40849) KARAT_ESTIMATION: Classification: Pure Gold[0m
+[0;32mI (40849) KARAT_ESTIMATION: Confidence level: 30%
+[0m
+[0;32mI (40859) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (40859) KARAT_ESTIMATION:   No significant oxidation peaks detected.[0m
+[0;32mI (40869) KARAT_ESTIMATION:   Sample appears to be pure gold (24K) with[0m
+[0;32mI (40879) KARAT_ESTIMATION:   minimal or no alloy metals.
+[0m
+[0;32mI (40879) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (40899) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (40899) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (40909) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (40919) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (40919) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (41039) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (41039) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (41049) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (41069) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (41069) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (41079) MAIN: ════════════════════════════════════════════════════════════
+
+[0m
+[0;32mI (47099) MAIN: 
+
+[0m
+[0;32mI (47099) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (47109) MAIN: ║  SCAN #4                                                 ║[0m
+[0;32mI (47109) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (47129) MAIN: [0m
+[0;32mI (47129) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (47149) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (47149) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (47159) LSV_SCAN: Voltage range: 0.000V to 0.600V[0m
+[0;32mI (47169) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (47169) LSV_SCAN: Settle time: 80ms per step[0m
+[0;32mI (47179) LSV_SCAN: Total data points: 61[0m
+[0;32mI (47179) LSV_SCAN: Estimated scan time: 4.9 seconds
+[0m
+[0;32mI (47189) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (47199) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (47299) LSV_SCAN:    0.000    |     0.030    | [0m
+[0;32mI (48109) LSV_SCAN:    0.090    |     0.010    | [0m
+[0;32mI (49009) LSV_SCAN:    0.190    |    -0.010    | [0m
+[0;32mI (49909) LSV_SCAN:    0.290    |    -0.030    | [0m
+[0;32mI (50809) LSV_SCAN:    0.390    |    -0.040    | [0m
+[0;32mI (51709) LSV_SCAN:    0.490    |    -0.050    | [0m
+[0;32mI (52609) LSV_SCAN:    0.590    |    -0.070    | [0m
+[0;32mI (52799) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (52799) LSV_SCAN: Scan complete - 61 data points collected[0m
+[0;32mI (52799) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (52819) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (52829) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (52829) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (52849) PEAK_ANALYSIS: Scanning for copper peak (0.00V to 0.25V):[0m
+[0;32mI (52859) PEAK_ANALYSIS: ✗ No significant copper peak detected[0m
+[0;32mI (52859) PEAK_ANALYSIS:   → Sample may be pure gold or low-Cu alloy
+[0m
+[0;32mI (52869) PEAK_ANALYSIS: Scanning for silver peak (0.30V to 0.55V):[0m
+[0;32mI (52879) PEAK_ANALYSIS: ✗ No significant silver peak detected[0m
+[0;32mI (52879) PEAK_ANALYSIS:   → Sample may contain minimal silver
+[0m
+[0;32mI (52889) PEAK_ANALYSIS: ───────────────────────────────────────[0m
+[0;32mI (52899) PEAK_ANALYSIS: Total peaks detected: 0[0m
+[0;32mI (52909) PEAK_ANALYSIS: Combined peak magnitude: 0.000 µA[0m
+[0;32mI (52919) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (52929) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (52939) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (52949) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (52959) KARAT_ESTIMATION: Total peak magnitude: 0.000 µA
+[0m
+[0;32mI (52969) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (52979) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (52989) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (52999) KARAT_ESTIMATION: Estimated purity: 24K (100.0% gold)[0m
+[0;32mI (53009) KARAT_ESTIMATION: Classification: Pure Gold[0m
+[0;32mI (53009) KARAT_ESTIMATION: Confidence level: 30%
+[0m
+[0;32mI (53019) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (53019) KARAT_ESTIMATION:   No significant oxidation peaks detected.[0m
+[0;32mI (53029) KARAT_ESTIMATION:   Sample appears to be pure gold (24K) with[0m
+[0;32mI (53039) KARAT_ESTIMATION:   minimal or no alloy metals.
+[0m
+[0;32mI (53039) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (53059) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (53059) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (53069) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (53079) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (53079) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (53199) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (53199) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (53209) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (53229) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (53229) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (53239) MAIN: ════════════════════════════════════════════════════════════
+
+[0m
+[0;32mI (59259) MAIN: 
+
+[0m
+[0;32mI (59259) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (59269) MAIN: ║  SCAN #5                                                 ║[0m
+[0;32mI (59269) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (59289) MAIN: [0m
+[0;32mI (59289) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (59309) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (59309) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (59319) LSV_SCAN: Voltage range: 0.000V to 0.600V[0m
+[0;32mI (59329) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (59329) LSV_SCAN: Settle time: 80ms per step[0m
+[0;32mI (59339) LSV_SCAN: Total data points: 61[0m
+[0;32mI (59339) LSV_SCAN: Estimated scan time: 4.9 seconds
+[0m
+[0;32mI (59349) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (59359) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (59459) LSV_SCAN:    0.000    |     0.030    | [0m
+[0;32mI (60269) LSV_SCAN:    0.090    |     0.010    | [0m
+[0;32mI (61169) LSV_SCAN:    0.190    |    -0.010    | [0m
+[0;32mI (62069) LSV_SCAN:    0.290    |    -0.030    | [0m
+[0;32mI (62969) LSV_SCAN:    0.390    |    -0.040    | [0m
+[0;32mI (63869) LSV_SCAN:    0.490    |    -0.050    | [0m
+[0;32mI (64769) LSV_SCAN:    0.590    |    -0.070    | [0m
+[0;32mI (64959) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (64959) LSV_SCAN: Scan complete - 61 data points collected[0m
+[0;32mI (64959) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (64979) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (64989) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (64989) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (65009) PEAK_ANALYSIS: Scanning for copper peak (0.00V to 0.25V):[0m
+[0;32mI (65019) PEAK_ANALYSIS: ✗ No significant copper peak detected[0m
+[0;32mI (65019) PEAK_ANALYSIS:   → Sample may be pure gold or low-Cu alloy
+[0m
+[0;32mI (65029) PEAK_ANALYSIS: Scanning for silver peak (0.30V to 0.55V):[0m
+[0;32mI (65039) PEAK_ANALYSIS: ✗ No significant silver peak detected[0m
+[0;32mI (65039) PEAK_ANALYSIS:   → Sample may contain minimal silver
+[0m
+[0;32mI (65049) PEAK_ANALYSIS: ───────────────────────────────────────[0m
+[0;32mI (65059) PEAK_ANALYSIS: Total peaks detected: 0[0m
+[0;32mI (65069) PEAK_ANALYSIS: Combined peak magnitude: 0.000 µA[0m
+[0;32mI (65079) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (65089) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (65099) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (65109) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (65119) KARAT_ESTIMATION: Total peak magnitude: 0.000 µA
+[0m
+[0;32mI (65129) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (65139) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (65149) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (65159) KARAT_ESTIMATION: Estimated purity: 24K (100.0% gold)[0m
+[0;32mI (65169) KARAT_ESTIMATION: Classification: Pure Gold[0m
+[0;32mI (65169) KARAT_ESTIMATION: Confidence level: 30%
+[0m
+[0;32mI (65179) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (65179) KARAT_ESTIMATION:   No significant oxidation peaks detected.[0m
+[0;32mI (65189) KARAT_ESTIMATION:   Sample appears to be pure gold (24K) with[0m
+[0;32mI (65199) KARAT_ESTIMATION:   minimal or no alloy metals.
+[0m
+[0;32mI (65199) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (65219) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (65219) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (65229) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (65239) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (65239) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (65359) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (65359) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (65369) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (65389) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (65389) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (65399) MAIN: ════════════════════════════════════════════════════════════
+
+[0m
+[0;32mI (71419) MAIN: 
+
+[0m
+[0;32mI (71419) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (71429) MAIN: ║  SCAN #6                                                 ║[0m
+[0;32mI (71429) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (71449) MAIN: [0m
+[0;32mI (71449) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (71469) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (71469) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (71479) LSV_SCAN: Voltage range: 0.000V to 0.600V[0m
+[0;32mI (71489) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (71489) LSV_SCAN: Settle time: 80ms per step[0m
+[0;32mI (71499) LSV_SCAN: Total data points: 61[0m
+[0;32mI (71499) LSV_SCAN: Estimated scan time: 4.9 seconds
+[0m
+[0;32mI (71509) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (71519) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (71619) LSV_SCAN:    0.000    |     0.030    | [0m
+[0;32mI (72429) LSV_SCAN:    0.090    |     0.010    | [0m
+[0;32mI (73329) LSV_SCAN:    0.190    |    -0.010    | [0m
+[0;32mI (74229) LSV_SCAN:    0.290    |    -0.030    | [0m
+[0;32mI (75129) LSV_SCAN:    0.390    |    -0.040    | [0m
+[0;32mI (76029) LSV_SCAN:    0.490    |    -0.050    | [0m
+[0;32mI (76929) LSV_SCAN:    0.590    |    -0.070    | [0m
+[0;32mI (77119) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (77119) LSV_SCAN: Scan complete - 61 data points collected[0m
+[0;32mI (77119) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (77139) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (77149) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (77149) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (77169) PEAK_ANALYSIS: Scanning for copper peak (0.00V to 0.25V):[0m
+[0;32mI (77179) PEAK_ANALYSIS: ✗ No significant copper peak detected[0m
+[0;32mI (77179) PEAK_ANALYSIS:   → Sample may be pure gold or low-Cu alloy
+[0m
+[0;32mI (77189) PEAK_ANALYSIS: Scanning for silver peak (0.30V to 0.55V):[0m
+[0;32mI (77199) PEAK_ANALYSIS: ✗ No significant silver peak detected[0m
+[0;32mI (77199) PEAK_ANALYSIS:   → Sample may contain minimal silver
+[0m
+[0;32mI (77209) PEAK_ANALYSIS: ───────────────────────────────────────[0m
+[0;32mI (77219) PEAK_ANALYSIS: Total peaks detected: 0[0m
+[0;32mI (77229) PEAK_ANALYSIS: Combined peak magnitude: 0.000 µA[0m
+[0;32mI (77239) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (77249) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (77259) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (77269) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (77279) KARAT_ESTIMATION: Total peak magnitude: 0.000 µA
+[0m
+[0;32mI (77289) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (77299) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (77309) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (77319) KARAT_ESTIMATION: Estimated purity: 24K (100.0% gold)[0m
+[0;32mI (77329) KARAT_ESTIMATION: Classification: Pure Gold[0m
+[0;32mI (77329) KARAT_ESTIMATION: Confidence level: 30%
+[0m
+[0;32mI (77339) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (77339) KARAT_ESTIMATION:   No significant oxidation peaks detected.[0m
+[0;32mI (77349) KARAT_ESTIMATION:   Sample appears to be pure gold (24K) with[0m
+[0;32mI (77359) KARAT_ESTIMATION:   minimal or no alloy metals.
+[0m
+[0;32mI (77359) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (77379) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (77379) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (77389) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (77399) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (77399) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (77519) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (77519) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (77529) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (77549) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (77549) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (77559) MAIN: ════════════════════════════════════════════════════════════
+
+[0m
+[0;32mI (83579) MAIN: 
+
+[0m
+[0;32mI (83579) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (83589) MAIN: ║  SCAN #7                                                 ║[0m
+[0;32mI (83589) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (83609) MAIN: [0m
+[0;32mI (83609) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (83629) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (83629) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (83639) LSV_SCAN: Voltage range: 0.000V to 0.600V[0m
+[0;32mI (83649) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (83649) LSV_SCAN: Settle time: 80ms per step[0m
+[0;32mI (83659) LSV_SCAN: Total data points: 61[0m
+[0;32mI (83659) LSV_SCAN: Estimated scan time: 4.9 seconds
+[0m
+[0;32mI (83669) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (83679) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (83779) LSV_SCAN:    0.000    |     0.030    | [0m
+[0;32mI (84589) LSV_SCAN:    0.090    |     0.010    | [0m
+[0;32mI (85489) LSV_SCAN:    0.190    |    -0.010    | [0m
+[0;32mI (86389) LSV_SCAN:    0.290    |    -0.030    | [0m
+[0;32mI (87289) LSV_SCAN:    0.390    |    -0.040    | [0m
+[0;32mI (88189) LSV_SCAN:    0.490    |    -0.060    | [0m
+[0;32mI (89089) LSV_SCAN:    0.590    |    -0.070    | [0m
+[0;32mI (89279) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (89279) LSV_SCAN: Scan complete - 61 data points collected[0m
+[0;32mI (89279) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (89299) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (89309) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (89309) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (89329) PEAK_ANALYSIS: Scanning for copper peak (0.00V to 0.25V):[0m
+[0;32mI (89339) PEAK_ANALYSIS: ✗ No significant copper peak detected[0m
+[0;32mI (89339) PEAK_ANALYSIS:   → Sample may be pure gold or low-Cu alloy
+[0m
+[0;32mI (89349) PEAK_ANALYSIS: Scanning for silver peak (0.30V to 0.55V):[0m
+[0;32mI (89359) PEAK_ANALYSIS: ✗ No significant silver peak detected[0m
+[0;32mI (89359) PEAK_ANALYSIS:   → Sample may contain minimal silver
+[0m
+[0;32mI (89369) PEAK_ANALYSIS: ───────────────────────────────────────[0m
+[0;32mI (89379) PEAK_ANALYSIS: Total peaks detected: 0[0m
+[0;32mI (89389) PEAK_ANALYSIS: Combined peak magnitude: 0.000 µA[0m
+[0;32mI (89399) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (89409) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (89419) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (89429) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (89439) KARAT_ESTIMATION: Total peak magnitude: 0.000 µA
+[0m
+[0;32mI (89449) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (89459) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (89469) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (89479) KARAT_ESTIMATION: Estimated purity: 24K (100.0% gold)[0m
+[0;32mI (89489) KARAT_ESTIMATION: Classification: Pure Gold[0m
+[0;32mI (89489) KARAT_ESTIMATION: Confidence level: 30%
+[0m
+[0;32mI (89499) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (89499) KARAT_ESTIMATION:   No significant oxidation peaks detected.[0m
+[0;32mI (89509) KARAT_ESTIMATION:   Sample appears to be pure gold (24K) with[0m
+[0;32mI (89519) KARAT_ESTIMATION:   minimal or no alloy metals.
+[0m
+[0;32mI (89519) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (89539) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (89539) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (89549) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (89559) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (89559) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (89679) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (89679) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (89689) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (89709) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (89709) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (89719) MAIN: ════════════════════════════════════════════════════════════
+
+[0m
+[0;32mI (95739) MAIN: 
+
+[0m
+[0;32mI (95739) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (95749) MAIN: ║  SCAN #8                                                 ║[0m
+[0;32mI (95749) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (95769) MAIN: [0m
+[0;32mI (95769) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (95789) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (95789) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (95799) LSV_SCAN: Voltage range: 0.000V to 0.600V[0m
+[0;32mI (95809) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (95809) LSV_SCAN: Settle time: 80ms per step[0m
+[0;32mI (95819) LSV_SCAN: Total data points: 61[0m
+[0;32mI (95819) LSV_SCAN: Estimated scan time: 4.9 seconds
+[0m
+[0;32mI (95829) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (95839) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (95939) LSV_SCAN:    0.000    |     0.030    | [0m
+[0;32mI (96749) LSV_SCAN:    0.090    |     0.010    | [0m
+[0;32mI (97649) LSV_SCAN:    0.190    |    -0.010    | [0m
+[0;32mI (98549) LSV_SCAN:    0.290    |    -0.030    | [0m
+[0;32mI (99449) LSV_SCAN:    0.390    |    -0.040    | [0m
+[0;32mI (100349) LSV_SCAN:    0.490    |    -0.050    | [0m
+[0;32mI (101249) LSV_SCAN:    0.590    |    -0.070    | [0m
+[0;32mI (101439) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (101439) LSV_SCAN: Scan complete - 61 data points collected[0m
+[0;32mI (101439) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (101459) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (101469) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (101479) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (101489) PEAK_ANALYSIS: Scanning for copper peak (0.00V to 0.25V):[0m
+[0;32mI (101499) PEAK_ANALYSIS: ✗ No significant copper peak detected[0m
+[0;32mI (101499) PEAK_ANALYSIS:   → Sample may be pure gold or low-Cu alloy
+[0m
+[0;32mI (101509) PEAK_ANALYSIS: Scanning for silver peak (0.30V to 0.55V):[0m
+[0;32mI (101519) PEAK_ANALYSIS: ✗ No significant silver peak detected[0m
+[0;32mI (101519) PEAK_ANALYSIS:   → Sample may contain minimal silver
+[0m
+[0;32mI (101529) PEAK_ANALYSIS: ───────────────────────────────────────[0m
+[0;32mI (101539) PEAK_ANALYSIS: Total peaks detected: 0[0m
+[0;32mI (101549) PEAK_ANALYSIS: Combined peak magnitude: 0.000 µA[0m
+[0;32mI (101559) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (101569) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (101579) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (101589) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (101599) KARAT_ESTIMATION: Total peak magnitude: 0.000 µA
+[0m
+[0;32mI (101609) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (101619) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (101629) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (101639) KARAT_ESTIMATION: Estimated purity: 24K (100.0% gold)[0m
+[0;32mI (101649) KARAT_ESTIMATION: Classification: Pure Gold[0m
+[0;32mI (101649) KARAT_ESTIMATION: Confidence level: 30%
+[0m
+[0;32mI (101659) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (101669) KARAT_ESTIMATION:   No significant oxidation peaks detected.[0m
+[0;32mI (101669) KARAT_ESTIMATION:   Sample appears to be pure gold (24K) with[0m
+[0;32mI (101679) KARAT_ESTIMATION:   minimal or no alloy metals.
+[0m
+[0;32mI (101689) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (101699) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (101709) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (101709) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (101719) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (101729) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (101839) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (101839) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (101849) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (101869) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (101869) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (101879) MAIN: ════════════════════════════════════════════════════════════
+
+[0m
+[0;32mI (107899) MAIN: 
+
+[0m
+[0;32mI (107899) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (107909) MAIN: ║  SCAN #9                                                 ║[0m
+[0;32mI (107909) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (107929) MAIN: [0m
+[0;32mI (107929) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (107949) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (107949) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (107969) LSV_SCAN: Voltage range: 0.000V to 0.600V[0m
+[0;32mI (107969) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (107979) LSV_SCAN: Settle time: 80ms per step[0m
+[0;32mI (107979) LSV_SCAN: Total data points: 61[0m
+[0;32mI (107989) LSV_SCAN: Estimated scan time: 4.9 seconds
+[0m
+[0;32mI (107989) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (107999) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (108099) LSV_SCAN:    0.000    |     0.030    | [0m
+[0;32mI (108909) LSV_SCAN:    0.090    |     0.010    | [0m
+[0;32mI (109809) LSV_SCAN:    0.190    |    -0.010    | [0m
+[0;32mI (110709) LSV_SCAN:    0.290    |    -0.030    | [0m
+[0;32mI (111609) LSV_SCAN:    0.390    |    -0.040    | [0m
+[0;32mI (112509) LSV_SCAN:    0.490    |    -0.050    | [0m
+[0;32mI (113409) LSV_SCAN:    0.590    |    -0.070    | [0m
+[0;32mI (113599) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (113599) LSV_SCAN: Scan complete - 61 data points collected[0m
+[0;32mI (113599) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (113619) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (113629) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (113639) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (113649) PEAK_ANALYSIS: Scanning for copper peak (0.00V to 0.25V):[0m
+[0;32mI (113659) PEAK_ANALYSIS: ✗ No significant copper peak detected[0m
+[0;32mI (113659) PEAK_ANALYSIS:   → Sample may be pure gold or low-Cu alloy
+[0m
+[0;32mI (113669) PEAK_ANALYSIS: Scanning for silver peak (0.30V to 0.55V):[0m
+[0;32mI (113679) PEAK_ANALYSIS: ✗ No significant silver peak detected[0m
+[0;32mI (113679) PEAK_ANALYSIS:   → Sample may contain minimal silver
+[0m
+[0;32mI (113689) PEAK_ANALYSIS: ───────────────────────────────────────[0m
+[0;32mI (113699) PEAK_ANALYSIS: Total peaks detected: 0[0m
+[0;32mI (113709) PEAK_ANALYSIS: Combined peak magnitude: 0.000 µA[0m
+[0;32mI (113719) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (113729) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (113739) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (113749) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (113759) KARAT_ESTIMATION: Total peak magnitude: 0.000 µA
+[0m
+[0;32mI (113769) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (113779) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (113789) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (113799) KARAT_ESTIMATION: Estimated purity: 24K (100.0% gold)[0m
+[0;32mI (113809) KARAT_ESTIMATION: Classification: Pure Gold[0m
+[0;32mI (113809) KARAT_ESTIMATION: Confidence level: 30%
+[0m
+[0;32mI (113819) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (113829) KARAT_ESTIMATION:   No significant oxidation peaks detected.[0m
+[0;32mI (113829) KARAT_ESTIMATION:   Sample appears to be pure gold (24K) with[0m
+[0;32mI (113839) KARAT_ESTIMATION:   minimal or no alloy metals.
+[0m
+[0;32mI (113849) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (113859) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (113869) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (113869) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (113879) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (113889) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (113999) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (113999) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (114009) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (114029) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (114029) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (114039) MAIN: ════════════════════════════════════════════════════════════
+
+[0m
+[0;32mI (120059) MAIN: 
+
+[0m
+[0;32mI (120059) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (120069) MAIN: ║  SCAN #10                                                ║[0m
+[0;32mI (120069) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (120089) MAIN: [0m
+[0;32mI (120089) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (120109) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (120109) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (120129) LSV_SCAN: Voltage range: 0.000V to 0.600V[0m
+[0;32mI (120129) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (120139) LSV_SCAN: Settle time: 80ms per step[0m
+[0;32mI (120139) LSV_SCAN: Total data points: 61[0m
+[0;32mI (120149) LSV_SCAN: Estimated scan time: 4.9 seconds
+[0m
+[0;32mI (120149) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (120159) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (120259) LSV_SCAN:    0.000    |     0.030    | [0m
+[0;32mI (121069) LSV_SCAN:    0.090    |     0.010    | [0m
+[0;32mI (121969) LSV_SCAN:    0.190    |    -0.010    | [0m
+[0;32mI (122869) LSV_SCAN:    0.290    |    -0.030    | [0m
+[0;32mI (123769) LSV_SCAN:    0.390    |    -0.040    | [0m
+[0;32mI (124669) LSV_SCAN:    0.490    |    -0.050    | [0m
+[0;32mI (125569) LSV_SCAN:    0.590    |    -0.070    | [0m
+[0;32mI (125759) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (125759) LSV_SCAN: Scan complete - 61 data points collected[0m
+[0;32mI (125759) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (125779) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (125789) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (125799) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (125809) PEAK_ANALYSIS: Scanning for copper peak (0.00V to 0.25V):[0m
+[0;32mI (125819) PEAK_ANALYSIS: ✗ No significant copper peak detected[0m
+[0;32mI (125819) PEAK_ANALYSIS:   → Sample may be pure gold or low-Cu alloy
+[0m
+[0;32mI (125829) PEAK_ANALYSIS: Scanning for silver peak (0.30V to 0.55V):[0m
+[0;32mI (125839) PEAK_ANALYSIS: ✗ No significant silver peak detected[0m
+[0;32mI (125839) PEAK_ANALYSIS:   → Sample may contain minimal silver
+[0m
+[0;32mI (125849) PEAK_ANALYSIS: ───────────────────────────────────────[0m
+[0;32mI (125859) PEAK_ANALYSIS: Total peaks detected: 0[0m
+[0;32mI (125869) PEAK_ANALYSIS: Combined peak magnitude: 0.000 µA[0m
+[0;32mI (125879) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (125889) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (125899) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (125909) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (125919) KARAT_ESTIMATION: Total peak magnitude: 0.000 µA
+[0m
+[0;32mI (125929) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (125939) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (125949) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (125959) KARAT_ESTIMATION: Estimated purity: 24K (100.0% gold)[0m
+[0;32mI (125969) KARAT_ESTIMATION: Classification: Pure Gold[0m
+[0;32mI (125969) KARAT_ESTIMATION: Confidence level: 30%
+[0m
+[0;32mI (125979) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (125989) KARAT_ESTIMATION:   No significant oxidation peaks detected.[0m
+[0;32mI (125989) KARAT_ESTIMATION:   Sample appears to be pure gold (24K) with[0m
+[0;32mI (125999) KARAT_ESTIMATION:   minimal or no alloy metals.
+[0m
+[0;32mI (126009) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (126019) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (126029) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (126029) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (126039) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (126049) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (126159) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (126159) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (126169) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (126189) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (126189) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (126199) MAIN: ════════════════════════════════════════════════════════════
+
+[0m
+[0;32mI (132219) MAIN: 
+
+[0m
+[0;32mI (132219) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (132229) MAIN: ║  SCAN #11                                                ║[0m
+[0;32mI (132229) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (132249) MAIN: [0m
+[0;32mI (132249) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (132269) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (132269) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (132289) LSV_SCAN: Voltage range: 0.000V to 0.600V[0m
+[0;32mI (132289) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (132299) LSV_SCAN: Settle time: 80ms per step[0m
+[0;32mI (132299) LSV_SCAN: Total data points: 61[0m
+[0;32mI (132309) LSV_SCAN: Estimated scan time: 4.9 seconds
+[0m
+[0;32mI (132309) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (132319) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (132419) LSV_SCAN:    0.000    |     0.030    | [0m
+[0;32mI (133229) LSV_SCAN:    0.090    |     0.010    | [0m
+[0;32mI (134129) LSV_SCAN:    0.190    |    -0.010    | [0m
+[0;32mI (135029) LSV_SCAN:    0.290    |    -0.030    | [0m
+[0;32mI (135929) LSV_SCAN:    0.390    |    -0.040    | [0m
+[0;32mI (136829) LSV_SCAN:    0.490    |    -0.050    | [0m
+[0;32mI (137729) LSV_SCAN:    0.590    |    -0.070    | [0m
+[0;32mI (137919) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (137919) LSV_SCAN: Scan complete - 61 data points collected[0m
+[0;32mI (137919) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (137939) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (137949) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (137959) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (137969) PEAK_ANALYSIS: Scanning for copper peak (0.00V to 0.25V):[0m
+[0;32mI (137979) PEAK_ANALYSIS: ✗ No significant copper peak detected[0m
+[0;32mI (137979) PEAK_ANALYSIS:   → Sample may be pure gold or low-Cu alloy
+[0m
+[0;32mI (137989) PEAK_ANALYSIS: Scanning for silver peak (0.30V to 0.55V):[0m
+[0;32mI (137999) PEAK_ANALYSIS: ✗ No significant silver peak detected[0m
+[0;32mI (137999) PEAK_ANALYSIS:   → Sample may contain minimal silver
+[0m
+[0;32mI (138009) PEAK_ANALYSIS: ───────────────────────────────────────[0m
+[0;32mI (138019) PEAK_ANALYSIS: Total peaks detected: 0[0m
+[0;32mI (138029) PEAK_ANALYSIS: Combined peak magnitude: 0.000 µA[0m
+[0;32mI (138039) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (138049) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (138059) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (138069) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (138079) KARAT_ESTIMATION: Total peak magnitude: 0.000 µA
+[0m
+[0;32mI (138089) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (138099) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (138109) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (138119) KARAT_ESTIMATION: Estimated purity: 24K (100.0% gold)[0m
+[0;32mI (138129) KARAT_ESTIMATION: Classification: Pure Gold[0m
+[0;32mI (138129) KARAT_ESTIMATION: Confidence level: 30%
+[0m
+[0;32mI (138139) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (138149) KARAT_ESTIMATION:   No significant oxidation peaks detected.[0m
+[0;32mI (138149) KARAT_ESTIMATION:   Sample appears to be pure gold (24K) with[0m
+[0;32mI (138159) KARAT_ESTIMATION:   minimal or no alloy metals.
+[0m
+[0;32mI (138169) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (138179) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (138189) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (138189) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (138199) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (138209) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (138319) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (138319) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (138329) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (138349) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (138349) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (138359) MAIN: ════════════════════════════════════════════════════════════
+
+[0m
+[0;32mI (144379) MAIN: 
+
+[0m
+[0;32mI (144379) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (144389) MAIN: ║  SCAN #12                                                ║[0m
+[0;32mI (144389) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (144409) MAIN: [0m
+[0;32mI (144409) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (144429) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (144429) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (144449) LSV_SCAN: Voltage range: 0.000V to 0.600V[0m
+[0;32mI (144449) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (144459) LSV_SCAN: Settle time: 80ms per step[0m
+[0;32mI (144459) LSV_SCAN: Total data points: 61[0m
+[0;32mI (144469) LSV_SCAN: Estimated scan time: 4.9 seconds
+[0m
+[0;32mI (144469) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (144479) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (144579) LSV_SCAN:    0.000    |     0.030    | [0m
+[0;32mI (145389) LSV_SCAN:    0.090    |     0.010    | [0m
+[0;32mI (146289) LSV_SCAN:    0.190    |    -0.010    | [0m
+[0;32mI (147189) LSV_SCAN:    0.290    |    -0.020    | [0m
+[0;32mI (148089) LSV_SCAN:    0.390    |    -0.040    | [0m
+[0;32mI (148989) LSV_SCAN:    0.490    |    -0.050    | [0m
+[0;32mI (149889) LSV_SCAN:    0.590    |    -0.070    | [0m
+[0;32mI (150079) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (150079) LSV_SCAN: Scan complete - 61 data points collected[0m
+[0;32mI (150079) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (150099) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (150109) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (150119) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (150129) PEAK_ANALYSIS: Scanning for copper peak (0.00V to 0.25V):[0m
+[0;32mI (150139) PEAK_ANALYSIS: ✗ No significant copper peak detected[0m
+[0;32mI (150139) PEAK_ANALYSIS:   → Sample may be pure gold or low-Cu alloy
+[0m
+[0;32mI (150149) PEAK_ANALYSIS: Scanning for silver peak (0.30V to 0.55V):[0m
+[0;32mI (150159) PEAK_ANALYSIS: ✗ No significant silver peak detected[0m
+[0;32mI (150159) PEAK_ANALYSIS:   → Sample may contain minimal silver
+[0m
+[0;32mI (150169) PEAK_ANALYSIS: ───────────────────────────────────────[0m
+[0;32mI (150179) PEAK_ANALYSIS: Total peaks detected: 0[0m
+[0;32mI (150189) PEAK_ANALYSIS: Combined peak magnitude: 0.000 µA[0m
+[0;32mI (150199) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (150209) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (150219) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (150229) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (150239) KARAT_ESTIMATION: Total peak magnitude: 0.000 µA
+[0m
+[0;32mI (150249) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (150259) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (150269) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (150279) KARAT_ESTIMATION: Estimated purity: 24K (100.0% gold)[0m
+[0;32mI (150289) KARAT_ESTIMATION: Classification: Pure Gold[0m
+[0;32mI (150289) KARAT_ESTIMATION: Confidence level: 30%
+[0m
+[0;32mI (150299) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (150309) KARAT_ESTIMATION:   No significant oxidation peaks detected.[0m
+[0;32mI (150309) KARAT_ESTIMATION:   Sample appears to be pure gold (24K) with[0m
+[0;32mI (150319) KARAT_ESTIMATION:   minimal or no alloy metals.
+[0m
+[0;32mI (150329) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (150339) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (150349) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (150349) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (150359) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (150369) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (150479) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (150479) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (150489) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (150509) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (150509) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (150519) MAIN: ════════════════════════════════════════════════════════════
+
+[0m
+[0;32mI (156539) MAIN: 
+
+[0m
+[0;32mI (156539) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (156549) MAIN: ║  SCAN #13                                                ║[0m
+[0;32mI (156549) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (156569) MAIN: [0m
+[0;32mI (156569) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (156589) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (156589) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (156609) LSV_SCAN: Voltage range: 0.000V to 0.600V[0m
+[0;32mI (156609) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (156619) LSV_SCAN: Settle time: 80ms per step[0m
+[0;32mI (156619) LSV_SCAN: Total data points: 61[0m
+[0;32mI (156629) LSV_SCAN: Estimated scan time: 4.9 seconds
+[0m
+[0;32mI (156629) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (156639) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (156739) LSV_SCAN:    0.000    |     0.030    | [0m
+[0;32mI (157549) LSV_SCAN:    0.090    |     0.010    | [0m
+[0;32mI (158449) LSV_SCAN:    0.190    |    -0.010    | [0m
+[0;32mI (159349) LSV_SCAN:    0.290    |    -0.030    | [0m
+[0;32mI (160249) LSV_SCAN:    0.390    |    -0.040    | [0m
+[0;32mI (161149) LSV_SCAN:    0.490    |    -0.050    | [0m
+[0;32mI (162049) LSV_SCAN:    0.590    |    -0.070    | [0m
+[0;32mI (162239) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (162239) LSV_SCAN: Scan complete - 61 data points collected[0m
+[0;32mI (162239) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (162259) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (162269) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (162279) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (162289) PEAK_ANALYSIS: Scanning for copper peak (0.00V to 0.25V):[0m
+[0;32mI (162299) PEAK_ANALYSIS: ✗ No significant copper peak detected[0m
+[0;32mI (162299) PEAK_ANALYSIS:   → Sample may be pure gold or low-Cu alloy
+[0m
+[0;32mI (162309) PEAK_ANALYSIS: Scanning for silver peak (0.30V to 0.55V):[0m
+[0;32mI (162319) PEAK_ANALYSIS: ✗ No significant silver peak detected[0m
+[0;32mI (162319) PEAK_ANALYSIS:   → Sample may contain minimal silver
+[0m
+[0;32mI (162329) PEAK_ANALYSIS: ───────────────────────────────────────[0m
+[0;32mI (162339) PEAK_ANALYSIS: Total peaks detected: 0[0m
+[0;32mI (162349) PEAK_ANALYSIS: Combined peak magnitude: 0.000 µA[0m
+[0;32mI (162359) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (162369) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (162379) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (162389) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (162399) KARAT_ESTIMATION: Total peak magnitude: 0.000 µA
+[0m
+[0;32mI (162409) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (162419) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (162429) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (162439) KARAT_ESTIMATION: Estimated purity: 24K (100.0% gold)[0m
+[0;32mI (162449) KARAT_ESTIMATION: Classification: Pure Gold[0m
+[0;32mI (162449) KARAT_ESTIMATION: Confidence level: 30%
+[0m
+[0;32mI (162459) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (162469) KARAT_ESTIMATION:   No significant oxidation peaks detected.[0m
+[0;32mI (162469) KARAT_ESTIMATION:   Sample appears to be pure gold (24K) with[0m
+[0;32mI (162479) KARAT_ESTIMATION:   minimal or no alloy metals.
+[0m
+[0;32mI (162489) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (162499) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (162509) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (162509) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (162519) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (162529) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (162639) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (162639) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (162649) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (162669) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (162669) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (162679) MAIN: ════════════════════════════════════════════════════════════
+
+[0m
+[0;32mI (168699) MAIN: 
+
+[0m
+[0;32mI (168699) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (168709) MAIN: ║  SCAN #14                                                ║[0m
+[0;32mI (168709) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (168729) MAIN: [0m
+[0;32mI (168729) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (168749) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (168749) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (168769) LSV_SCAN: Voltage range: 0.000V to 0.600V[0m
+[0;32mI (168769) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (168779) LSV_SCAN: Settle time: 80ms per step[0m
+[0;32mI (168779) LSV_SCAN: Total data points: 61[0m
+[0;32mI (168789) LSV_SCAN: Estimated scan time: 4.9 seconds
+[0m
+[0;32mI (168789) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (168799) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (168899) LSV_SCAN:    0.000    |     0.030    | [0m
