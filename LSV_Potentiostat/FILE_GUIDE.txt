@@ -1,0 +1,326 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                    LSV POTENTIOSTAT - FILE GUIDE                          ║
+║                    What Each File Does                                    ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+This guide explains what each file does and when you need to use it.
+
+═══════════════════════════════════════════════════════════════════════════
+📂 PROJECT ROOT
+═══════════════════════════════════════════════════════════════════════════
+
+📄 LSV_Potentiostat.ino
+   ├─ PURPOSE: Main Arduino sketch (START HERE!)
+   ├─ CONTAINS: setup() and loop() functions
+   ├─ WHEN TO EDIT: Almost never (high-level orchestration only)
+   └─ UPLOAD THIS: Yes - this is what you upload to ESP32
+
+📄 platformio.ini
+   ├─ PURPOSE: PlatformIO project configuration (optional)
+   ├─ CONTAINS: Build settings, library dependencies
+   ├─ WHEN TO EDIT: Only if using PlatformIO instead of Arduino IDE
+   └─ UPLOAD THIS: No (build configuration only)
+
+═══════════════════════════════════════════════════════════════════════════
+📂 include/ - HEADER FILES (Declarations)
+═══════════════════════════════════════════════════════════════════════════
+
+📄 include/config.h ⭐ MOST IMPORTANT FOR CUSTOMIZATION
+   ├─ PURPOSE: All tunable parameters in one place
+   ├─ CONTAINS:
+   │  • I2C pin definitions (GPIO21, GPIO22)
+   │  • Scan parameters (voltage range, step size, timing)
+   │  • Calibration constants (resistor values, thresholds)
+   │  • Peak detection windows (Cu: 0.0-0.25V, Ag: 0.3-0.55V)
+   │  • Feature flags (enable/disable smoothing, CSV export, etc.)
+   ├─ WHEN TO EDIT:
+   │  • ✅ Adjust scan speed (STEP_SIZE, SETTLE_TIME_MS)
+   │  • ✅ Change voltage range (START_VOLTAGE, END_VOLTAGE)
+   │  • ✅ Update calibration thresholds after testing known samples
+   │  • ✅ Enable/disable advanced features
+   └─ EXAMPLE CHANGES:
+      • Faster scan: STEP_SIZE = 0.02, SETTLE_TIME_MS = 50
+      • Wider range: START_VOLTAGE = -0.5, END_VOLTAGE = 1.5
+      • After calibration: KARAT_24_MAX = 0.6, KARAT_22_MAX = 2.5
+
+📄 include/lsv_scan.h
+   ├─ PURPOSE: Declarations for LSV scanning functions
+   ├─ CONTAINS: Function prototypes, LSVData structure definition
+   ├─ WHEN TO EDIT: Rarely (only if adding new scan functions)
+   └─ PAIRS WITH: src/lsv_scan.cpp
+
+📄 include/peak_analysis.h
+   ├─ PURPOSE: Declarations for peak detection functions
+   ├─ CONTAINS: PeakInfo and PeakAnalysisResult structures
+   ├─ WHEN TO EDIT: Rarely (only if adding new analysis methods)
+   └─ PAIRS WITH: src/peak_analysis.cpp
+
+📄 include/karat_estimation.h
+   ├─ PURPOSE: Declarations for karat estimation functions
+   ├─ CONTAINS: KaratEstimate structure, karat conversion functions
+   ├─ WHEN TO EDIT: Rarely (only if changing estimation algorithm)
+   └─ PAIRS WITH: src/karat_estimation.cpp
+
+═══════════════════════════════════════════════════════════════════════════
+📂 src/ - SOURCE FILES (Implementations)
+═══════════════════════════════════════════════════════════════════════════
+
+📄 src/lsv_scan.cpp
+   ├─ PURPOSE: Core electrochemical scanning functionality
+   ├─ CONTAINS:
+   │  • initializeHardware() - Setup I2C, DAC, ADC
+   │  • performLSVScan() - Voltage sweep and current measurement
+   │  • setDACVoltage() - Control applied voltage
+   │  • readCurrent() - Measure current via ADC
+   │  • measureBaseline() - Record baseline offset
+   ├─ WHEN TO EDIT:
+   │  • Change hardware initialization sequence
+   │  • Modify scan algorithm (e.g., add reverse scan)
+   │  • Improve current measurement (filtering, averaging)
+   └─ TYPICAL EDITS: Advanced users only
+
+📄 src/peak_analysis.cpp
+   ├─ PURPOSE: Extract oxidation peaks from scan data
+   ├─ CONTAINS:
+   │  • analyzePeaks() - Main analysis routine
+   │  • findPeakInRange() - Detect peak in voltage window
+   │  • calculatePeakArea() - Integrate peak area
+   │  • applySmoothingFilter() - Noise reduction
+   ├─ WHEN TO EDIT:
+   │  • ✅ Improve peak detection algorithm
+   │  • ✅ Add Gaussian peak fitting
+   │  • ✅ Change smoothing filter parameters
+   └─ TYPICAL EDITS: If peaks are not detected correctly
+
+📄 src/karat_estimation.cpp
+   ├─ PURPOSE: Estimate gold purity from peak data
+   ├─ CONTAINS:
+   │  • estimateKarat() - Main estimation routine
+   │  • classifyByTotalPeak() - Threshold-based method
+   │  • classifyByMetalRatio() - Ratio-based method
+   │  • calculateConfidence() - Reliability metric
+   ├─ WHEN TO EDIT:
+   │  • ✅ Update classification thresholds (after calibration)
+   │  • ✅ Add machine learning classification
+   │  • ✅ Improve confidence calculation
+   └─ TYPICAL EDITS: After you calibrate with known samples
+
+═══════════════════════════════════════════════════════════════════════════
+📂 DOCUMENTATION FILES
+═══════════════════════════════════════════════════════════════════════════
+
+📖 README.md ⭐ START HERE FOR DETAILED GUIDE
+   ├─ SIZE: ~1200 lines (comprehensive)
+   ├─ AUDIENCE: Everyone (beginners to experts)
+   ├─ READ THIS FOR:
+   │  • Complete hardware list with alternatives
+   │  • Detailed circuit diagrams and connection tables
+   │  • Step-by-step assembly instructions
+   │  • Software installation guide
+   │  • Calibration procedure (very important!)
+   │  • Result interpretation examples
+   │  • Troubleshooting (10+ common issues)
+   │  • Electrochemistry theory explained
+   └─ PRINT THIS: Yes, for reference during assembly
+
+📖 QUICK_START.md ⭐ 30-MINUTE SPEEDRUN
+   ├─ SIZE: ~400 lines (concise)
+   ├─ AUDIENCE: Beginners, hackathon participants
+   ├─ READ THIS FOR:
+   │  • Fast setup guide (get running in 30 minutes)
+   │  • Minimal component list
+   │  • Quick assembly steps
+   │  • Salt water electrolyte recipe
+   │  • First copper wire test
+   │  • Gold sample testing
+   └─ PRINT THIS: Yes, for quick reference
+
+📖 CIRCUIT_DETAILS.md
+   ├─ SIZE: ~800 lines (technical deep dive)
+   ├─ AUDIENCE: Advanced users, circuit designers
+   ├─ READ THIS FOR:
+   │  • Circuit theory (potentiostat, transimpedance amplifier)
+   │  • Component selection rationale
+   │  • Design equations and calculations
+   │  • Power supply analysis
+   │  • I2C bus configuration details
+   │  • Advanced modifications (bipolar voltage, multiple WE)
+   └─ READ THIS: If you want to understand WHY it works
+
+📖 PROJECT_STRUCTURE.md
+   ├─ SIZE: ~300 lines (code architecture)
+   ├─ AUDIENCE: Developers, contributors
+   ├─ READ THIS FOR:
+   │  • File organization explanation
+   │  • Module descriptions and responsibilities
+   │  • Code flow diagrams
+   │  • Compilation details
+   │  • Development workflow
+   └─ READ THIS: If you want to modify/extend the code
+
+📖 PROJECT_SUMMARY.txt (THIS FILE!)
+   ├─ SIZE: ~350 lines (overview)
+   ├─ AUDIENCE: Everyone (project overview)
+   ├─ READ THIS FOR:
+   │  • Quick project overview
+   │  • Feature list (what it can do)
+   │  • Hardware cost breakdown
+   │  • Hackathon presentation tips
+   └─ READ THIS: For a high-level understanding
+
+📖 FILE_GUIDE.txt
+   ├─ SIZE: ~200 lines (this file)
+   ├─ AUDIENCE: New users (orientation)
+   ├─ READ THIS FOR:
+   │  • Understand what each file does
+   │  • Know which files to edit
+   │  • Find information quickly
+   └─ READ THIS: First time opening the project
+
+═══════════════════════════════════════════════════════════════════════════
+🚀 QUICK DECISION TREE: WHICH FILE DO I NEED?
+═══════════════════════════════════════════════════════════════════════════
+
+❓ I want to...
+
+→ "Get started quickly (30 minutes)"
+  ✓ Read: QUICK_START.md
+  ✓ Upload: LSV_Potentiostat.ino
+  ✓ Done!
+
+→ "Understand everything in detail"
+  ✓ Read: README.md (comprehensive guide)
+  ✓ Then: Assemble circuit and test
+
+→ "Change scan speed or voltage range"
+  ✓ Edit: include/config.h
+  ✓ Change: STEP_SIZE, SETTLE_TIME_MS, START_VOLTAGE, END_VOLTAGE
+  ✓ Re-upload: LSV_Potentiostat.ino
+
+→ "Calibrate with known gold samples"
+  ✓ Read: README.md → Calibration Procedure section
+  ✓ Test: Known 14K, 18K, 22K, 24K samples (3 scans each)
+  ✓ Edit: include/config.h → Update thresholds
+  ✓ Re-upload: LSV_Potentiostat.ino
+
+→ "Improve peak detection (peaks not found)"
+  ✓ Edit: src/peak_analysis.cpp → Modify findPeakInRange()
+  ✓ Or: include/config.h → Lower CU_THRESHOLD, AG_THRESHOLD
+  ✓ Re-upload: LSV_Potentiostat.ino
+
+→ "Change karat classification rules"
+  ✓ Edit: include/config.h → KARAT_24_MAX, KARAT_22_MAX, etc.
+  ✓ Or: src/karat_estimation.cpp → Modify classifyByTotalPeak()
+  ✓ Re-upload: LSV_Potentiostat.ino
+
+→ "Understand circuit design (why these components?)"
+  ✓ Read: CIRCUIT_DETAILS.md → Circuit Theory sections
+
+→ "Troubleshoot hardware problems"
+  ✓ Read: README.md → Troubleshooting section
+  ✓ Or: QUICK_START.md → Emergency Troubleshooting
+
+→ "Understand code architecture"
+  ✓ Read: PROJECT_STRUCTURE.md → Code Flow Diagram
+
+→ "Prepare hackathon presentation"
+  ✓ Read: PROJECT_SUMMARY.txt → Hackathon Readiness section
+  ✓ Print: QUICK_START.md (demo script)
+
+→ "Enable advanced features (smoothing, CSV export)"
+  ✓ Edit: include/config.h → Set ENABLE_SMOOTHING = true, etc.
+  ✓ Re-upload: LSV_Potentiostat.ino
+
+→ "Add new features (e.g., Cyclic Voltammetry)"
+  ✓ Read: PROJECT_STRUCTURE.md → Development Workflow
+  ✓ Study: Existing code in src/ files
+  ✓ Create: New module or extend existing one
+
+═══════════════════════════════════════════════════════════════════════════
+🔧 EDITING WORKFLOW
+═══════════════════════════════════════════════════════════════════════════
+
+FOR SIMPLE CHANGES (scan parameters, thresholds):
+
+  1. Open: include/config.h in Arduino IDE or text editor
+  2. Find: #define for parameter you want to change
+  3. Edit: Change the value (e.g., STEP_SIZE from 0.01 to 0.02)
+  4. Save: File → Save
+  5. Upload: Click Upload button (→) in Arduino IDE
+  6. Test: Open Serial Monitor and run scan
+
+FOR ADVANCED CHANGES (algorithms, new features):
+
+  1. Open: Appropriate .cpp file (lsv_scan.cpp, peak_analysis.cpp, etc.)
+  2. Edit: Modify function implementation
+  3. Save: File → Save
+  4. Upload: Click Upload button (→) in Arduino IDE
+  5. Debug: Watch Serial Monitor for errors
+  6. Iterate: Refine until working correctly
+
+FOR DOCUMENTATION UPDATES:
+
+  1. Open: Appropriate .md file in text editor
+  2. Edit: Markdown formatting (headings with #, lists with -)
+  3. Save: File → Save
+  4. View: Use Markdown viewer or GitHub to see formatted version
+
+═══════════════════════════════════════════════════════════════════════════
+⚠️  IMPORTANT REMINDERS
+═══════════════════════════════════════════════════════════════════════════
+
+✅ DO edit include/config.h frequently (it's designed for customization)
+✅ DO read README.md before first use (saves troubleshooting time)
+✅ DO calibrate with known samples (improves accuracy dramatically)
+✅ DO follow QUICK_START.md for first setup (30 minutes)
+
+❌ DON'T edit .ino or .cpp files unless you understand the code
+❌ DON'T skip hardware checks (I2C, DAC, ADC initialization)
+❌ DON'T expect accurate results without calibration
+❌ DON'T use for commercial gold transactions (educational only!)
+
+═══════════════════════════════════════════════════════════════════════════
+📞 HELP RESOURCES (in order of usefulness)
+═══════════════════════════════════════════════════════════════════════════
+
+1. README.md → Troubleshooting section
+   (Covers 10+ common issues with solutions)
+
+2. QUICK_START.md → Emergency Troubleshooting
+   (Quick fixes for common problems)
+
+3. Code comments in .cpp files
+   (Explains what each function does)
+
+4. PROJECT_STRUCTURE.md → Code Flow Diagram
+   (Visual guide to how modules interact)
+
+5. CIRCUIT_DETAILS.md → Testing Procedures
+   (Step-by-step circuit verification)
+
+═══════════════════════════════════════════════════════════════════════════
+🎯 SUCCESS CHECKLIST
+═══════════════════════════════════════════════════════════════════════════
+
+Before claiming "it works":
+
+☐ Arduino IDE uploads code without errors
+☐ Serial Monitor shows "System ready!" message
+☐ Both I2C devices detected (MCP4725 at 0x60, ADS1115 at 0x48)
+☐ Copper wire test shows peak at ~0.1V (3-10µA)
+☐ Peak height changes with different wire diameters
+☐ Pure gold (24K) shows no peaks or tiny peaks (<0.5µA)
+☐ Lower karat gold (14K) shows larger peaks (>5µA)
+☐ Same sample gives similar results in repeated scans
+
+═══════════════════════════════════════════════════════════════════════════
+
+READY TO START?
+
+1. Read QUICK_START.md (30 minutes)
+2. Assemble circuit
+3. Upload LSV_Potentiostat.ino
+4. Test and calibrate
+5. Win hackathon! 🏆
+
+═══════════════════════════════════════════════════════════════════════════
