@@ -1,0 +1,56 @@
+[0/1] Re-running CMake...
+-- Building ESP-IDF components for target esp32
+NOTICE: Processing 2 dependencies:
+NOTICE: [1/2] espressif/mdns (1.9.1)
+NOTICE: [2/2] idf (5.1.6)
+-- Project sdkconfig file /home/shashvat/Wall-E/taf/sdkconfig
+Loading defaults file /home/shashvat/Wall-E/taf/sdkconfig.defaults...
+-- Could NOT find Threads (missing: Threads_FOUND) 
+-- USING O3
+-- App "taf" version: v2.2-87-g20d9ba5-dirty
+-- Adding linker script /home/shashvat/Wall-E/taf/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /home/shashvat/esp/esp-idf/components/esp_system/ld/esp32/sections.ld.in
+-- Adding linker script /home/shashvat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /home/shashvat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /home/shashvat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /home/shashvat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script /home/shashvat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script /home/shashvat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script /home/shashvat/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_coex esp_common esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_wifi espcoredump espressif__mdns esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls mqtt newlib nvs_flash openthread partition_table perfmon protobuf-c protocomm pthread sdmmc soc spi_flash spiffs sra-board-component tcp_transport ulp unity usb vfs wear_levelling websocket wifi_provisioning wpa_supplicant xtensa
+-- Component paths: /home/shashvat/esp/esp-idf/components/app_trace /home/shashvat/esp/esp-idf/components/app_update /home/shashvat/esp/esp-idf/components/bootloader /home/shashvat/esp/esp-idf/components/bootloader_support /home/shashvat/esp/esp-idf/components/bt /home/shashvat/esp/esp-idf/components/cmock /home/shashvat/esp/esp-idf/components/console /home/shashvat/esp/esp-idf/components/cxx /home/shashvat/esp/esp-idf/components/driver /home/shashvat/esp/esp-idf/components/efuse /home/shashvat/esp/esp-idf/components/esp-tls /home/shashvat/esp/esp-idf/components/esp_adc /home/shashvat/esp/esp-idf/components/esp_app_format /home/shashvat/esp/esp-idf/components/esp_coex /home/shashvat/esp/esp-idf/components/esp_common /home/shashvat/esp/esp-idf/components/esp_eth /home/shashvat/esp/esp-idf/components/esp_event /home/shashvat/esp/esp-idf/components/esp_gdbstub /home/shashvat/esp/esp-idf/components/esp_hid /home/shashvat/esp/esp-idf/components/esp_http_client /home/shashvat/esp/esp-idf/components/esp_http_server /home/shashvat/esp/esp-idf/components/esp_https_ota /home/shashvat/esp/esp-idf/components/esp_https_server /home/shashvat/esp/esp-idf/components/esp_hw_support /home/shashvat/esp/esp-idf/components/esp_lcd /home/shashvat/esp/esp-idf/components/esp_local_ctrl /home/shashvat/esp/esp-idf/components/esp_mm /home/shashvat/esp/esp-idf/components/esp_netif /home/shashvat/esp/esp-idf/components/esp_netif_stack /home/shashvat/esp/esp-idf/components/esp_partition /home/shashvat/esp/esp-idf/components/esp_phy /home/shashvat/esp/esp-idf/components/esp_pm /home/shashvat/esp/esp-idf/components/esp_psram /home/shashvat/esp/esp-idf/components/esp_ringbuf /home/shashvat/esp/esp-idf/components/esp_rom /home/shashvat/esp/esp-idf/components/esp_system /home/shashvat/esp/esp-idf/components/esp_timer /home/shashvat/esp/esp-idf/components/esp_wifi /home/shashvat/esp/esp-idf/components/espcoredump /home/shashvat/Wall-E/taf/managed_components/espressif__mdns /home/shashvat/esp/esp-idf/components/esptool_py /home/shashvat/esp/esp-idf/components/fatfs /home/shashvat/esp/esp-idf/components/freertos /home/shashvat/esp/esp-idf/components/hal /home/shashvat/esp/esp-idf/components/heap /home/shashvat/esp/esp-idf/components/http_parser /home/shashvat/esp/esp-idf/components/idf_test /home/shashvat/esp/esp-idf/components/ieee802154 /home/shashvat/esp/esp-idf/components/json /home/shashvat/esp/esp-idf/components/log /home/shashvat/esp/esp-idf/components/lwip /home/shashvat/Wall-E/taf/main /home/shashvat/esp/esp-idf/components/mbedtls /home/shashvat/esp/esp-idf/components/mqtt /home/shashvat/esp/esp-idf/components/newlib /home/shashvat/esp/esp-idf/components/nvs_flash /home/shashvat/esp/esp-idf/components/openthread /home/shashvat/esp/esp-idf/components/partition_table /home/shashvat/esp/esp-idf/components/perfmon /home/shashvat/esp/esp-idf/components/protobuf-c /home/shashvat/esp/esp-idf/components/protocomm /home/shashvat/esp/esp-idf/components/pthread /home/shashvat/esp/esp-idf/components/sdmmc /home/shashvat/esp/esp-idf/components/soc /home/shashvat/esp/esp-idf/components/spi_flash /home/shashvat/esp/esp-idf/components/spiffs /home/shashvat/Wall-E/components/sra-board-component /home/shashvat/esp/esp-idf/components/tcp_transport /home/shashvat/esp/esp-idf/components/ulp /home/shashvat/esp/esp-idf/components/unity /home/shashvat/esp/esp-idf/components/usb /home/shashvat/esp/esp-idf/components/vfs /home/shashvat/esp/esp-idf/components/wear_levelling /home/shashvat/Wall-E/taf/components/websocket /home/shashvat/esp/esp-idf/components/wifi_provisioning /home/shashvat/esp/esp-idf/components/wpa_supplicant /home/shashvat/esp/esp-idf/components/xtensa
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/shashvat/Wall-E/taf/build
+[1/11] cd /home/shashvat/Wall-E/taf/build/esp-idf/main && /usr/bin/cmake -E echo "Failed to create SPIFFS image for partition 'www'. " "Check project configuration if using the correct partition table file." && /usr/bin/cmake -E remove /home/shashvat/Wall-E/taf/build/esp-idf/main/7DE8X.cmake && /usr/bin/cmake -E env "FAIL_MESSAGE=Failing the build (see errors on lines above)" /usr/bin/cmake -P /home/shashvat/esp/esp-idf/tools/cmake/scripts/fail.cmake
+FAILED: esp-idf/main/CMakeFiles/spiffs_www_bin /home/shashvat/Wall-E/taf/build/esp-idf/main/CMakeFiles/spiffs_www_bin 
+cd /home/shashvat/Wall-E/taf/build/esp-idf/main && /usr/bin/cmake -E echo "Failed to create SPIFFS image for partition 'www'. " "Check project configuration if using the correct partition table file." && /usr/bin/cmake -E remove /home/shashvat/Wall-E/taf/build/esp-idf/main/7DE8X.cmake && /usr/bin/cmake -E env "FAIL_MESSAGE=Failing the build (see errors on lines above)" /usr/bin/cmake -P /home/shashvat/esp/esp-idf/tools/cmake/scripts/fail.cmake
+Failed to create SPIFFS image for partition 'www'.  Check project configuration if using the correct partition table file.
+CMake Error at /home/shashvat/esp/esp-idf/tools/cmake/scripts/fail.cmake:3 (message):
+  Failing the build (see errors on lines above)
+
+
+[2/11] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/taf_main.c.obj
+[3/11] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/taf_http_server.c.obj
+[4/11] Performing build step for 'bootloader'
+[0/1] Re-running CMake...
+-- Building ESP-IDF components for target esp32
+-- Project sdkconfig file /home/shashvat/Wall-E/taf/sdkconfig
+Compiler supported targets: xtensa-esp32-elf
+
+-- Adding linker script /home/shashvat/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- App "bootloader" version: v5.1.6-674-gaa840f86a6
+-- Adding linker script /home/shashvat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /home/shashvat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /home/shashvat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /home/shashvat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script /home/shashvat/esp/esp-idf/components/bootloader/subproject/main/ld/esp32/bootloader.ld
+-- Adding linker script /home/shashvat/esp/esp-idf/components/bootloader/subproject/main/ld/esp32/bootloader.rom.ld
+-- Components: bootloader bootloader_support efuse esp_app_format esp_common esp_hw_support esp_rom esp_system esptool_py freertos hal log main micro-ecc newlib partition_table soc spi_flash xtensa
+-- Component paths: /home/shashvat/esp/esp-idf/components/bootloader /home/shashvat/esp/esp-idf/components/bootloader_support /home/shashvat/esp/esp-idf/components/efuse /home/shashvat/esp/esp-idf/components/esp_app_format /home/shashvat/esp/esp-idf/components/esp_common /home/shashvat/esp/esp-idf/components/esp_hw_support /home/shashvat/esp/esp-idf/components/esp_rom /home/shashvat/esp/esp-idf/components/esp_system /home/shashvat/esp/esp-idf/components/esptool_py /home/shashvat/esp/esp-idf/components/freertos /home/shashvat/esp/esp-idf/components/hal /home/shashvat/esp/esp-idf/components/log /home/shashvat/esp/esp-idf/components/bootloader/subproject/main /home/shashvat/esp/esp-idf/components/bootloader/subproject/components/micro-ecc /home/shashvat/esp/esp-idf/components/newlib /home/shashvat/esp/esp-idf/components/partition_table /home/shashvat/esp/esp-idf/components/soc /home/shashvat/esp/esp-idf/components/spi_flash /home/shashvat/esp/esp-idf/components/xtensa
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/shashvat/Wall-E/taf/build/bootloader
+[1/1] cd /home/shashvat/Wall-E/taf/build/bootloader/esp-idf/esptool_py && /home/shashvat/.espressif/python_env/idf5.1_py3.10_env/bin/python /home/shashvat/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/shashvat/Wall-E/taf/build/bootloader/bootloader.bin
+Bootloader binary size 0x68c0 bytes. 0x740 bytes (6%) free.
+ninja: build stopped: subcommand failed.

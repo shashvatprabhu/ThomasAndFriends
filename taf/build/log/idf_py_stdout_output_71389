@@ -1,0 +1,140 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7128
+load:0x40078000,len:15716
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (29) boot: ESP-IDF v5.1.6-674-gaa840f86a6 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 10 2025 07:23:52[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (43) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00140000[0m
+[0;32mI (91) boot:  3 www              Unknown data     01 82 00150000 00090000[0m
+[0;32mI (99) boot: End of partition table[0m
+[0;32mI (103) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1c460h (115808) map[0m
+[0;32mI (153) esp_image: segment 1: paddr=0002c488 vaddr=3ffb0000 size=03b90h ( 15248) load[0m
+[0;32mI (160) esp_image: segment 2: paddr=00030020 vaddr=400d0020 size=9c6e8h (640744) map[0m
+[0;32mI (391) esp_image: segment 3: paddr=000cc710 vaddr=3ffb3b90 size=000f4h (   244) load[0m
+[0;32mI (391) esp_image: segment 4: paddr=000cc80c vaddr=40080000 size=1691ch ( 92444) load[0m
+[0;32mI (447) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (447) boot: Disabling RNG early entropy source...[0m
+[0;32mI (458) cpu_start: Multicore app[0m
+[0;32mI (459) cpu_start: Pro cpu up.[0m
+[0;32mI (459) cpu_start: Starting app cpu, entry point is 0x400813c8[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (477) cpu_start: Pro cpu start user code[0m
+[0;32mI (477) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (477) cpu_start: Application information:[0m
+[0;32mI (481) cpu_start: Project name:     taf[0m
+[0;32mI (486) cpu_start: App version:      v2.2-87-g20d9ba5-dirty[0m
+[0;32mI (492) cpu_start: Compile time:     Dec 10 2025 07:27:19[0m
+[0;32mI (498) cpu_start: ELF file SHA256:  03957eb9eae7dd7a...[0m
+[0;32mI (504) cpu_start: ESP-IDF:          v5.1.6-674-gaa840f86a6[0m
+[0;32mI (510) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (515) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (520) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (525) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (532) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (538) heap_init: At 3FFBAC38 len 000253C8 (148 KiB): DRAM[0m
+[0;32mI (544) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (551) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (557) heap_init: At 4009691C len 000096E4 (37 KiB): IRAM[0m
+[0;32mI (565) spi_flash: detected chip: generic[0m
+[0;32mI (568) spi_flash: flash io: dio[0m
+[0;33mW (572) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (586) app_start: Starting scheduler on CPU0[0m
+[0;32mI (590) app_start: Starting scheduler on CPU1[0m
+[0;32mI (590) main_task: Started on CPU0[0m
+[0;32mI (600) main_task: Calling app_main()[0m
+[0;32mI (600) taf_main: Starting TAF Density Measurement System[0m
+[0;32mI (600) taf_main: Initializing HTTP server...[0m
+[0;32mI (630) mdns_mem: mDNS task will be created from internal RAM[0m
+[0;32mI (640) wifi station: ESP_WIFI_MODE_STA[0m
+[0;32mI (650) wifi:wifi driver task: 3ffc4188, prio:23, stack:6656, core=0[0m
+[0;32mI (660) wifi:wifi firmware version: 2fdde40[0m
+[0;32mI (660) wifi:wifi certification version: v7.0[0m
+[0;32mI (660) wifi:config NVS flash: enabled[0m
+[0;32mI (660) wifi:config nano formating: disabled[0m
+[0;32mI (660) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (670) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (670) wifi:Init management short buffer num: 32[0m
+[0;32mI (680) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (680) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (690) wifi:Init static rx buffer num: 10[0m
+[0;32mI (690) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (690) wifi_init: rx ba win: 6[0m
+[0;32mI (700) wifi_init: tcpip mbox: 32[0m
+[0;32mI (700) wifi_init: udp mbox: 6[0m
+[0;32mI (710) wifi_init: tcp mbox: 6[0m
+[0;32mI (710) wifi_init: tcp tx win: 5760[0m
+[0;32mI (710) wifi_init: tcp rx win: 5760[0m
+[0;32mI (720) wifi_init: tcp mss: 1440[0m
+[0;32mI (720) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (730) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (760) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (830) wifi:mode : sta (f4:65:0b:52:d3:a4)[0m
+[0;32mI (840) wifi:enable tsf[0m
+[0;32mI (840) wifi station: wifi_init_sta finished.[0m
+[0;32mI (1580) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (1580) wifi:state: init -> auth (b0)[0m
+[0;32mI (1600) wifi:state: auth -> assoc (0)[0m
+[0;32mI (1610) wifi:state: assoc -> run (10)[0m
+[0;32mI (1820) wifi:connected with Galaxy, aid = 1, channel 6, BW20, bssid = ce:14:13:4c:3d:73[0m
+[0;32mI (1820) wifi:security: WPA2-PSK, phy: bgn, rssi: -26[0m
+[0;32mI (1840) wifi:pm start, type: 1[0m
+
+[0;32mI (1840) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1850) wifi:<ba-add>idx:0 (ifx:0, ce:14:13:4c:3d:73), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1880) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1880) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (2850) esp_netif_handlers: sta ip: 10.49.246.45, mask: 255.255.255.0, gw: 10.49.246.213[0m
+[0;32mI (2850) wifi station: got ip:10.49.246.45[0m
+[0;32mI (2850) wifi station: connected to ap SSID: Galaxy[0m
+[0;32mI (2900) taf_http_server: Partition size: total: 534881, used: 20080[0m
+[0;32mI (2900) taf_http_server: Starting HTTP Server[0m
+[0;32mI (2910) taf_main: HTTP server started successfully[0m
+[0;32mI (2910) taf_main: Connect to the web interface to input weight measurements[0m
+[0;32mI (28570) taf_http_server: File sending complete[0m
+[0;31mE (53530) taf_http_server: Failed to open file : /www/favicon.ico[0m
+[0;33mW (53530) httpd_txrx: httpd_resp_send_err: 500 Internal Server Error - Failed to read existing file[0m
+[0;33mW (53540) httpd_uri: httpd_uri: uri handler execution failed[0m
+[0;33mW (66610) httpd_txrx: httpd_sock_err: error in recv : 104[0m
+[0;32mI (106140) taf_http_server: Received weight in water: 43.000 g[0m
+[0;32mI (106230) taf_main: Weight in Air: 0.000 g[0m
+[0;32mI (106230) taf_main: Weight in Water: 43.000 g[0m
+[0;32mI (112280) taf_http_server: Received weight in air: 50.000 g[0m
+[0;32mI (112290) taf_http_server: Calculated density: 7.143 g/cm³[0m
+[0;32mI (112330) taf_main: Weight in Air: 50.000 g[0m
+[0;32mI (112330) taf_main: Weight in Water: 43.000 g[0m
+[0;32mI (112330) taf_main: Calculated Density: 7.143 g/cm³[0m
+[0;32mI (126010) taf_http_server: Received weight in water: 50.000 g[0m
+[0;33mW (126010) taf_http_server: Invalid buoyant force, cannot calculate density[0m
+[0;32mI (126030) taf_main: Weight in Air: 50.000 g[0m
+[0;32mI (126030) taf_main: Weight in Water: 50.000 g[0m
+[0;32mI (129080) taf_http_server: Received weight in air: 50.000 g[0m
+[0;33mW (129080) taf_http_server: Invalid buoyant force, cannot calculate density[0m
+[0;32mI (129130) taf_main: Weight in Air: 50.000 g[0m
+[0;32mI (129130) taf_main: Weight in Water: 50.000 g[0m
+[0;32mI (139720) taf_http_server: Received weight in water: 48.000 g[0m
+[0;32mI (139720) taf_http_server: Calculated density: 25.000 g/cm³[0m
+[0;32mI (139730) taf_main: Weight in Air: 50.000 g[0m
+[0;32mI (139730) taf_main: Weight in Water: 48.000 g[0m
+[0;32mI (139740) taf_main: Calculated Density: 25.000 g/cm³[0m
+[0;32mI (148540) taf_http_server: Received weight in water: 40.000 g[0m
+[0;32mI (148540) taf_http_server: Calculated density: 5.000 g/cm³[0m
+[0;32mI (148540) taf_main: Weight in Air: 50.000 g[0m
+[0;32mI (148540) taf_main: Weight in Water: 40.000 g[0m
+[0;32mI (148550) taf_main: Calculated Density: 5.000 g/cm³[0m
