@@ -1,0 +1,39 @@
+[0/1] Re-running CMake...
+-- Building ESP-IDF components for target esp32
+-- Project sdkconfig file /Users/vrushtee/ThomasAndFriends/LSV_FINAL/sdkconfig
+-- Could NOT find Threads (missing: Threads_FOUND) 
+-- USING O3
+-- App "lsv_potentiostat" version: 83187e0-dirty
+-- Adding linker script /Users/vrushtee/ThomasAndFriends/LSV_FINAL/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /Users/vrushtee/esp/esp-idf/components/esp_system/ld/esp32/sections.ld.in
+-- Adding linker script /Users/vrushtee/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /Users/vrushtee/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /Users/vrushtee/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /Users/vrushtee/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script /Users/vrushtee/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script /Users/vrushtee/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script /Users/vrushtee/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_coex esp_common esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_wifi espcoredump esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls mqtt newlib nvs_flash openthread partition_table perfmon protobuf-c protocomm pthread sdmmc soc spi_flash spiffs tcp_transport ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+-- Component paths: /Users/vrushtee/esp/esp-idf/components/app_trace /Users/vrushtee/esp/esp-idf/components/app_update /Users/vrushtee/esp/esp-idf/components/bootloader /Users/vrushtee/esp/esp-idf/components/bootloader_support /Users/vrushtee/esp/esp-idf/components/bt /Users/vrushtee/esp/esp-idf/components/cmock /Users/vrushtee/esp/esp-idf/components/console /Users/vrushtee/esp/esp-idf/components/cxx /Users/vrushtee/esp/esp-idf/components/driver /Users/vrushtee/esp/esp-idf/components/efuse /Users/vrushtee/esp/esp-idf/components/esp-tls /Users/vrushtee/esp/esp-idf/components/esp_adc /Users/vrushtee/esp/esp-idf/components/esp_app_format /Users/vrushtee/esp/esp-idf/components/esp_coex /Users/vrushtee/esp/esp-idf/components/esp_common /Users/vrushtee/esp/esp-idf/components/esp_eth /Users/vrushtee/esp/esp-idf/components/esp_event /Users/vrushtee/esp/esp-idf/components/esp_gdbstub /Users/vrushtee/esp/esp-idf/components/esp_hid /Users/vrushtee/esp/esp-idf/components/esp_http_client /Users/vrushtee/esp/esp-idf/components/esp_http_server /Users/vrushtee/esp/esp-idf/components/esp_https_ota /Users/vrushtee/esp/esp-idf/components/esp_https_server /Users/vrushtee/esp/esp-idf/components/esp_hw_support /Users/vrushtee/esp/esp-idf/components/esp_lcd /Users/vrushtee/esp/esp-idf/components/esp_local_ctrl /Users/vrushtee/esp/esp-idf/components/esp_mm /Users/vrushtee/esp/esp-idf/components/esp_netif /Users/vrushtee/esp/esp-idf/components/esp_netif_stack /Users/vrushtee/esp/esp-idf/components/esp_partition /Users/vrushtee/esp/esp-idf/components/esp_phy /Users/vrushtee/esp/esp-idf/components/esp_pm /Users/vrushtee/esp/esp-idf/components/esp_psram /Users/vrushtee/esp/esp-idf/components/esp_ringbuf /Users/vrushtee/esp/esp-idf/components/esp_rom /Users/vrushtee/esp/esp-idf/components/esp_system /Users/vrushtee/esp/esp-idf/components/esp_timer /Users/vrushtee/esp/esp-idf/components/esp_wifi /Users/vrushtee/esp/esp-idf/components/espcoredump /Users/vrushtee/esp/esp-idf/components/esptool_py /Users/vrushtee/esp/esp-idf/components/fatfs /Users/vrushtee/esp/esp-idf/components/freertos /Users/vrushtee/esp/esp-idf/components/hal /Users/vrushtee/esp/esp-idf/components/heap /Users/vrushtee/esp/esp-idf/components/http_parser /Users/vrushtee/esp/esp-idf/components/idf_test /Users/vrushtee/esp/esp-idf/components/ieee802154 /Users/vrushtee/esp/esp-idf/components/json /Users/vrushtee/esp/esp-idf/components/log /Users/vrushtee/esp/esp-idf/components/lwip /Users/vrushtee/ThomasAndFriends/LSV_FINAL/main /Users/vrushtee/esp/esp-idf/components/mbedtls /Users/vrushtee/esp/esp-idf/components/mqtt /Users/vrushtee/esp/esp-idf/components/newlib /Users/vrushtee/esp/esp-idf/components/nvs_flash /Users/vrushtee/esp/esp-idf/components/openthread /Users/vrushtee/esp/esp-idf/components/partition_table /Users/vrushtee/esp/esp-idf/components/perfmon /Users/vrushtee/esp/esp-idf/components/protobuf-c /Users/vrushtee/esp/esp-idf/components/protocomm /Users/vrushtee/esp/esp-idf/components/pthread /Users/vrushtee/esp/esp-idf/components/sdmmc /Users/vrushtee/esp/esp-idf/components/soc /Users/vrushtee/esp/esp-idf/components/spi_flash /Users/vrushtee/esp/esp-idf/components/spiffs /Users/vrushtee/esp/esp-idf/components/tcp_transport /Users/vrushtee/esp/esp-idf/components/ulp /Users/vrushtee/esp/esp-idf/components/unity /Users/vrushtee/esp/esp-idf/components/usb /Users/vrushtee/esp/esp-idf/components/vfs /Users/vrushtee/esp/esp-idf/components/wear_levelling /Users/vrushtee/esp/esp-idf/components/wifi_provisioning /Users/vrushtee/esp/esp-idf/components/wpa_supplicant /Users/vrushtee/esp/esp-idf/components/xtensa
+-- Configuring done (1.6s)
+-- Generating done (0.2s)
+-- Build files have been written to: /Users/vrushtee/ThomasAndFriends/LSV_FINAL/build
+[1/12] Performing build step for 'bootloader'
+[1/1] cd /Users/vrushtee/ThomasAndFriends/LSV_FINAL/build/bootloader/esp-idf/esptool_py && /Users/vrushtee/.espressif/python_env/idf5.1_py3.14_env/bin/python /Users/vrushtee/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/vrushtee/ThomasAndFriends/LSV_FINAL/build/bootloader/bootloader.bin
+Bootloader binary size 0x68b0 bytes. 0x750 bytes (7%) free.
+[2/12] No install step for 'bootloader'
+[3/12] Completed 'bootloader'
+[4/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/lsv_scan.c.obj
+[5/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/i2c_devices.c.obj
+[6/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/i2c_debug.c.obj
+[7/12] Linking C static library esp-idf/main/libmain.a
+[8/12] Generating ld/sections.ld
+[9/12] Linking CXX executable lsv_potentiostat.elf
+[10/12] Generating binary image from built executable
+esptool.py v4.8.0
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /Users/vrushtee/ThomasAndFriends/LSV_FINAL/build/lsv_potentiostat.bin
+[11/12] cd /Users/vrushtee/ThomasAndFriends/LSV_FINAL/build/esp-idf/esptool_py && /Users/vrushtee/.espressif/python_env/idf5.1_py3.14_env/bin/python /Users/vrushtee/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/vrushtee/ThomasAndFriends/LSV_FINAL/build/partition_table/partition-table.bin /Users/vrushtee/ThomasAndFriends/LSV_FINAL/build/lsv_potentiostat.bin
+lsv_potentiostat.bin binary size 0x33780 bytes. Smallest app partition is 0x100000 bytes. 0xcc880 bytes (80%) free.

@@ -1,0 +1,1104 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7112
+load:0x40078000,len:15716
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (29) boot: ESP-IDF cab6f10 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 11 2025 00:45:32[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (34) boot: chip revision: v3.1[0m
+[0;32mI (37) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (42) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (51) boot: Enabling RNG early entropy source...[0m
+[0;32mI (57) boot: Partition Table:[0m
+[0;32mI (60) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (67) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (75) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (82) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (94) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0df98h ( 57240) map[0m
+[0;32mI (123) esp_image: segment 1: paddr=0001dfc0 vaddr=3ffb0000 size=02058h (  8280) load[0m
+[0;32mI (127) esp_image: segment 2: paddr=00020020 vaddr=400d0020 size=165f4h ( 91636) map[0m
+[0;32mI (162) esp_image: segment 3: paddr=0003661c vaddr=3ffb2058 size=00274h (   628) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00036898 vaddr=40080000 size=0df90h ( 57232) load[0m
+[0;32mI (199) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (199) boot: Disabling RNG early entropy source...[0m
+[0;32mI (210) cpu_start: Multicore app[0m
+[0;32mI (211) cpu_start: Pro cpu up.[0m
+[0;32mI (211) cpu_start: Starting app cpu, entry point is 0x40081338[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (229) cpu_start: Pro cpu start user code[0m
+[0;32mI (229) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (229) cpu_start: Application information:[0m
+[0;32mI (233) cpu_start: Project name:     lsv_potentiostat[0m
+[0;32mI (239) cpu_start: App version:      83187e0-dirty[0m
+[0;32mI (245) cpu_start: Compile time:     Dec 11 2025 00:45:27[0m
+[0;32mI (251) cpu_start: ELF file SHA256:  f686350904b09115...[0m
+[0;32mI (257) cpu_start: ESP-IDF:          cab6f10[0m
+[0;32mI (262) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (266) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (271) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (276) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (283) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (289) heap_init: At 3FFB3520 len 0002CAE0 (178 KiB): DRAM[0m
+[0;32mI (295) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (302) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (308) heap_init: At 4008DF90 len 00012070 (72 KiB): IRAM[0m
+[0;32mI (316) spi_flash: detected chip: generic[0m
+[0;32mI (319) spi_flash: flash io: dio[0m
+[0;33mW (323) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (337) app_start: Starting scheduler on CPU0[0m
+[0;32mI (341) app_start: Starting scheduler on CPU1[0m
+[0;32mI (341) main_task: Started on CPU0[0m
+[0;32mI (351) main_task: Calling app_main()[0m
+[0;32mI (351) MAIN: 
+
+[0m
+[0;32mI (351) MAIN: ═══════════════════════════════════════════════════════════[0m
+[0;32mI (371) MAIN:   ESP32 LSV POTENTIOSTAT - STARTING[0m
+[0;32mI (371) MAIN: ═══════════════════════════════════════════════════════════
+[0m
+[0;32mI (421) LSV_SCAN: ╔═══════════════════════════════════════╗[0m
+[0;32mI (421) LSV_SCAN: ║  LSV POTENTIOSTAT - ESP32-WROOM-32E   ║[0m
+[0;32mI (431) LSV_SCAN: ║  Gold Purity Analyzer                 ║[0m
+[0;32mI (431) LSV_SCAN: ║  Smart India Hackathon 2025           ║[0m
+[0;32mI (441) LSV_SCAN: ╚═══════════════════════════════════════╝[0m
+[0;32mI (451) LSV_SCAN: Initializing I2C bus...[0m
+[0;32mI (461) I2C_DEVICES: I2C initialized on GPIO21 (SDA) and GPIO22 (SCL)[0m
+[0;32mI (461) LSV_SCAN: Initializing MCP4725 DAC...[0m
+[0;32mI (471) I2C_DEVICES: ═══════════════════════════════════════[0m
+[0;32mI (481) I2C_DEVICES: MCP4725 POWER & CONNECTION CHECK[0m
+[0;32mI (491) I2C_DEVICES: ═══════════════════════════════════════[0m
+[0;32mI (501) I2C_DEVICES: [0m
+[0;32mI (501) I2C_DEVICES: STEP 1: Measure Power Supply[0m
+[0;32mI (511) I2C_DEVICES:   → Set multimeter to DC voltage[0m
+[0;32mI (511) I2C_DEVICES:   → Red probe on MCP4725 VDD pin[0m
+[0;32mI (521) I2C_DEVICES:   → Black probe on MCP4725 GND pin[0m
+[0;32mI (531) I2C_DEVICES:   → Should read: 3.3V ± 0.1V[0m
+[0;32mI (531) I2C_DEVICES: [0m
+[0;32mI (541) I2C_DEVICES: STEP 2: Check Ground Connection[0m
+[0;32mI (541) I2C_DEVICES:   → Measure continuity: ESP32 GND to MCP4725 GND[0m
+[0;32mI (551) I2C_DEVICES:   → Should read: 0Ω (short circuit)[0m
+[0;32mI (551) I2C_DEVICES: [0m
+[0;32mI (561) I2C_DEVICES: STEP 3: Testing I2C communication...[0m
+[0;32mI (561) I2C_DEVICES: [0m
+[0;32mI (571) I2C_DEVICES: ✓ MCP4725 responding at address 0x60[0m
+[0;32mI (571) I2C_DEVICES:   (I2C communication OK)[0m
+[0;32mI (581) I2C_DEVICES: [0m
+[0;32mI (581) I2C_DEVICES:   Current DAC register: 2048 (1.650V)[0m
+[0;32mI (591) I2C_DEVICES: [0m
+[0;32mI (591) I2C_DEVICES: STEP 4: Testing VOUT output...[0m
+[0;32mI (601) I2C_DEVICES:   Setting DAC to 1.65V (50% of range)...[0m
+[0;32mI (601) I2C_DEVICES: MCP4725: Writing DAC value 2048 (target 1.650V) [0x40 0x80 0x00][0m
+[0;32mI (621) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 2048 = 1.650V)[0m
+[0;32mI (821) I2C_DEVICES:   ✓ DAC register verified: 2048[0m
+[0;32mI (821) I2C_DEVICES: [0m
+[0;32mI (821) I2C_DEVICES: STEP 5: Measure VOUT with multimeter[0m
+[0;32mI (821) I2C_DEVICES:   → Red probe on MCP4725 VOUT pin[0m
+[0;32mI (831) I2C_DEVICES:   → Black probe on MCP4725 GND pin[0m
+[0;32mI (831) I2C_DEVICES:   → Expected: ~1.65V[0m
+[0;32mI (841) I2C_DEVICES: [0m
+[0;32mI (841) I2C_DEVICES:   If reading 0V:[0m
+[0;32mI (841) I2C_DEVICES:     ✗ VDD not connected (check power)[0m
+[0;32mI (851) I2C_DEVICES:     ✗ VOUT pin not connected to circuit[0m
+[0;32mI (861) I2C_DEVICES:     ✗ VOUT shorted to GND[0m
+[0;32mI (861) I2C_DEVICES:     ✗ MCP4725 chip damaged[0m
+[0;32mI (871) I2C_DEVICES: [0m
+[0;32mI (871) I2C_DEVICES: Setting to 0.000V (safe state)...[0m
+[0;32mI (881) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;32mI (891) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 0 = 0.000V)[0m
+[0;32mI (891) I2C_DEVICES: ✓ Initialized to 0.000V[0m
+[0;32mI (901) I2C_DEVICES: ═══════════════════════════════════════[0m
+[0;32mI (911) I2C_DEVICES: [0m
+[0;32mI (911) LSV_SCAN: Initializing ADS1115 ADC...[0m
+[0;32mI (921) I2C_DEVICES: ADS1115 found at address 0x48[0m
+[0;32mI (921) I2C_DEVICES: Config register: 0x8383[0m
+[0;32mI (931) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;32mI (951) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 0 = 0.000V)[0m
+[0;32mI (951) LSV_SCAN: Voltage set to 0.000V (DAC code 0)[0m
+[0;32mI (951) LSV_SCAN: DAC set to 0.000V (safe state)[0m
+[0;32mI (951) LSV_SCAN: System ready![0m
+[0;32mI (961) MAIN: ═══════════════════════════════════════════════════════════[0m
+[0;32mI (981) MAIN: PRE-SCAN CHECKLIST[0m
+[0;32mI (981) MAIN: ═══════════════════════════════════════════════════════════[0m
+[0;32mI (1001) MAIN: [0m
+[0;32mI (1001) MAIN: Please verify before starting scan:[0m
+[0;32mI (1011) MAIN: [0m
+[0;32mI (1011) MAIN: ☐ Electrodes properly positioned[0m
+[0;32mI (1011) MAIN:   • Working Electrode (WE): Gold sample or test electrode[0m
+[0;32mI (1021) MAIN:   • Reference Electrode (RE): Copper wire or graphite[0m
+[0;32mI (1031) MAIN:   • Counter Electrode (CE): Copper wire or graphite[0m
+[0;32mI (1031) MAIN: [0m
+[0;32mI (1041) MAIN: ☐ Electrodes submerged in electrolyte[0m
+[0;32mI (1041) MAIN:   • Depth: 2-3 cm below surface[0m
+[0;32mI (1051) MAIN:   • Electrolyte: 0.1M KCl or 0.5M H₂SO₄[0m
+[0;32mI (1051) MAIN:   • Volume: At least 50-100 mL[0m
+[0;32mI (1061) MAIN: [0m
+[0;32mI (1061) MAIN: ☐ Electrodes NOT touching each other[0m
+[0;32mI (1071) MAIN:   • Maintain 1-2 cm spacing between electrodes[0m
+[0;32mI (1071) MAIN: [0m
+[0;32mI (1081) MAIN: ☐ Beaker on stable, non-conductive surface[0m
+[0;32mI (1081) MAIN:   • Prevent spills and electrical shorts[0m
+[0;32mI (1091) MAIN: [0m
+[0;32mI (1091) MAIN: ═══════════════════════════════════════════════════════════
+[0m
+[0;32mI (1111) MAIN: Starting first scan in 10 seconds...[0m
+[0;32mI (1121) MAIN:   10...[0m
+[0;32mI (2121) MAIN:   9...[0m
+[0;32mI (3121) MAIN:   8...[0m
+[0;32mI (4121) MAIN:   7...[0m
+[0;32mI (5121) MAIN:   6...[0m
+[0;32mI (6121) MAIN:   5...[0m
+[0;32mI (7121) MAIN:   4...[0m
+[0;32mI (8121) MAIN:   3...[0m
+[0;32mI (9121) MAIN:   2...[0m
+[0;32mI (10121) MAIN:   1...[0m
+[0;32mI (11121) MAIN:   GO!
+[0m
+[0;32mI (11121) MAIN: 
+
+[0m
+[0;32mI (11121) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (11131) MAIN: ║  SCAN #1                                                 ║[0m
+[0;32mI (11141) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (11151) MAIN: [0m
+[0;32mI (11161) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (11171) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (11171) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (11191) LSV_SCAN: Voltage range: 0.000V to 1.800V[0m
+[0;32mI (11191) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (11201) LSV_SCAN: Settle time: 1000ms per step[0m
+[0;32mI (11201) LSV_SCAN: Total data points: 181[0m
+[0;32mI (11211) LSV_SCAN: Estimated scan time: 181.0 seconds
+[0m
+[0;32mI (11211) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (11221) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (11231) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (12241) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (12241) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (12241) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;31mE (12251) LSV_SCAN: Failed to set voltage[0m
+[0;32mI (12251) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (12261) LSV_SCAN: MAX CURRENT: 0.000 µA at 0.000V[0m
+[0;32mI (12271) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (13281) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (13281) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (13281) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;32mI (13391) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (13391) LSV_SCAN: Scan complete - 0 data points collected[0m
+[0;32mI (13391) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (13411) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (13421) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (13421) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;31mE (13441) PEAK_ANALYSIS: Invalid scan data for analysis[0m
+[0;32mI (13441) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (13461) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (13461) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (13481) KARAT_ESTIMATION: Total peak magnitude: 0.000 µA[0m
+[0;32mI (13481) KARAT_ESTIMATION: Copper peak: 1.964 µA (detected: NO)[0m
+[0;32mI (13491) KARAT_ESTIMATION: Silver peak: -0.000 µA (detected: YES)
+[0m
+[0;32mI (13501) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (13511) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (13521) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (13531) KARAT_ESTIMATION: Estimated purity: 24K (100.0% gold)[0m
+[0;32mI (13541) KARAT_ESTIMATION: Classification: Pure Gold[0m
+[0;32mI (13541) KARAT_ESTIMATION: Confidence level: 40%
+[0m
+[0;32mI (13551) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (13551) KARAT_ESTIMATION:   No significant oxidation peaks detected.[0m
+[0;32mI (13561) KARAT_ESTIMATION:   Sample appears to be pure gold (24K) with[0m
+[0;32mI (13571) KARAT_ESTIMATION:   minimal or no alloy metals.
+[0m
+[0;32mI (13571) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (13591) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (13591) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (13601) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (13611) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (13611) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (13631) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (14641) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (14641) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (14641) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;32mI (14751) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (14751) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (14761) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (14781) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (14781) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (14791) MAIN: ════════════════════════════════════════════════════════════
+
+[0m
+[0;32mI (20811) MAIN: 
+
+[0m
+[0;32mI (20811) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (20821) MAIN: ║  SCAN #2                                                 ║[0m
+[0;32mI (20821) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (20841) MAIN: [0m
+[0;32mI (20841) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (20861) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (20861) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (20871) LSV_SCAN: Voltage range: 0.000V to 1.800V[0m
+[0;32mI (20881) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (20881) LSV_SCAN: Settle time: 1000ms per step[0m
+[0;32mI (20891) LSV_SCAN: Total data points: 181[0m
+[0;32mI (20891) LSV_SCAN: Estimated scan time: 181.0 seconds
+[0m
+[0;32mI (20901) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (20911) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (20921) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (21931) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (21931) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (21931) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;31mE (21941) LSV_SCAN: Failed to set voltage[0m
+[0;32mI (21941) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (21951) LSV_SCAN: MAX CURRENT: 0.000 µA at 0.000V[0m
+[0;32mI (21961) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (22971) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (22971) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (22971) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;32mI (23081) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (23081) LSV_SCAN: Scan complete - 0 data points collected[0m
+[0;32mI (23081) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (23101) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (23111) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (23111) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;31mE (23131) PEAK_ANALYSIS: Invalid scan data for analysis[0m
+[0;32mI (23131) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (23151) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (23151) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (23171) KARAT_ESTIMATION: Total peak magnitude: 0.000 µA[0m
+[0;32mI (23171) KARAT_ESTIMATION: Copper peak: 1.964 µA (detected: NO)[0m
+[0;32mI (23181) KARAT_ESTIMATION: Silver peak: -0.000 µA (detected: YES)
+[0m
+[0;32mI (23191) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (23201) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (23211) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (23221) KARAT_ESTIMATION: Estimated purity: 24K (100.0% gold)[0m
+[0;32mI (23231) KARAT_ESTIMATION: Classification: Pure Gold[0m
+[0;32mI (23231) KARAT_ESTIMATION: Confidence level: 40%
+[0m
+[0;32mI (23241) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (23241) KARAT_ESTIMATION:   No significant oxidation peaks detected.[0m
+[0;32mI (23251) KARAT_ESTIMATION:   Sample appears to be pure gold (24K) with[0m
+[0;32mI (23261) KARAT_ESTIMATION:   minimal or no alloy metals.
+[0m
+[0;32mI (23261) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (23281) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (23281) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (23291) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (23301) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (23301) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (23321) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (24331) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (24331) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (24331) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;32mI (24441) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (24441) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (24451) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (24471) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (24471) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (24481) MAIN: ════════════════════════════════════════════════════════════
+
+[0m
+[0;32mI (30501) MAIN: 
+
+[0m
+[0;32mI (30501) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (30511) MAIN: ║  SCAN #3                                                 ║[0m
+[0;32mI (30511) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (30531) MAIN: [0m
+[0;32mI (30531) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (30551) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (30551) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (30561) LSV_SCAN: Voltage range: 0.000V to 1.800V[0m
+[0;32mI (30571) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (30571) LSV_SCAN: Settle time: 1000ms per step[0m
+[0;32mI (30581) LSV_SCAN: Total data points: 181[0m
+[0;32mI (30581) LSV_SCAN: Estimated scan time: 181.0 seconds
+[0m
+[0;32mI (30591) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (30601) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (30611) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (31621) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (31621) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (31621) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;31mE (31631) LSV_SCAN: Failed to set voltage[0m
+[0;32mI (31631) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (31641) LSV_SCAN: MAX CURRENT: 0.000 µA at 0.000V[0m
+[0;32mI (31651) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (32661) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (32661) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (32661) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;32mI (32771) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (32771) LSV_SCAN: Scan complete - 0 data points collected[0m
+[0;32mI (32771) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (32791) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (32801) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (32801) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;31mE (32821) PEAK_ANALYSIS: Invalid scan data for analysis[0m
+[0;32mI (32821) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (32841) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (32841) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (32861) KARAT_ESTIMATION: Total peak magnitude: 0.000 µA[0m
+[0;32mI (32861) KARAT_ESTIMATION: Copper peak: 1.964 µA (detected: NO)[0m
+[0;32mI (32871) KARAT_ESTIMATION: Silver peak: -0.000 µA (detected: YES)
+[0m
+[0;32mI (32881) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (32891) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (32901) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (32911) KARAT_ESTIMATION: Estimated purity: 24K (100.0% gold)[0m
+[0;32mI (32921) KARAT_ESTIMATION: Classification: Pure Gold[0m
+[0;32mI (32921) KARAT_ESTIMATION: Confidence level: 40%
+[0m
+[0;32mI (32931) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (32931) KARAT_ESTIMATION:   No significant oxidation peaks detected.[0m
+[0;32mI (32941) KARAT_ESTIMATION:   Sample appears to be pure gold (24K) with[0m
+[0;32mI (32951) KARAT_ESTIMATION:   minimal or no alloy metals.
+[0m
+[0;32mI (32951) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (32971) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (32971) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (32981) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (32991) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (32991) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (33011) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (34021) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (34021) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (34021) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;32mI (34131) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (34131) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (34141) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (34161) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (34161) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (34171) MAIN: ════════════════════════════════════════════════════════════
+
+[0m
+[0;32mI (40191) MAIN: 
+
+[0m
+[0;32mI (40191) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (40201) MAIN: ║  SCAN #4                                                 ║[0m
+[0;32mI (40201) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (40221) MAIN: [0m
+[0;32mI (40221) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (40241) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (40241) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (40251) LSV_SCAN: Voltage range: 0.000V to 1.800V[0m
+[0;32mI (40261) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (40261) LSV_SCAN: Settle time: 1000ms per step[0m
+[0;32mI (40271) LSV_SCAN: Total data points: 181[0m
+[0;32mI (40271) LSV_SCAN: Estimated scan time: 181.0 seconds
+[0m
+[0;32mI (40281) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (40291) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (40301) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (41311) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (41311) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (41311) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;31mE (41321) LSV_SCAN: Failed to set voltage[0m
+[0;32mI (41321) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (41331) LSV_SCAN: MAX CURRENT: 0.000 µA at 0.000V[0m
+[0;32mI (41341) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (42351) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (42351) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (42351) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;32mI (42461) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (42461) LSV_SCAN: Scan complete - 0 data points collected[0m
+[0;32mI (42461) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (42481) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (42491) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (42491) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;31mE (42511) PEAK_ANALYSIS: Invalid scan data for analysis[0m
+[0;32mI (42511) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (42531) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (42531) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (42551) KARAT_ESTIMATION: Total peak magnitude: 0.000 µA[0m
+[0;32mI (42551) KARAT_ESTIMATION: Copper peak: 1.964 µA (detected: NO)[0m
+[0;32mI (42561) KARAT_ESTIMATION: Silver peak: -0.000 µA (detected: YES)
+[0m
+[0;32mI (42571) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (42581) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (42591) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (42601) KARAT_ESTIMATION: Estimated purity: 24K (100.0% gold)[0m
+[0;32mI (42611) KARAT_ESTIMATION: Classification: Pure Gold[0m
+[0;32mI (42611) KARAT_ESTIMATION: Confidence level: 40%
+[0m
+[0;32mI (42621) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (42621) KARAT_ESTIMATION:   No significant oxidation peaks detected.[0m
+[0;32mI (42631) KARAT_ESTIMATION:   Sample appears to be pure gold (24K) with[0m
+[0;32mI (42641) KARAT_ESTIMATION:   minimal or no alloy metals.
+[0m
+[0;32mI (42641) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (42661) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (42661) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (42671) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (42681) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (42681) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (42701) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (43711) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (43711) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (43711) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;32mI (43821) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (43821) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (43831) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (43851) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (43851) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (43861) MAIN: ════════════════════════════════════════════════════════════
+
+[0m
+[0;32mI (49881) MAIN: 
+
+[0m
+[0;32mI (49881) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (49891) MAIN: ║  SCAN #5                                                 ║[0m
+[0;32mI (49891) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (49911) MAIN: [0m
+[0;32mI (49911) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (49931) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (49931) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (49941) LSV_SCAN: Voltage range: 0.000V to 1.800V[0m
+[0;32mI (49951) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (49951) LSV_SCAN: Settle time: 1000ms per step[0m
+[0;32mI (49961) LSV_SCAN: Total data points: 181[0m
+[0;32mI (49961) LSV_SCAN: Estimated scan time: 181.0 seconds
+[0m
+[0;32mI (49971) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (49981) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (49991) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (51001) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (51001) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (51001) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;31mE (51011) LSV_SCAN: Failed to set voltage[0m
+[0;32mI (51011) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (51021) LSV_SCAN: MAX CURRENT: 0.000 µA at 0.000V[0m
+[0;32mI (51031) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (52041) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (52041) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (52041) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;32mI (52151) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (52151) LSV_SCAN: Scan complete - 0 data points collected[0m
+[0;32mI (52151) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (52171) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (52181) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (52181) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;31mE (52201) PEAK_ANALYSIS: Invalid scan data for analysis[0m
+[0;32mI (52201) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (52221) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (52221) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (52241) KARAT_ESTIMATION: Total peak magnitude: 0.000 µA[0m
+[0;32mI (52241) KARAT_ESTIMATION: Copper peak: 1.964 µA (detected: NO)[0m
+[0;32mI (52251) KARAT_ESTIMATION: Silver peak: -0.000 µA (detected: YES)
+[0m
+[0;32mI (52261) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (52271) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (52281) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (52291) KARAT_ESTIMATION: Estimated purity: 24K (100.0% gold)[0m
+[0;32mI (52301) KARAT_ESTIMATION: Classification: Pure Gold[0m
+[0;32mI (52301) KARAT_ESTIMATION: Confidence level: 40%
+[0m
+[0;32mI (52311) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (52311) KARAT_ESTIMATION:   No significant oxidation peaks detected.[0m
+[0;32mI (52321) KARAT_ESTIMATION:   Sample appears to be pure gold (24K) with[0m
+[0;32mI (52331) KARAT_ESTIMATION:   minimal or no alloy metals.
+[0m
+[0;32mI (52331) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (52351) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (52351) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (52361) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (52371) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (52371) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (52391) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (53401) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (53401) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (53401) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;32mI (53511) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (53511) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (53521) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (53541) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (53541) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (53551) MAIN: ════════════════════════════════════════════════════════════
+
+[0m
+[0;32mI (59571) MAIN: 
+
+[0m
+[0;32mI (59571) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (59581) MAIN: ║  SCAN #6                                                 ║[0m
+[0;32mI (59581) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (59601) MAIN: [0m
+[0;32mI (59601) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (59621) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (59621) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (59631) LSV_SCAN: Voltage range: 0.000V to 1.800V[0m
+[0;32mI (59641) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (59641) LSV_SCAN: Settle time: 1000ms per step[0m
+[0;32mI (59651) LSV_SCAN: Total data points: 181[0m
+[0;32mI (59651) LSV_SCAN: Estimated scan time: 181.0 seconds
+[0m
+[0;32mI (59661) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (59671) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (59681) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (60691) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (60691) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (60691) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;31mE (60701) LSV_SCAN: Failed to set voltage[0m
+[0;32mI (60701) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (60711) LSV_SCAN: MAX CURRENT: 0.000 µA at 0.000V[0m
+[0;32mI (60721) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (61731) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (61731) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (61731) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;32mI (61841) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (61841) LSV_SCAN: Scan complete - 0 data points collected[0m
+[0;32mI (61841) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (61861) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (61871) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (61871) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;31mE (61891) PEAK_ANALYSIS: Invalid scan data for analysis[0m
+[0;32mI (61891) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (61911) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (61911) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (61931) KARAT_ESTIMATION: Total peak magnitude: 0.000 µA[0m
+[0;32mI (61931) KARAT_ESTIMATION: Copper peak: 1.964 µA (detected: NO)[0m
+[0;32mI (61941) KARAT_ESTIMATION: Silver peak: -0.000 µA (detected: YES)
+[0m
+[0;32mI (61951) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (61961) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (61971) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (61981) KARAT_ESTIMATION: Estimated purity: 24K (100.0% gold)[0m
+[0;32mI (61991) KARAT_ESTIMATION: Classification: Pure Gold[0m
+[0;32mI (61991) KARAT_ESTIMATION: Confidence level: 40%
+[0m
+[0;32mI (62001) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (62001) KARAT_ESTIMATION:   No significant oxidation peaks detected.[0m
+[0;32mI (62011) KARAT_ESTIMATION:   Sample appears to be pure gold (24K) with[0m
+[0;32mI (62021) KARAT_ESTIMATION:   minimal or no alloy metals.
+[0m
+[0;32mI (62021) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (62041) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (62041) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (62051) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (62061) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (62061) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (62081) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (63091) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (63091) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (63091) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;32mI (63201) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (63201) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (63211) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (63231) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (63231) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (63241) MAIN: ════════════════════════════════════════════════════════════
+
+[0m
+[0;32mI (69261) MAIN: 
+
+[0m
+[0;32mI (69261) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (69271) MAIN: ║  SCAN #7                                                 ║[0m
+[0;32mI (69271) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (69291) MAIN: [0m
+[0;32mI (69291) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (69311) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (69311) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (69321) LSV_SCAN: Voltage range: 0.000V to 1.800V[0m
+[0;32mI (69331) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (69331) LSV_SCAN: Settle time: 1000ms per step[0m
+[0;32mI (69341) LSV_SCAN: Total data points: 181[0m
+[0;32mI (69341) LSV_SCAN: Estimated scan time: 181.0 seconds
+[0m
+[0;32mI (69351) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (69361) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (69371) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (70381) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (70381) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (70381) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;31mE (70391) LSV_SCAN: Failed to set voltage[0m
+[0;32mI (70391) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (70401) LSV_SCAN: MAX CURRENT: 0.000 µA at 0.000V[0m
+[0;32mI (70411) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (71421) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (71421) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (71421) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;32mI (71531) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (71531) LSV_SCAN: Scan complete - 0 data points collected[0m
+[0;32mI (71531) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (71551) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (71561) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (71561) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;31mE (71581) PEAK_ANALYSIS: Invalid scan data for analysis[0m
+[0;32mI (71581) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (71601) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (71601) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (71621) KARAT_ESTIMATION: Total peak magnitude: 0.000 µA[0m
+[0;32mI (71621) KARAT_ESTIMATION: Copper peak: 1.964 µA (detected: NO)[0m
+[0;32mI (71631) KARAT_ESTIMATION: Silver peak: -0.000 µA (detected: YES)
+[0m
+[0;32mI (71641) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (71651) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (71661) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (71671) KARAT_ESTIMATION: Estimated purity: 24K (100.0% gold)[0m
+[0;32mI (71681) KARAT_ESTIMATION: Classification: Pure Gold[0m
+[0;32mI (71681) KARAT_ESTIMATION: Confidence level: 40%
+[0m
+[0;32mI (71691) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (71691) KARAT_ESTIMATION:   No significant oxidation peaks detected.[0m
+[0;32mI (71701) KARAT_ESTIMATION:   Sample appears to be pure gold (24K) with[0m
+[0;32mI (71711) KARAT_ESTIMATION:   minimal or no alloy metals.
+[0m
+[0;32mI (71711) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (71731) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (71731) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (71741) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (71751) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (71751) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (71771) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (72781) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (72781) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (72781) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;32mI (72891) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (72891) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (72901) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (72921) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (72921) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (72931) MAIN: ════════════════════════════════════════════════════════════
+
+[0m
+[0;32mI (78951) MAIN: 
+
+[0m
+[0;32mI (78951) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (78961) MAIN: ║  SCAN #8                                                 ║[0m
+[0;32mI (78961) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (78981) MAIN: [0m
+[0;32mI (78981) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (79001) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (79001) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (79011) LSV_SCAN: Voltage range: 0.000V to 1.800V[0m
+[0;32mI (79021) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (79021) LSV_SCAN: Settle time: 1000ms per step[0m
+[0;32mI (79031) LSV_SCAN: Total data points: 181[0m
+[0;32mI (79031) LSV_SCAN: Estimated scan time: 181.0 seconds
+[0m
+[0;32mI (79041) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (79051) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (79061) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (80071) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (80071) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (80071) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;31mE (80081) LSV_SCAN: Failed to set voltage[0m
+[0;32mI (80081) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (80091) LSV_SCAN: MAX CURRENT: 0.000 µA at 0.000V[0m
+[0;32mI (80101) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (81111) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (81111) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (81111) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;32mI (81221) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (81221) LSV_SCAN: Scan complete - 0 data points collected[0m
+[0;32mI (81221) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (81241) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (81251) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (81251) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;31mE (81271) PEAK_ANALYSIS: Invalid scan data for analysis[0m
+[0;32mI (81271) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (81291) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (81291) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (81311) KARAT_ESTIMATION: Total peak magnitude: 0.000 µA[0m
+[0;32mI (81311) KARAT_ESTIMATION: Copper peak: 1.964 µA (detected: NO)[0m
+[0;32mI (81321) KARAT_ESTIMATION: Silver peak: -0.000 µA (detected: YES)
+[0m
+[0;32mI (81331) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (81341) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (81351) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (81361) KARAT_ESTIMATION: Estimated purity: 24K (100.0% gold)[0m
+[0;32mI (81371) KARAT_ESTIMATION: Classification: Pure Gold[0m
+[0;32mI (81371) KARAT_ESTIMATION: Confidence level: 40%
+[0m
+[0;32mI (81381) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (81381) KARAT_ESTIMATION:   No significant oxidation peaks detected.[0m
+[0;32mI (81391) KARAT_ESTIMATION:   Sample appears to be pure gold (24K) with[0m
+[0;32mI (81401) KARAT_ESTIMATION:   minimal or no alloy metals.
+[0m
+[0;32mI (81401) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (81421) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (81421) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (81431) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (81441) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (81441) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (81461) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (82471) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (82471) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (82471) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;32mI (82581) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (82581) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (82591) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (82611) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (82611) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (82621) MAIN: ════════════════════════════════════════════════════════════
+
+[0m
+[0;32mI (88641) MAIN: 
+
+[0m
+[0;32mI (88641) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (88651) MAIN: ║  SCAN #9                                                 ║[0m
+[0;32mI (88651) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (88671) MAIN: [0m
+[0;32mI (88671) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (88691) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (88691) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (88701) LSV_SCAN: Voltage range: 0.000V to 1.800V[0m
+[0;32mI (88711) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (88711) LSV_SCAN: Settle time: 1000ms per step[0m
+[0;32mI (88721) LSV_SCAN: Total data points: 181[0m
+[0;32mI (88721) LSV_SCAN: Estimated scan time: 181.0 seconds
+[0m
+[0;32mI (88731) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (88741) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (88751) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (89761) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (89761) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (89761) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;31mE (89771) LSV_SCAN: Failed to set voltage[0m
+[0;32mI (89771) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (89781) LSV_SCAN: MAX CURRENT: 0.000 µA at 0.000V[0m
+[0;32mI (89791) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;31mE (90801) I2C_DEVICES: MCP4725 write FAILED! Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (90801) I2C_DEVICES:   Address: 0x60, Data: [0x40 0x00 0x00][0m
+[0;31mE (90801) LSV_SCAN: Failed to set voltage 0.000V (DAC code 0): ESP_ERR_TIMEOUT[0m
+[0;32mI (90911) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (90911) LSV_SCAN: Scan complete - 0 data points collected[0m
+[0;32mI (90911) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (90931) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (90941) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (90941) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;31mE (90961) PEAK_ANALYSIS: Invalid scan data for analysis[0m
+[0;32mI (90961) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (90981) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (90981) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (91001) KARAT_ESTIMATION: Total peak magnitude: 0.000 µA[0m
+[0;32mI (91001) KARAT_ESTIMATION: Copper peak: 1.964 µA (detected: NO)[0m
+[0;32mI (91011) KARAT_ESTIMATION: Silver peak: -0.000 µA (detected: YES)
+[0m
+[0;32mI (91021) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (91031) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (91041) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (91051) KARAT_ESTIMATION: Estimated purity: 24K (100.0% gold)[0m
+[0;32mI (91061) KARAT_ESTIMATION: Classification: Pure Gold[0m
+[0;32mI (91061) KARAT_ESTIMATION: Confidence level: 40%
+[0m
+[0;32mI (91071) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (91071) KARAT_ESTIMATION:   No significant oxidation peaks detected.[0m
+[0;32mI (91081) KARAT_ESTIMATION:   Sample appears to be pure gold (24K) with[0m
+[0;32mI (91091) KARAT_ESTIMATION:   minimal or no alloy metals.
+[0m
+[0;32mI (91091) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (91111) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (91111) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (91121) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (91131) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (91131) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (91151) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+F�QUjM� [0m
+[0;32mI (541) I2C_DEVICES: STEP 2: Check Ground Connection[0m
+[0;32mI (541) I2C_DEVICES:   → Measure continuity: ESP32 GND to MCP4725 GND[0m
+[0;32mI (551) I2C_DEVICES:   → Should read: 0Ω (short circuit)[0m
+[0;32mI (551) I2C_DEVICES: [0m
+[0;32mI (561) I2C_DEVICES: STEP 3: Testing I2C communication...[0m
+[0;32mI (561) I2C_DEVICES: [0m
+[0;31mE (1571) I2C_DEVICES: ✗✗✗ MCP4725 NOT RESPONDING ✗✗✗[0m
+[0;31mE (1571) I2C_DEVICES: [0m
+[0;31mE (1571) I2C_DEVICES: I2C Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (1571) I2C_DEVICES: [0m
+[0;31mE (1571) I2C_DEVICES: TROUBLESHOOTING CHECKLIST:[0m
+[0;31mE (1581) I2C_DEVICES: [0m
+[0;31mE (1581) I2C_DEVICES: 1. POWER SUPPLY (MOST COMMON ISSUE):[0m
+[0;31mE (1591) I2C_DEVICES:    → Measure VDD to GND: Should be 3.3V[0m
+[0;31mE (1591) I2C_DEVICES:    → If 0V: Check ESP32 3.3V pin connection[0m
+[0;31mE (1601) I2C_DEVICES:    → If wrong voltage: Check power supply[0m
+[0;31mE (1611) I2C_DEVICES: [0m
+[0;31mE (1611) I2C_DEVICES: 2. GROUND CONNECTION:[0m
+[0;31mE (1621) I2C_DEVICES:    → ESP32 GND must connect to MCP4725 GND[0m
+[0;31mE (1621) I2C_DEVICES:    → Measure continuity: Should be 0Ω[0m
+[0;31mE (1631) I2C_DEVICES: [0m
+[0;31mE (1631) I2C_DEVICES: 3. I2C WIRING:[0m
+[0;31mE (1641) I2C_DEVICES:    → SDA: ESP32 GPIO21 → MCP4725 SDA[0m
+[0;31mE (1641) I2C_DEVICES:    → SCL: ESP32 GPIO22 → MCP4725 SCL[0m
+[0;31mE (1651) I2C_DEVICES:    → Check for loose connections[0m
+[0;31mE (1661) I2C_DEVICES: [0m
+[0;31mE (1661) I2C_DEVICES: 4. PULL-UP RESISTORS:[0m
+[0;31mE (1661) I2C_DEVICES:    → SDA and SCL need 4.7kΩ pull-ups to 3.3V[0m
+[0;31mE (1671) I2C_DEVICES:    → Most breakout boards have these built-in[0m
+[0;31mE (1681) I2C_DEVICES: [0m
+[0;31mE (1681) I2C_DEVICES: 5. I2C ADDRESS:[0m
+[0;31mE (1691) I2C_DEVICES:    → MCP4725 A0 pin to GND = address 0x60[0m
+[0;31mE (1691) I2C_DEVICES:    → Check A0 pin connection[0m
+[0;31mE (1701) I2C_DEVICES: [0m
+[0;32mI (1701) I2C_DEVICES: ═══════════════════════════════════════[0m
+[0;32mI (1711) I2C_DEVICES: [0m
+[0;31mE (1721) LSV_SCAN: MCP4725 initialization failed![0m
+[0;31mE (1721) MAIN: Hardware initialization failed![0m
+[0;31mE (1731) MAIN: System halted. Check connections and reset.[0m
+[0;31mE (1571) I2C_DEVICES: ✗✗✗ MCP4725 NOT RESPONDING ✗✗✗[0m
+[0;31mE (1571) I2C_DEVICES: [0m
+[0;31mE (1571) I2C_DEVICES: I2C Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (1571) I2C_DEVICES: [0m
+[0;31mE (1571) I2C_DEVICES: TROUBLESHOOTING CHECKLIST:[0m
+[0;31mE (1581) I2C_DEVICES: [0m
+[0;31mE (1581) I2C_DEVICES: 1. POWER SUPPLY (MOST COMMON ISSUE):[0m
+[0;31mE (1591) I2C_DEVICES:    → Measure VDD to GND: Should be 3.3V[0m
+[0;31mE (1591) I2C_DEVICES:    → If 0V: Check ESP32 3.3V pin connection[0m
+[0;31mE (1601) I2C_DEVICES:    → If wrong voltage: Check power supply[0m
+[0;31mE (1611) I2C_DEVICES: [0m
+[0;31mE (1611) I2C_DEVICES: 2. GROUND CONNECTION:[0m
+[0;31mE (1621) I2C_DEVICES:    → ESP32 GND must connect to MCP4725 GND[0m
+[0;31mE (1621) I2C_DEVICES:    → Measure continuity: Should be 0Ω[0m
+[0;31mE (1631) I2C_DEVICES: [0m
+[0;31mE (1631) I2C_DEVICES: 3. I2C WIRING:[0m
+[0;31mE (1641) I2C_DEVICES:    → SDA: ESP32 GPIO21 → MCP4725 SDA[0m
+[0;31mE (1641) I2C_DEVICES:    → SCL: ESP32 GPIO22 → MCP4725 SCL[0m
+[0;31mE (1651) I2C_DEVICES:    → Check for loose connections[0m
+[0;31mE (1661) I2C_DEVICES: [0m
+[0;31mE (1661) I2C_DEVICES: 4. PULL-UP RESISTORS:[0m
+[0;31mE (1661) I2C_DEVICES:    → SDA and SCL need 4.7kΩ pull-ups to 3.3V[0m
+[0;31mE (1671) I2C_DEVICES:    → Most breakout boards have these built-in[0m
+[0;31mE (1681) I2C_DEVICES: [0m
+[0;31mE (1681) I2C_DEVICES: 5. I2C ADDRESS:[0m
+[0;31mE (1691) I2C_DEVICES:    → MCP4725 A0 pin to GND = address 0x60[0m
+[0;31mE (1691) I2C_DEVICES:    → Check A0 pin connection[0m
+[0;31mE (1701) I2C_DEVICES: [0m
+[0;32mI (1701) I2C_DEVICES: ═══════════════════════════════════════[0m
+[0;32mI (1711) I2C_DEVICES: [0m
+[0;31mE (1721) LSV_SCAN: MCP4725 initialization failed![0m
+[0;31mE (1721) MAIN: Hardware initialization failed![0m
+[0;31mE (1731) MAIN: System halted. Check connections and reset.[0m
+[0;31mE (1571) I2C_DEVICES: ✗✗✗ MCP4725 NOT RESPONDING ✗✗✗[0m
+[0;31mE (1571) I2C_DEVICES: [0m
+[0;31mE (1571) I2C_DEVICES: I2C Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (1571) I2C_DEVICES: [0m
+[0;31mE (1571) I2C_DEVICES: TROUBLESHOOTING CHECKLIST:[0m
+[0;31mE (1581) I2C_DEVICES: [0m
+[0;31mE (1581) I2C_DEVICES: 1. POWER SUPPLY (MOST COMMON ISSUE):[0m
+[0;31mE (1591) I2C_DEVICES:    → Measure VDD to GND: Should be 3.3V[0m
+[0;31mE (1591) I2C_DEVICES:    → If 0V: Check ESP32 3.3V pin connection[0m
+[0;31mE (1601) I2C_DEVICES:    → If wrong voltage: Check power supply[0m
+[0;31mE (1611) I2C_DEVICES: [0m
+[0;31mE (1611) I2C_DEVICES: 2. GROUND CONNECTION:[0m
+[0;31mE (1621) I2C_DEVICES:    → ESP32 GND must connect to MCP4725 GND[0m
+[0;31mE (1621) I2C_DEVICES:    → Measure continuity: Should be 0Ω[0m
+[0;31mE (1631) I2C_DEVICES: [0m
+[0;31mE (1631) I2C_DEVICES: 3. I2C WIRING:[0m
+[0;31mE (1641) I2C_DEVICES:    → SDA: ESP32 GPIO21 → MCP4725 SDA[0m
+[0;31mE (1641) I2C_DEVICES:    → SCL: ESP32 GPIO22 → MCP4725 SCL[0m
+[0;31mE (1651) I2C_DEVICES:    → Check for loose connections[0m
+[0;31mE (1661) I2C_DEVICES: [0m
+[0;31mE (1661) I2C_DEVICES: 4. PULL-UP RESISTORS:[0m
+[0;31mE (1661) I2C_DEVICES:    → SDA and SCL need 4.7kΩ pull-ups to 3.3V[0m
+[0;31mE (1671) I2C_DEVICES:    → Most breakout boards have these built-in[0m
+[0;31mE (1681) I2C_DEVICES: [0m
+[0;31mE (1681) I2C_DEVICES: 5. I2C ADDRESS:[0m
+[0;31mE (1691) I2C_DEVICES:    → MCP4725 A0 pin to GND = address 0x60[0m
+[0;31mE (1691) I2C_DEVICES:    → Check A0 pin connection[0m
+[0;31mE (1701) I2C_DEVICES: [0m
+[0;32mI (1701) I2C_DEVICES: ═══════════════════════════════════════[0m
+[0;32mI (1711) I2C_DEVICES: [0m
+[0;31mE (1721) LSV_SCAN: MCP4725 initialization failed![0m
+[0;31mE (1721) MAIN: Hardware initialization failed![0m
+[0;31mE (1731) MAIN: System halted. Check connections and reset.[0m
+[0;31mE (1571) I2C_DEVICES: ✗✗✗ MCP4725 NOT RESPONDING ✗✗✗[0m
+[0;31mE (1571) I2C_DEVICES: [0m
+[0;31mE (1571) I2C_DEVICES: I2C Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (1571) I2C_DEVICES: [0m
+[0;31mE (1571) I2C_DEVICES: TROUBLESHOOTING CHECKLIST:[0m
+[0;31mE (1581) I2C_DEVICES: [0m
+[0;31mE (1581) I2C_DEVICES: 1. POWER SUPPLY (MOST COMMON ISSUE):[0m
+[0;31mE (1591) I2C_DEVICES:    → Measure VDD to GND: Should be 3.3V[0m
+[0;31mE (1591) I2C_DEVICES:    → If 0V: Check ESP32 3.3V pin connection[0m
+[0;31mE (1601) I2C_DEVICES:    → If wrong voltage: Check power supply[0m
+[0;31mE (1611) I2C_DEVICES: [0m
+[0;31mE (1611) I2C_DEVICES: 2. GROUND CONNECTION:[0m
+[0;31mE (1621) I2C_DEVICES:    → ESP32 GND must connect to MCP4725 GND[0m
+[0;31mE (1621) I2C_DEVICES:    → Measure continuity: Should be 0Ω[0m
+[0;31mE (1631) I2C_DEVICES: [0m
+[0;31mE (1631) I2C_DEVICES: 3. I2C WIRING:[0m
+[0;31mE (1641) I2C_DEVICES:    → SDA: ESP32 GPIO21 → MCP4725 SDA[0m
+[0;31mE (1641) I2C_DEVICES:    → SCL: ESP32 GPIO22 → MCP4725 SCL[0m
+[0;31mE (1651) I2C_DEVICES:    → Check for loose connections[0m
+[0;31mE (1661) I2C_DEVICES: [0m
+[0;31mE (1661) I2C_DEVICES: 4. PULL-UP RESISTORS:[0m
+[0;31mE (1661) I2C_DEVICES:    → SDA and SCL need 4.7kΩ pull-ups to 3.3V[0m
+[0;31mE (1671) I2C_DEVICES:    → Most breakout boards have these built-in[0m
+[0;31mE (1681) I2C_DEVICES: [0m
+[0;31mE (1681) I2C_DEVICES: 5. I2C ADDRESS:[0m
+[0;31mE (1691) I2C_DEVICES:    → MCP4725 A0 pin to GND = address 0x60[0m
+[0;31mE (1691) I2C_DEVICES:    → Check A0 pin connection[0m
+[0;31mE (1701) I2C_DEVICES: [0m
+[0;32mI (1701) I2C_DEVICES: ═══════════════════════════════════════[0m
+[0;32mI (1711) I2C_DEVICES: [0m
+[0;31mE (1721) LSV_SCAN: MCP4725 initialization failed![0m
+[0;31mE (1721) MAIN: Hardware initialization failed![0m
+[0;31mE (1731) MAIN: System halted. Check connections and reset.[0m
+�LSJbMY}M9� ╚═══════════════════════════════════════╝[0m
+[0;32mI (451) LSV_SCAN: Initializing I2C bus...[0m
+[0;32mI (461) I2C_DEVICES: I2C initialized on GPIO21 (SDA) and GPIO22 (SCL)[0m
+[0;32mI (461) LSV_SCAN: Initializing MCP4725 DAC...[0m
+[0;32mI (471) I2C_DEVICES: ═══════════════════════════════════════[0m
+[0;32mI (481) I2C_DEVICES: MCP4725 POWER & CONNECTION CHECK[0m
+[0;32mI (491) I2C_DEVICES: ═══════════════════════════════════════[0m
+[0;32mI (501) I2C_DEVICES: [0m
+[0;32mI (501) I2C_DEVICES: STEP 1: Measure Power Supply[0m
+[0;32mI (511) I2C_DEVICES:   → Set multimeter to DC voltage[0m
+[0;32mI (511) I2C_DEVICES:   → Red probe on MCP4725 VDD pin[0m
+[0;32mI (521) I2C_DEVICES:   → Black probe on MCP4725 GND pin[0m
+[0;32mI (531) I2C_DEVICES:   → Should read: 3.3V ± 0.1V[0m
+[0;32mI (531) I2C_DEVICES: [0m
+[0;32mI (541) I2C_DEVICES: STEP 2: Check Ground Connection[0m
+[0;32mI (541) I2C_DEVICES:   → Measure continuity: ESP32 GND to MCP4725 GND[0m
+[0;32mI (551) I2C_DEVICES:   → Should read: 0Ω (short circuit)[0m
+[0;32mI (551) I2C_DEVICES: [0m
+[0;32mI (561) I2C_DEVICES: STEP 3: Testing I2C communication...[0m
+[0;32mI (561) I2C_DEVICES: [0m
+[0;31mE (1571) I2C_DEVICES: ✗✗✗ MCP4725 NOT RESPONDING ✗✗✗[0m
+[0;31mE (1571) I2C_DEVICES: [0m
+[0;31mE (1571) I2C_DEVICES: I2C Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (1571) I2C_DEVICES: [0m
+[0;31mE (1571) I2C_DEVICES: TROUBLESHOOTING CHECKLIST:[0m
+[0;31mE (1581) I2C_DEVICES: [0m
+[0;31mE (1581) I2C_DEVICES: 1. POWER SUPPLY (MOST COMMON ISSUE):[0m
+[0;31mE (1591) I2C_DEVICES:    → Measure VDD to GND: Should be 3.3V[0m
+[0;31mE (1591) I2C_DEVICES:    → If 0V: Check ESP32 3.3V pin connection[0m
+[0;31mE (1601) I2C_DEVICES:    → If wrong voltage: Check power supply[0m
+[0;31mE (1611) I2C_DEVICES: [0m
+[0;31mE (1611) I2C_DEVICES: 2. GROUND CONNECTION:[0m
+[0;31mE (1621) I2C_DEVICES:    → ESP32 GND must connect to MCP4725 GND[0m
+[0;31mE (1621) I2C_DEVICES:    → Measure continuity: Should be 0Ω[0m
+[0;31mE (1631) I2C_DEVICES: [0m
+[0;31mE (1631) I2C_DEVICES: 3. I2C WIRING:[0m
+[0;31mE (1641) I2C_DEVICES:    → SDA: ESP32 GPIO21 → MCP4725 SDA[0m
+[0;31mE (1641) I2C_DEVICES:    → SCL: ESP32 GPIO22 → MCP4725 SCL[0m
+[0;31mE (1651) I2C_DEVICES:    → Check for loose connections[0m
+[0;31mE (1661) I2C_DEVICES: [0m
+[0;31mE (1661) I2C_DEVICES: 4. PULL-UP RESISTORS:[0m
+[0;31mE (1661) I2C_DEVICES:    → SDA and SCL need 4.7kΩ pull-ups to 3.3V[0m
+[0;31mE (1671) I2C_DEVICES:    → Most breakout boards have these built-in[0m
+[0;31mE (1681) I2C_DEVICES: [0m
+[0;31mE (1681) I2C_DEVICES: 5. I2C ADDRESS:[0m
+[0;31mE (1691) I2C_DEVICES:    → MCP4725 A0 pin to GND = address 0x60[0m
+[0;31mE (1691) I2C_DEVICES:    → Check A0 pin connection[0m
+[0;31mE (1701) I2C_DEVICES: [0m
+[0;32mI (1701) I2C_DEVICES: ═══════════════════════════════════════[0m
+[0;32mI (1711) I2C_DEVICES: [0m
+[0;31mE (1721) LSV_SCAN: MCP4725 initialization failed![0m
+[0;31mE (1721) MAIN: Hardware initialization failed![0m
+[0;31mE (1731) MAIN: System halted. Check connections and reset.[0m
+[0;31mE (1571) I2C_DEVICES: ✗✗✗ MCP4725 NOT RESPONDING ✗✗✗[0m
+[0;31mE (1571) I2C_DEVICES: [0m
+[0;31mE (1571) I2C_DEVICES: I2C Error: ESP_ERR_TIMEOUT (0x107)[0m
+[0;31mE (1571) I2C_DEVICES: [0m
+[0;31mE (1571) I2C_DEVICES: TROUBLESHOOTING CHECKLIST:[0m
+[0;31mE (1581) I2C_DEVICES: [0m
+[0;31mE (1581) I2C_DEVICES: 1. POWER SUPPLY (MOST COMMON ISSUE):[0m
+[0;31mE (1591) I2C_DEVICES:    → Measure VDD to GND: Should be 3.3V[0m
+[0;31mE (1591) I2C_DEVICES:    → If 0V: Check ESP32 3.3V pin connection[0m
+[0;31mE (1601) I2C_DEVICES:    → If wrong voltage: Check power supply[0m
+[0;31mE (1611) I2C_DEVICES: [0m
+[0;31mE (1611) I2C_DEVICES: 2. GROUND CONNECTION:[0m
+[0;31mE (1621) I2C_DEVICES:    → ESP32 GND must connect to MCP4725 GND[0m
+[0;31mE (1621) I2C_DEVICES:    → Measure continuity: Should be 0Ω[0m
+[0;31mE (1631) I2C_DEVICES: [0m
+[0;31mE (1631) I2C_DEVICES: 3. I2C WIRING:[0m
+[0;31mE (1641) I2C_DEVICES:    → SDA: ESP32 GPIO21 → MCP4725 SDA[0m
+[0;31mE (1641) I2C_DEVICES:    → SCL: ESP32 GPIO22 → MCP4725 SCL[0m
+[0;31mE (1651) I2C_DEVICES:    → Check for loose connections[0m
+[0;31mE (1661) I2C_DEVICES: [0m
+[0;31mE (1661) I2C_DEVICES: 4. PULL-UP RESISTORS:[0m
+[0;31mE (1661) I2C_DEVICES:    → SDA and SCL need 4.7kΩ pull-ups to 3.3V[0m
+[0;31mE (1671) I2C_DEVICES:    → Most breakout boards have these built-in[0m
+[0;31mE (1681) I2C_DEVICES: [0m
+[0;31mE (1681) I2C_DEVICES: 5. I2C ADDRESS:[0m
+[0;31mE (1691) I2C_DEVICES:    → MCP4725 A0 pin to GND = address 0x60[0m
+[0;31mE (1691) I2C_DEVICES:    → Check A0 pin connection[0m
+[0;31mE (1701) I2C_DEVICES: [0m
+[0;32mI (1701) I2C_DEVICES: ═══════════════════════════════════════[0m
+[0;32mI (1711) I2C_DEVICES: [0m
+[0;31mE (1721) LSV_SCAN: MCP4725 initialization failed![0m
+[0;31mE (1721) MAIN: Hardware initialization failed![0m
+[0;31mE (1731) MAIN: System halted. Check connections and reset.[0m

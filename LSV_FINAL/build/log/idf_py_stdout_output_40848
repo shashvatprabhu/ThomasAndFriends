@@ -1,0 +1,259 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7112
+load:0x40078000,len:15716
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (29) boot: ESP-IDF cab6f10 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 11 2025 00:45:32[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (34) boot: chip revision: v3.1[0m
+[0;32mI (37) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (42) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (51) boot: Enabling RNG early entropy source...[0m
+[0;32mI (57) boot: Partition Table:[0m
+[0;32mI (60) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (67) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (75) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (82) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (94) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0d1c8h ( 53704) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001d1f0 vaddr=3ffb0000 size=022cch (  8908) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f4c4 vaddr=40080000 size=00b54h (  2900) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=15bcch ( 89036) map[0m
+[0;32mI (168) esp_image: segment 4: paddr=00035bf4 vaddr=40080b54 size=0d414h ( 54292) load[0m
+[0;32mI (198) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (198) boot: Disabling RNG early entropy source...[0m
+[0;32mI (210) cpu_start: Multicore app[0m
+[0;32mI (211) cpu_start: Pro cpu up.[0m
+[0;32mI (211) cpu_start: Starting app cpu, entry point is 0x40081338[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (228) cpu_start: Pro cpu start user code[0m
+[0;32mI (228) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (228) cpu_start: Application information:[0m
+[0;32mI (233) cpu_start: Project name:     lsv_potentiostat[0m
+[0;32mI (239) cpu_start: App version:      83187e0-dirty[0m
+[0;32mI (244) cpu_start: Compile time:     Dec 11 2025 00:45:27[0m
+[0;32mI (250) cpu_start: ELF file SHA256:  8da43e547bee13f6...[0m
+[0;32mI (256) cpu_start: ESP-IDF:          cab6f10[0m
+[0;32mI (261) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (266) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (271) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (276) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (283) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (289) heap_init: At 3FFB3520 len 0002CAE0 (178 KiB): DRAM[0m
+[0;32mI (295) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (301) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (308) heap_init: At 4008DF68 len 00012098 (72 KiB): IRAM[0m
+[0;32mI (315) spi_flash: detected chip: generic[0m
+[0;32mI (318) spi_flash: flash io: dio[0m
+[0;33mW (322) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (336) app_start: Starting scheduler on CPU0[0m
+[0;32mI (341) app_start: Starting scheduler on CPU1[0m
+[0;32mI (341) main_task: Started on CPU0[0m
+[0;32mI (351) main_task: Calling app_main()[0m
+[0;32mI (371) LSV_SCAN: ╔═══════════════════════════════════════╗[0m
+[0;32mI (381) LSV_SCAN: ║  LSV POTENTIOSTAT - ESP32-WROOM-32E   ║[0m
+[0;32mI (381) LSV_SCAN: ║  Gold Purity Analyzer                 ║[0m
+[0;32mI (391) LSV_SCAN: ║  Smart India Hackathon 2025           ║[0m
+[0;32mI (401) LSV_SCAN: ╚═══════════════════════════════════════╝[0m
+[0;32mI (411) LSV_SCAN: Initializing I2C bus...[0m
+[0;32mI (421) I2C_DEVICES: I2C initialized on GPIO21 (SDA) and GPIO22 (SCL)[0m
+[0;32mI (421) LSV_SCAN: Initializing MCP4725 DAC...[0m
+[0;32mI (431) I2C_DEVICES: MCP4725 found at address 0x60[0m
+[0;32mI (431) LSV_SCAN: Initializing ADS1115 ADC...[0m
+[0;32mI (441) I2C_DEVICES: ADS1115 found at address 0x48[0m
+[0;32mI (441) I2C_DEVICES: Config register: 0x8383[0m
+[0;32mI (451) LSV_SCAN: DAC set to 0.000V (safe state)[0m
+[0;32mI (451) LSV_SCAN: System ready![0m
+[0;32mI (461) MAIN: ═══════════════════════════════════════════════════════════[0m
+[0;32mI (471) MAIN: PRE-SCAN CHECKLIST[0m
+[0;32mI (481) MAIN: ═══════════════════════════════════════════════════════════[0m
+[0;32mI (501) MAIN: [0m
+[0;32mI (501) MAIN: Please verify before starting scan:[0m
+[0;32mI (501) MAIN: [0m
+[0;32mI (511) MAIN: ☐ Electrodes properly positioned[0m
+[0;32mI (511) MAIN:   • Working Electrode (WE): Gold sample or test electrode[0m
+[0;32mI (521) MAIN:   • Reference Electrode (RE): Copper wire or graphite[0m
+[0;32mI (531) MAIN:   • Counter Electrode (CE): Copper wire or graphite[0m
+[0;32mI (531) MAIN: [0m
+[0;32mI (541) MAIN: ☐ Electrodes submerged in electrolyte[0m
+[0;32mI (541) MAIN:   • Depth: 2-3 cm below surface[0m
+[0;32mI (551) MAIN:   • Electrolyte: 0.1M KCl or 0.5M H₂SO₄[0m
+[0;32mI (551) MAIN:   • Volume: At least 50-100 mL[0m
+[0;32mI (561) MAIN: [0m
+[0;32mI (561) MAIN: ☐ Electrodes NOT touching each other[0m
+[0;32mI (571) MAIN:   • Maintain 1-2 cm spacing between electrodes[0m
+[0;32mI (571) MAIN: [0m
+[0;32mI (571) MAIN: ☐ Beaker on stable, non-conductive surface[0m
+[0;32mI (581) MAIN:   • Prevent spills and electrical shorts[0m
+[0;32mI (591) MAIN: [0m
+[0;32mI (591) MAIN: ═══════════════════════════════════════════════════════════
+[0m
+[0;32mI (611) MAIN: Starting first scan in 10 seconds...[0m
+[0;32mI (611) MAIN:   10...[0m
+[0;32mI (1621) MAIN:   9...[0m
+[0;32mI (2621) MAIN:   8...[0m
+[0;32mI (3621) MAIN:   7...[0m
+[0;32mI (4621) MAIN:   6...[0m
+[0;32mI (5621) MAIN:   5...[0m
+[0;32mI (6621) MAIN:   4...[0m
+[0;32mI (7621) MAIN:   3...[0m
+[0;32mI (8621) MAIN:   2...[0m
+[0;32mI (9621) MAIN:   1...[0m
+[0;32mI (10621) MAIN:   GO!
+[0m
+[0;32mI (10621) MAIN: 
+
+[0m
+[0;32mI (10621) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (10631) MAIN: ║  SCAN #1                                                 ║[0m
+[0;32mI (10641) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (10651) MAIN: [0m
+[0;32mI (10661) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (10671) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (10671) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (10691) LSV_SCAN: Voltage range: 0.000V to 0.600V[0m
+[0;32mI (10691) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (10701) LSV_SCAN: Settle time: 1000ms per step[0m
+[0;32mI (10701) LSV_SCAN: Total data points: 61[0m
+[0;32mI (10711) LSV_SCAN: Estimated scan time: 61.0 seconds
+[0m
+[0;32mI (10711) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (10721) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (11761) LSV_SCAN: DEBUG: A0=1.972V, A1=1.664V, Diff=0.308V[0m
+[0;32mI (11761) LSV_SCAN:    0.000    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (12791) LSV_SCAN:    0.010    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (13821) LSV_SCAN:    0.020    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (14851) LSV_SCAN:    0.030    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (15881) LSV_SCAN:    0.040    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (16911) LSV_SCAN:    0.050    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (17941) LSV_SCAN:    0.060    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (18971) LSV_SCAN:    0.070    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (20001) LSV_SCAN:    0.080    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (21031) LSV_SCAN:    0.090    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (22061) LSV_SCAN: DEBUG: A0=1.972V, A1=1.664V, Diff=0.308V[0m
+[0;32mI (22061) LSV_SCAN:    0.100    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (23091) LSV_SCAN:    0.110    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (24121) LSV_SCAN:    0.120    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (25151) LSV_SCAN:    0.130    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (26181) LSV_SCAN:    0.140    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (27211) LSV_SCAN:    0.150    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (28241) LSV_SCAN:    0.160    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (29271) LSV_SCAN:    0.170    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (30301) LSV_SCAN:    0.180    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (31331) LSV_SCAN:    0.190    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (32361) LSV_SCAN: DEBUG: A0=1.972V, A1=1.664V, Diff=0.308V[0m
+[0;32mI (32361) LSV_SCAN:    0.200    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (33391) LSV_SCAN:    0.210    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (34421) LSV_SCAN:    0.220    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (35451) LSV_SCAN:    0.230    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (36481) LSV_SCAN:    0.240    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (37511) LSV_SCAN:    0.250    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (38541) LSV_SCAN:    0.260    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (39571) LSV_SCAN:    0.270    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (40601) LSV_SCAN:    0.280    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (41631) LSV_SCAN:    0.290    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (42661) LSV_SCAN: DEBUG: A0=1.972V, A1=1.664V, Diff=0.308V[0m
+[0;32mI (42661) LSV_SCAN:    0.300    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (43691) LSV_SCAN:    0.310    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (44721) LSV_SCAN:    0.320    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (45751) LSV_SCAN:    0.330    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (46781) LSV_SCAN:    0.340    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (47811) LSV_SCAN:    0.350    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (48841) LSV_SCAN:    0.360    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (49871) LSV_SCAN:    0.370    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (50901) LSV_SCAN:    0.380    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (51931) LSV_SCAN:    0.390    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (52961) LSV_SCAN: DEBUG: A0=1.974V, A1=1.664V, Diff=0.308V[0m
+[0;32mI (52961) LSV_SCAN:    0.400    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (53991) LSV_SCAN:    0.410    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (55021) LSV_SCAN:    0.420    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (56051) LSV_SCAN:    0.430    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (57081) LSV_SCAN:    0.440    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (58111) LSV_SCAN:    0.450    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (59141) LSV_SCAN:    0.460    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (60171) LSV_SCAN:    0.470    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (61201) LSV_SCAN:    0.480    |    -3.100    | ▲▲ LARGE PEAK[0m
+[0;32mI (62231) LSV_SCAN:    0.490    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (63261) LSV_SCAN: DEBUG: A0=1.974V, A1=1.664V, Diff=0.308V[0m
+[0;32mI (63261) LSV_SCAN:    0.500    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (64291) LSV_SCAN:    0.510    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (65321) LSV_SCAN:    0.520    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (66351) LSV_SCAN:    0.530    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (67381) LSV_SCAN:    0.540    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (68411) LSV_SCAN:    0.550    |    -3.080    | ▲▲ LARGE PEAK[0m
+[0;32mI (69441) LSV_SCAN:    0.560    |    -3.100    | ▲▲ LARGE PEAK[0m
+[0;32mI (70471) LSV_SCAN:    0.570    |    -3.100    | ▲▲ LARGE PEAK[0m
+[0;32mI (71501) LSV_SCAN:    0.580    |    -3.100    | ▲▲ LARGE PEAK[0m
+[0;32mI (72531) LSV_SCAN:    0.590    |    -3.100    | ▲▲ LARGE PEAK[0m
+[0;32mI (73561) LSV_SCAN: DEBUG: A0=1.974V, A1=1.664V, Diff=0.310V[0m
+[0;32mI (73561) LSV_SCAN:    0.600    |    -3.100    | ▲▲ LARGE PEAK[0m
+[0;32mI (73561) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (73571) LSV_SCAN: MAX CURRENT: 3.100 µA at 0.480V[0m
+[0;32mI (73681) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (73681) LSV_SCAN: Scan complete - 61 data points collected[0m
+[0;32mI (73681) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (73701) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (73711) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (73711) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (73731) PEAK_ANALYSIS: Scanning for copper peak (0.00V to 0.25V):[0m
+[0;32mI (73741) PEAK_ANALYSIS: ✓ COPPER detected: 3.080 µA peak at 0.000V[0m
+[0;32mI (73741) PEAK_ANALYSIS:   → Indicates copper-containing alloy
+[0m
+[0;32mI (73751) PEAK_ANALYSIS: Scanning for silver peak (0.30V to 0.55V):[0m
+[0;32mI (73761) PEAK_ANALYSIS: ✓ SILVER detected: 3.100 µA peak at 0.480V[0m
+[0;32mI (73761) PEAK_ANALYSIS:   → Indicates silver-containing alloy
+[0m
+[0;32mI (73771) PEAK_ANALYSIS: ───────────────────────────────────────[0m
+[0;32mI (73781) PEAK_ANALYSIS: Total peaks detected: 2[0m
+[0;32mI (73791) PEAK_ANALYSIS: Combined peak magnitude: 6.180 µA[0m
+[0;32mI (73801) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (73811) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (73821) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (73831) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (73841) KARAT_ESTIMATION: Total peak magnitude: 6.180 µA[0m
+[0;32mI (73851) KARAT_ESTIMATION: Copper peak: 3.080 µA (detected: YES)[0m
+[0;32mI (73851) KARAT_ESTIMATION: Silver peak: 3.100 µA (detected: YES)
+[0m
+[0;32mI (73861) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (73881) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (73881) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (73891) KARAT_ESTIMATION: Estimated purity: 14K (58.3% gold)[0m
+[0;32mI (73901) KARAT_ESTIMATION: Classification: Lower Purity Gold[0m
+[0;32mI (73911) KARAT_ESTIMATION: Confidence level: 85%
+[0m
+[0;32mI (73911) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (73921) KARAT_ESTIMATION:   Large alloy peaks (6.18 µA total) indicate[0m
+[0;32mI (73921) KARAT_ESTIMATION:   ~41.7% alloy content, consistent with 14K gold[0m
+[0;32mI (73931) KARAT_ESTIMATION:   or lower.
+[0m
+[0;32mI (73941) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (73951) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (73961) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (73961) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (73971) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (73981) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (74091) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (74091) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (74101) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (74121) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (74121) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (74131) MAIN: ════════════════════════════════════════════════════════════
+
+[0m

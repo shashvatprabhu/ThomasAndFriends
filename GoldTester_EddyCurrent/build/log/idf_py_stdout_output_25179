@@ -1,0 +1,75 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7112
+load:0x40078000,len:15716
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (29) boot: ESP-IDF cab6f10 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 10 2025 13:14:28[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (34) boot: chip revision: v3.1[0m
+[0;32mI (37) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (42) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (51) boot: Enabling RNG early entropy source...[0m
+[0;32mI (57) boot: Partition Table:[0m
+[0;32mI (60) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (67) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (75) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (82) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (94) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0b4a8h ( 46248) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0001b4d0 vaddr=3ffb0000 size=022cch (  8908) load[0m
+[0;32mI (123) esp_image: segment 2: paddr=0001d7a4 vaddr=40080000 size=02874h ( 10356) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=14e2ch ( 85548) map[0m
+[0;32mI (164) esp_image: segment 4: paddr=00034e54 vaddr=40082874 size=0b6f4h ( 46836) load[0m
+[0;32mI (191) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (191) boot: Disabling RNG early entropy source...[0m
+[0;32mI (203) cpu_start: Multicore app[0m
+[0;32mI (204) cpu_start: Pro cpu up.[0m
+[0;32mI (204) cpu_start: Starting app cpu, entry point is 0x40081338[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (221) cpu_start: Pro cpu start user code[0m
+[0;32mI (221) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (221) cpu_start: Application information:[0m
+[0;32mI (226) cpu_start: Project name:     gold_tester_eddy_current[0m
+[0;32mI (232) cpu_start: App version:      83187e0-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 10 2025 13:14:24[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  4ee4ceb2f2aa11a4...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          cab6f10[0m
+[0;32mI (255) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (259) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (264) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (269) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (276) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (282) heap_init: At 3FFB2BB0 len 0002D450 (181 KiB): DRAM[0m
+[0;32mI (289) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (295) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (301) heap_init: At 4008DF68 len 00012098 (72 KiB): IRAM[0m
+[0;32mI (309) spi_flash: detected chip: generic[0m
+[0;32mI (312) spi_flash: flash io: dio[0m
+[0;33mW (316) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (330) app_start: Starting scheduler on CPU0[0m
+[0;32mI (334) app_start: Starting scheduler on CPU1[0m
+[0;32mI (334) main_task: Started on CPU0[0m
+[0;32mI (344) main_task: Calling app_main()[0m
+[0;32mI (364) GOLD_TESTER: [0m
+[0;32mI (364) GOLD_TESTER: ╔════════════════════════════════════════╗[0m
+[0;32mI (374) GOLD_TESTER: ║   GOLD TESTER - Eddy Current Method   ║[0m
+[0;32mI (384) GOLD_TESTER: ║   90-turn coil, 0.7mm wire            ║[0m
+[0;32mI (384) GOLD_TESTER: ║   ESP32-WROOM-32E + ADS1115           ║[0m
+[0;32mI (394) GOLD_TESTER: ╚════════════════════════════════════════╝[0m
+[0;32mI (404) GOLD_TESTER: [0m
+[0;32mI (414) ADS1115: I2C initialized on GPIO21 (SDA) and GPIO22 (SCL)[0m
+[0;31mE (414) ADS1115: ADS1115 not found at address 0x48[0m
+[0;31mE (424) GOLD_TESTER: ADS1115 initialization failed![0m
+[0;31mE (424) GOLD_TESTER: Check connections:[0m
+[0;31mE (434) GOLD_TESTER:   VCC → 5V[0m
+[0;31mE (434) GOLD_TESTER:   GND → GND[0m
+[0;31mE (444) GOLD_TESTER:   SCL → GPIO22[0m
+[0;31mE (444) GOLD_TESTER:   SDA → GPIO21[0m

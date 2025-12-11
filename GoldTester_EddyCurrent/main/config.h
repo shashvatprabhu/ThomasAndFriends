@@ -43,7 +43,7 @@
 #define OSCILLATOR_FREQ_HZ          100000  // 100kHz
 
 // Current limiting resistor
-#define CURRENT_RESISTOR_OHMS       220     // 220Ω resistor
+#define CURRENT_RESISTOR_OHMS       100     // 220Ω resistor
 
 // Voltage divider (10kΩ + 10kΩ)
 #define R1_OHMS                     10000   // Upper resistor

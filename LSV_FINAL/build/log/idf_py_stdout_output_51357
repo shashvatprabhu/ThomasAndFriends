@@ -1,0 +1,1081 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7112
+load:0x40078000,len:15716
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (29) boot: ESP-IDF cab6f10 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 11 2025 00:45:32[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (34) boot: chip revision: v3.1[0m
+[0;32mI (37) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (42) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (51) boot: Enabling RNG early entropy source...[0m
+[0;32mI (57) boot: Partition Table:[0m
+[0;32mI (60) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (67) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (75) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (82) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (94) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0e600h ( 58880) map[0m
+[0;32mI (124) esp_image: segment 1: paddr=0001e628 vaddr=3ffb0000 size=019f0h (  6640) load[0m
+[0;32mI (127) esp_image: segment 2: paddr=00020020 vaddr=400d0020 size=16998h ( 92568) map[0m
+[0;32mI (163) esp_image: segment 3: paddr=000369c0 vaddr=3ffb19f0 size=008ech (  2284) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=000372b4 vaddr=40080000 size=0df90h ( 57232) load[0m
+[0;32mI (200) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (200) boot: Disabling RNG early entropy source...[0m
+[0;32mI (211) cpu_start: Multicore app[0m
+[0;32mI (212) cpu_start: Pro cpu up.[0m
+[0;32mI (212) cpu_start: Starting app cpu, entry point is 0x40081338[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (230) cpu_start: Pro cpu start user code[0m
+[0;32mI (230) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (230) cpu_start: Application information:[0m
+[0;32mI (234) cpu_start: Project name:     lsv_potentiostat[0m
+[0;32mI (240) cpu_start: App version:      83187e0-dirty[0m
+[0;32mI (246) cpu_start: Compile time:     Dec 11 2025 00:45:27[0m
+[0;32mI (252) cpu_start: ELF file SHA256:  b2eca5a690431166...[0m
+[0;32mI (258) cpu_start: ESP-IDF:          cab6f10[0m
+[0;32mI (263) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (267) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (272) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (277) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (284) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFB3530 len 0002CAD0 (178 KiB): DRAM[0m
+[0;32mI (296) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (309) heap_init: At 4008DF90 len 00012070 (72 KiB): IRAM[0m
+[0;32mI (317) spi_flash: detected chip: generic[0m
+[0;32mI (320) spi_flash: flash io: dio[0m
+[0;33mW (324) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (338) app_start: Starting scheduler on CPU0[0m
+[0;32mI (342) app_start: Starting scheduler on CPU1[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) MAIN: 
+
+[0m
+[0;32mI (352) MAIN: ═══════════════════════════════════════════════════════════[0m
+[0;32mI (372) MAIN:   ESP32 LSV POTENTIOSTAT - STARTING[0m
+[0;32mI (372) MAIN: ═══════════════════════════════════════════════════════════
+[0m
+[0;32mI (422) LSV_SCAN: ╔═══════════════════════════════════════╗[0m
+[0;32mI (422) LSV_SCAN: ║  LSV POTENTIOSTAT - ESP32-WROOM-32E   ║[0m
+[0;32mI (432) LSV_SCAN: ║  Gold Purity Analyzer                 ║[0m
+[0;32mI (432) LSV_SCAN: ║  Smart India Hackathon 2025           ║[0m
+[0;32mI (442) LSV_SCAN: ╚═══════════════════════════════════════╝[0m
+[0;32mI (452) LSV_SCAN: Initializing I2C bus...[0m
+[0;32mI (462) I2C_DEVICES: I2C initialized on GPIO21 (SDA) and GPIO22 (SCL)[0m
+[0;32mI (462) LSV_SCAN: Initializing MCP4725 DAC...[0m
+[0;32mI (472) I2C_DEVICES: ═══════════════════════════════════════[0m
+[0;32mI (482) I2C_DEVICES: MCP4725 POWER & CONNECTION CHECK[0m
+[0;32mI (492) I2C_DEVICES: ═══════════════════════════════════════[0m
+[0;32mI (502) I2C_DEVICES: [0m
+[0;32mI (502) I2C_DEVICES: STEP 1: Measure Power Supply[0m
+[0;32mI (512) I2C_DEVICES:   → Set multimeter to DC voltage[0m
+[0;32mI (512) I2C_DEVICES:   → Red probe on MCP4725 VDD pin[0m
+[0;32mI (522) I2C_DEVICES:   → Black probe on MCP4725 GND pin[0m
+[0;32mI (532) I2C_DEVICES:   → Should read: 3.3V ± 0.1V[0m
+[0;32mI (532) I2C_DEVICES: [0m
+[0;32mI (542) I2C_DEVICES: STEP 2: Check Ground Connection[0m
+[0;32mI (542) I2C_DEVICES:   → Measure continuity: ESP32 GND to MCP4725 GND[0m
+[0;32mI (552) I2C_DEVICES:   → Should read: 0Ω (short circuit)[0m
+[0;32mI (552) I2C_DEVICES: [0m
+[0;32mI (562) I2C_DEVICES: STEP 3: Testing I2C communication...[0m
+[0;32mI (562) I2C_DEVICES: [0m
+[0;32mI (572) I2C_DEVICES: ✓ MCP4725 responding at address 0x60[0m
+[0;32mI (572) I2C_DEVICES:   (I2C communication OK)[0m
+[0;32mI (582) I2C_DEVICES: [0m
+[0;32mI (582) I2C_DEVICES:   Current DAC register: 1104 (0.890V)[0m
+[0;32mI (592) I2C_DEVICES: [0m
+[0;32mI (592) I2C_DEVICES: STEP 4: Testing VOUT output...[0m
+[0;32mI (602) I2C_DEVICES:   Setting DAC to 1.65V (50% of range)...[0m
+[0;32mI (602) I2C_DEVICES: MCP4725: Writing DAC value 2048 (target 1.650V) [0x40 0x80 0x00][0m
+[0;32mI (622) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 2048 = 1.650V)[0m
+[0;32mI (822) I2C_DEVICES:   ✓ DAC register verified: 2048[0m
+[0;32mI (822) I2C_DEVICES: [0m
+[0;32mI (822) I2C_DEVICES: STEP 5: Measure VOUT with multimeter[0m
+[0;32mI (822) I2C_DEVICES:   → Red probe on MCP4725 VOUT pin[0m
+[0;32mI (832) I2C_DEVICES:   → Black probe on MCP4725 GND pin[0m
+[0;32mI (832) I2C_DEVICES:   → Expected: ~1.65V[0m
+[0;32mI (842) I2C_DEVICES: [0m
+[0;32mI (842) I2C_DEVICES:   If reading 0V:[0m
+[0;32mI (842) I2C_DEVICES:     ✗ VDD not connected (check power)[0m
+[0;32mI (852) I2C_DEVICES:     ✗ VOUT pin not connected to circuit[0m
+[0;32mI (862) I2C_DEVICES:     ✗ VOUT shorted to GND[0m
+[0;32mI (862) I2C_DEVICES:     ✗ MCP4725 chip damaged[0m
+[0;32mI (872) I2C_DEVICES: [0m
+[0;32mI (872) I2C_DEVICES: Setting to 0.000V (safe state)...[0m
+[0;32mI (882) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;32mI (892) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 0 = 0.000V)[0m
+[0;32mI (892) I2C_DEVICES: ✓ Initialized to 0.000V[0m
+[0;32mI (902) I2C_DEVICES: ═══════════════════════════════════════[0m
+[0;32mI (912) I2C_DEVICES: [0m
+[0;32mI (912) LSV_SCAN: Initializing ADS1115 ADC...[0m
+[0;32mI (922) I2C_DEVICES: ADS1115 found at address 0x48[0m
+[0;32mI (922) I2C_DEVICES: Config register: 0xD383[0m
+[0;32mI (932) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;32mI (952) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 0 = 0.000V)[0m
+[0;32mI (952) LSV_SCAN: Voltage set to 0.000V (DAC code 0)[0m
+[0;32mI (952) LSV_SCAN: DAC set to 0.000V (safe state)[0m
+[0;32mI (952) LSV_SCAN: System ready![0m
+[0;32mI (962) MAIN: ═══════════════════════════════════════════════════════════[0m
+[0;32mI (982) MAIN: PRE-SCAN CHECKLIST[0m
+[0;32mI (982) MAIN: ═══════════════════════════════════════════════════════════[0m
+[0;32mI (1002) MAIN: [0m
+[0;32mI (1002) MAIN: Please verify before starting scan:[0m
+[0;32mI (1012) MAIN: [0m
+[0;32mI (1012) MAIN: ☐ Electrodes properly positioned[0m
+[0;32mI (1012) MAIN:   • Working Electrode (WE): Gold sample or test electrode[0m
+[0;32mI (1022) MAIN:   • Reference Electrode (RE): Copper wire or graphite[0m
+[0;32mI (1032) MAIN:   • Counter Electrode (CE): Copper wire or graphite[0m
+[0;32mI (1032) MAIN: [0m
+[0;32mI (1042) MAIN: ☐ Electrodes submerged in electrolyte[0m
+[0;32mI (1042) MAIN:   • Depth: 2-3 cm below surface[0m
+[0;32mI (1052) MAIN:   • Electrolyte: 0.1M KCl or 0.5M H₂SO₄[0m
+[0;32mI (1052) MAIN:   • Volume: At least 50-100 mL[0m
+[0;32mI (1062) MAIN: [0m
+[0;32mI (1062) MAIN: ☐ Electrodes NOT touching each other[0m
+[0;32mI (1072) MAIN:   • Maintain 1-2 cm spacing between electrodes[0m
+[0;32mI (1072) MAIN: [0m
+[0;32mI (1082) MAIN: ☐ Beaker on stable, non-conductive surface[0m
+[0;32mI (1082) MAIN:   • Prevent spills and electrical shorts[0m
+[0;32mI (1092) MAIN: [0m
+[0;32mI (1092) MAIN: ═══════════════════════════════════════════════════════════
+[0m
+[0;32mI (1112) MAIN: Starting first scan in 10 seconds...[0m
+[0;32mI (1122) MAIN:   10...[0m
+[0;32mI (2122) MAIN:   9...[0m
+[0;32mI (3122) MAIN:   8...[0m
+[0;32mI (4122) MAIN:   7...[0m
+[0;32mI (5122) MAIN:   6...[0m
+[0;32mI (6122) MAIN:   5...[0m
+[0;32mI (7122) MAIN:   4...[0m
+[0;32mI (8122) MAIN:   3...[0m
+[0;32mI (9122) MAIN:   2...[0m
+[0;32mI (10122) MAIN:   1...[0m
+[0;32mI (11122) MAIN:   GO!
+[0m
+[0;32mI (11122) MAIN: 
+
+[0m
+[0;32mI (11122) MAIN: ╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (11132) MAIN: ║  SCAN #1                                                 ║[0m
+[0;32mI (11142) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (11152) MAIN: [0m
+[0;32mI (11162) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (11172) LSV_SCAN: Starting LSV Scan[0m
+[0;32mI (11172) LSV_SCAN: ═══════════════════════════════════════[0m
+[0;32mI (11192) LSV_SCAN: Voltage range: 0.000V to 1.800V[0m
+[0;32mI (11192) LSV_SCAN: Step size: 0.010V[0m
+[0;32mI (11202) LSV_SCAN: Settle time: 1000ms per step[0m
+[0;32mI (11202) LSV_SCAN: Total data points: 181[0m
+[0;32mI (11212) LSV_SCAN: Estimated scan time: 181.0 seconds
+[0m
+[0;32mI (11212) LSV_SCAN: Voltage (V) | Current (µA) | Notes[0m
+[0;32mI (11222) LSV_SCAN: ────────────┼──────────────┼─────────────[0m
+[0;32mI (11232) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;32mI (11252) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 0 = 0.000V)[0m
+[0;32mI (11252) LSV_SCAN: Voltage set to 0.000V (DAC code 0)[0m
+[0;32mI (12252) LSV_SCAN: ADC: A0=5520 (0.690V), A1=0 (0.000V), Diff=9248 (1.156V) ✓[0m
+[0;32mI (12252) LSV_SCAN:    0.000    |    28.900    | ▲▲ LARGE PEAK[0m
+[0;32mI (12252) I2C_DEVICES: MCP4725: Writing DAC value 12 (target 0.010V) [0x40 0x00 0xC0][0m
+[0;32mI (12272) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 12 = 0.010V)[0m
+[0;32mI (12272) LSV_SCAN: Voltage set to 0.010V (DAC code 12)[0m
+[0;32mI (13282) LSV_SCAN: ADC: A0=4736 (0.592V), A1=0 (0.000V), Diff=4768 (0.596V) ✓ ⚠ A1 SATURATED[0m
+[0;31mE (13282) LSV_SCAN: [0m
+[0;31mE (13282) LSV_SCAN: ═══════════════════════════════════════════════════════════[0m
+[0;31mE (13302) LSV_SCAN: ⚠️  OP-AMP SATURATION DETECTED![0m
+[0;31mE (13312) LSV_SCAN: ═══════════════════════════════════════════════════════════[0m
+[0;31mE (13322) LSV_SCAN: [0m
+[0;31mE (13332) LSV_SCAN: A0 = 0.592V (constant) - TIA output stuck[0m
+[0;31mE (13332) LSV_SCAN: A1 = 0.000V (constant) - Control op-amp output stuck[0m
+[0;31mE (13342) LSV_SCAN: [0m
+[0;31mE (13342) LSV_SCAN: TIA SATURATION (A0 = 0.592V):[0m
+[0;31mE (13352) LSV_SCAN:   → LM358 #2 Pin 1 stuck at 0.592V[0m
+[0;31mE (13352) LSV_SCAN: [0m
+[0;31mE (13362) LSV_SCAN:   CHECK WITH MULTIMETER:[0m
+[0;31mE (13362) LSV_SCAN:   1. LM358 #2 Pin 2 (virtual ground) → Should be < 0.1V[0m
+[0;31mE (13372) LSV_SCAN:      If > 0.5V: Virtual ground not working![0m
+[0;31mE (13382) LSV_SCAN: [0m
+[0;31mE (13382) LSV_SCAN:   2. LM358 #2 Pin 3 → Should be 0V (connected to GND)[0m
+[0;31mE (13392) LSV_SCAN: [0m
+[0;31mE (13392) LSV_SCAN:   3. Feedback resistor (40kΩ) → Between Pin 1 and Pin 2[0m
+[0;31mE (13402) LSV_SCAN:      Measure resistance to verify[0m
+[0;31mE (13402) LSV_SCAN: [0m
+[0;31mE (13412) LSV_SCAN:   4. WE connection → Should connect to Pin 2[0m
+[0;31mE (13412) LSV_SCAN:      Check continuity[0m
+[0;31mE (13422) LSV_SCAN: [0m
+[0;31mE (13422) LSV_SCAN: POSSIBLE CAUSES:[0m
+[0;31mE (13432) LSV_SCAN: 1. No electrochemical cell connected (most common)[0m
+[0;31mE (13432) LSV_SCAN: 2. Op-amp power not connected (Pin 8 ≠ 3.3V)[0m
+[0;31mE (13442) LSV_SCAN: 3. Feedback resistor missing/wrong (50kΩ)[0m
+[0;31mE (13452) LSV_SCAN: 4. Electrodes not connected (WE, RE, CE)[0m
+[0;31mE (13452) LSV_SCAN: 5. Short circuit or broken connections[0m
+[0;31mE (13462) LSV_SCAN: [0m
+[0;31mE (13462) LSV_SCAN: See OPAMP_SATURATION_DIAGNOSTIC.md for detailed troubleshooting[0m
+[0;31mE (13472) LSV_SCAN: ═══════════════════════════════════════════════════════════[0m
+[0;31mE (13492) LSV_SCAN: [0m
+[0;32mI (13492) LSV_SCAN:    0.010    |    14.900    | ▲▲ LARGE PEAK[0m
+[0;32mI (13502) I2C_DEVICES: MCP4725: Writing DAC value 24 (target 0.019V) [0x40 0x01 0x80][0m
+[0;32mI (13522) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 24 = 0.019V)[0m
+[0;32mI (13522) LSV_SCAN: Voltage set to 0.020V (DAC code 24)[0m
+[0;32mI (14522) LSV_SCAN: ADC: A0=4336 (0.542V), A1=0 (0.000V), Diff=4384 (0.548V) ✓ ⚠ A1 SATURATED[0m
+[0;32mI (14522) LSV_SCAN:    0.020    |    13.700    | ▲▲ LARGE PEAK[0m
+[0;32mI (14532) I2C_DEVICES: MCP4725: Writing DAC value 37 (target 0.030V) [0x40 0x02 0x50][0m
+[0;32mI (14542) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 37 = 0.030V)[0m
+[0;32mI (14542) LSV_SCAN: Voltage set to 0.030V (DAC code 37)[0m
+[0;32mI (15552) LSV_SCAN: ADC: A0=4048 (0.506V), A1=0 (0.000V), Diff=4080 (0.510V) ✓ ⚠ A1 SATURATED[0m
+[0;32mI (15552) LSV_SCAN:    0.030    |    12.750    | ▲▲ LARGE PEAK[0m
+[0;32mI (15562) I2C_DEVICES: MCP4725: Writing DAC value 49 (target 0.039V) [0x40 0x03 0x10][0m
+[0;32mI (15572) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 49 = 0.039V)[0m
+[0;32mI (15572) LSV_SCAN: Voltage set to 0.040V (DAC code 49)[0m
+[0;32mI (16582) LSV_SCAN: ADC: A0=3552 (0.444V), A1=0 (0.000V), Diff=3840 (0.480V) ✓ ⚠ A1 SATURATED[0m
+[0;32mI (16582) LSV_SCAN:    0.040    |    12.000    | ▲▲ LARGE PEAK[0m
+[0;32mI (16592) I2C_DEVICES: MCP4725: Writing DAC value 62 (target 0.050V) [0x40 0x03 0xE0][0m
+[0;32mI (16602) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 62 = 0.050V)[0m
+[0;32mI (16602) LSV_SCAN: Voltage set to 0.050V (DAC code 62)[0m
+[0;32mI (17612) LSV_SCAN: ADC: A0=3008 (0.376V), A1=0 (0.000V), Diff=3392 (0.424V) ✓ ⚠ A1 SATURATED[0m
+[0;32mI (17612) LSV_SCAN:    0.050    |    10.600    | ▲▲ LARGE PEAK[0m
+[0;32mI (17622) I2C_DEVICES: MCP4725: Writing DAC value 74 (target 0.060V) [0x40 0x04 0xA0][0m
+[0;32mI (17632) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 74 = 0.060V)[0m
+[0;32mI (17632) LSV_SCAN: Voltage set to 0.060V (DAC code 74)[0m
+[0;32mI (18642) LSV_SCAN: ADC: A0=2688 (0.336V), A1=0 (0.000V), Diff=3008 (0.376V) ✓ ⚠ A1 SATURATED[0m
+[0;32mI (18642) LSV_SCAN:    0.060    |     9.400    | ▲▲ LARGE PEAK[0m
+[0;32mI (18652) I2C_DEVICES: MCP4725: Writing DAC value 86 (target 0.069V) [0x40 0x05 0x60][0m
+[0;32mI (18662) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 86 = 0.069V)[0m
+[0;32mI (18662) LSV_SCAN: Voltage set to 0.070V (DAC code 86)[0m
+[0;32mI (19672) LSV_SCAN: ADC: A0=2432 (0.304V), A1=0 (0.000V), Diff=2832 (0.354V) ✓ ⚠ A1 SATURATED[0m
+[0;32mI (19672) LSV_SCAN:    0.070    |     8.850    | ▲▲ LARGE PEAK[0m
+[0;32mI (19682) I2C_DEVICES: MCP4725: Writing DAC value 99 (target 0.080V) [0x40 0x06 0x30][0m
+[0;32mI (19692) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 99 = 0.080V)[0m
+[0;32mI (19692) LSV_SCAN: Voltage set to 0.080V (DAC code 99)[0m
+[0;32mI (20702) LSV_SCAN: ADC: A0=2080 (0.260V), A1=0 (0.000V), Diff=2496 (0.312V) ✓ ⚠ A1 SATURATED[0m
+[0;32mI (20702) LSV_SCAN:    0.080    |     7.800    | ▲▲ LARGE PEAK[0m
+[0;32mI (20712) I2C_DEVICES: MCP4725: Writing DAC value 111 (target 0.089V) [0x40 0x06 0xF0][0m
+[0;32mI (20722) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 111 = 0.089V)[0m
+[0;32mI (20722) LSV_SCAN: Voltage set to 0.090V (DAC code 111)[0m
+[0;32mI (21732) LSV_SCAN: ADC: A0=1952 (0.244V), A1=0 (0.000V), Diff=2320 (0.290V) ✓ ⚠ A1 SATURATED[0m
+[0;32mI (21732) LSV_SCAN:    0.090    |     7.250    | ▲▲ LARGE PEAK[0m
+[0;32mI (21742) I2C_DEVICES: MCP4725: Writing DAC value 124 (target 0.100V) [0x40 0x07 0xC0][0m
+[0;32mI (21752) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 124 = 0.100V)[0m
+[0;32mI (21752) LSV_SCAN: Voltage set to 0.100V (DAC code 124)[0m
+[0;32mI (22762) LSV_SCAN: ADC: A0=1600 (0.200V), A1=0 (0.000V), Diff=2000 (0.250V) ✓ ⚠ A1 SATURATED[0m
+[0;32mI (22762) LSV_SCAN:    0.100    |     6.250    | ▲▲ LARGE PEAK[0m
+[0;32mI (22772) I2C_DEVICES: MCP4725: Writing DAC value 136 (target 0.110V) [0x40 0x08 0x80][0m
+[0;32mI (22782) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 136 = 0.110V)[0m
+[0;32mI (22782) LSV_SCAN: Voltage set to 0.110V (DAC code 136)[0m
+[0;32mI (23792) LSV_SCAN: ADC: A0=1376 (0.172V), A1=0 (0.000V), Diff=1776 (0.222V) ✓ ⚠ A1 SATURATED[0m
+[0;32mI (23792) LSV_SCAN:    0.110    |     5.550    | ▲▲ LARGE PEAK[0m
+[0;32mI (23802) I2C_DEVICES: MCP4725: Writing DAC value 148 (target 0.119V) [0x40 0x09 0x40][0m
+[0;32mI (23812) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 148 = 0.119V)[0m
+[0;32mI (23812) LSV_SCAN: Voltage set to 0.120V (DAC code 148)[0m
+[0;32mI (24822) LSV_SCAN: ADC: A0=1056 (0.132V), A1=0 (0.000V), Diff=1488 (0.186V) ✓ ⚠ A1 SATURATED[0m
+[0;32mI (24822) LSV_SCAN:    0.120    |     4.650    | ▲▲ LARGE PEAK[0m
+[0;32mI (24832) I2C_DEVICES: MCP4725: Writing DAC value 161 (target 0.130V) [0x40 0x0A 0x10][0m
+[0;32mI (24842) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 161 = 0.130V)[0m
+[0;32mI (24842) LSV_SCAN: Voltage set to 0.130V (DAC code 161)[0m
+[0;32mI (25852) LSV_SCAN: ADC: A0=720 (0.090V), A1=0 (0.000V), Diff=1072 (0.134V) ✓ ⚠ A1 SATURATED[0m
+[0;32mI (25852) LSV_SCAN:    0.130    |     3.350    | ▲▲ LARGE PEAK[0m
+[0;32mI (25852) I2C_DEVICES: MCP4725: Writing DAC value 173 (target 0.139V) [0x40 0x0A 0xD0][0m
+[0;32mI (25872) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 173 = 0.139V)[0m
+[0;32mI (25872) LSV_SCAN: Voltage set to 0.140V (DAC code 173)[0m
+[0;32mI (26882) LSV_SCAN: ADC: A0=448 (0.056V), A1=0 (0.000V), Diff=928 (0.116V) ✓ ⚠ A1 SATURATED[0m
+[0;32mI (26882) LSV_SCAN:    0.140    |     2.900    | ▲ Peak[0m
+[0;32mI (26882) I2C_DEVICES: MCP4725: Writing DAC value 186 (target 0.150V) [0x40 0x0B 0xA0][0m
+[0;32mI (26902) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 186 = 0.150V)[0m
+[0;32mI (26902) LSV_SCAN: Voltage set to 0.150V (DAC code 186)[0m
+[0;32mI (27912) LSV_SCAN: ADC: A0=64 (0.008V), A1=0 (0.000V), Diff=224 (0.028V) ✓ ⚠ A1 SATURATED[0m
+[0;32mI (27912) LSV_SCAN:    0.150    |     0.700    | Rising[0m
+[0;32mI (27912) I2C_DEVICES: MCP4725: Writing DAC value 198 (target 0.160V) [0x40 0x0C 0x60][0m
+[0;32mI (27932) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 198 = 0.160V)[0m
+[0;32mI (27932) LSV_SCAN: Voltage set to 0.160V (DAC code 198)[0m
+[0;32mI (28942) LSV_SCAN: ADC: A0=80 (0.010V), A1=0 (0.000V), Diff=80 (0.010V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (28942) LSV_SCAN:    0.160    |     0.250    | [0m
+[0;32mI (28952) I2C_DEVICES: MCP4725: Writing DAC value 210 (target 0.169V) [0x40 0x0D 0x20][0m
+[0;32mI (28962) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 210 = 0.169V)[0m
+[0;32mI (28962) LSV_SCAN: Voltage set to 0.170V (DAC code 210)[0m
+[0;32mI (29972) LSV_SCAN:    0.170    |     0.250    | [0m
+[0;32mI (29972) I2C_DEVICES: MCP4725: Writing DAC value 223 (target 0.180V) [0x40 0x0D 0xF0][0m
+[0;32mI (29982) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 223 = 0.180V)[0m
+[0;32mI (29982) LSV_SCAN: Voltage set to 0.180V (DAC code 223)[0m
+[0;32mI (30982) LSV_SCAN:    0.180    |     0.250    | [0m
+[0;32mI (30982) I2C_DEVICES: MCP4725: Writing DAC value 235 (target 0.189V) [0x40 0x0E 0xB0][0m
+[0;32mI (30992) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 235 = 0.189V)[0m
+[0;32mI (30992) LSV_SCAN: Voltage set to 0.190V (DAC code 235)[0m
+[0;32mI (31992) LSV_SCAN:    0.190    |     0.250    | [0m
+[0;32mI (31992) I2C_DEVICES: MCP4725: Writing DAC value 248 (target 0.200V) [0x40 0x0F 0x80][0m
+[0;32mI (32002) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 248 = 0.200V)[0m
+[0;32mI (32002) LSV_SCAN: Voltage set to 0.200V (DAC code 248)[0m
+[0;32mI (33002) LSV_SCAN: ADC: A0=96 (0.012V), A1=0 (0.000V), Diff=96 (0.012V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (33002) LSV_SCAN:    0.200    |     0.300    | [0m
+[0;32mI (33012) I2C_DEVICES: MCP4725: Writing DAC value 260 (target 0.210V) [0x40 0x10 0x40][0m
+[0;32mI (33022) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 260 = 0.210V)[0m
+[0;32mI (33022) LSV_SCAN: Voltage set to 0.210V (DAC code 260)[0m
+[0;32mI (34032) LSV_SCAN:    0.210    |     0.300    | [0m
+[0;32mI (34032) I2C_DEVICES: MCP4725: Writing DAC value 273 (target 0.220V) [0x40 0x11 0x10][0m
+[0;32mI (34042) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 273 = 0.220V)[0m
+[0;32mI (34042) LSV_SCAN: Voltage set to 0.220V (DAC code 273)[0m
+[0;32mI (35042) LSV_SCAN: ADC: A0=112 (0.014V), A1=0 (0.000V), Diff=112 (0.014V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (35042) LSV_SCAN:    0.220    |     0.350    | [0m
+[0;32mI (35052) I2C_DEVICES: MCP4725: Writing DAC value 285 (target 0.230V) [0x40 0x11 0xD0][0m
+[0;32mI (35062) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 285 = 0.230V)[0m
+[0;32mI (35062) LSV_SCAN: Voltage set to 0.230V (DAC code 285)[0m
+[0;32mI (36072) LSV_SCAN:    0.230    |     0.350    | [0m
+[0;32mI (36072) I2C_DEVICES: MCP4725: Writing DAC value 297 (target 0.239V) [0x40 0x12 0x90][0m
+[0;32mI (36082) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 297 = 0.239V)[0m
+[0;32mI (36082) LSV_SCAN: Voltage set to 0.240V (DAC code 297)[0m
+[0;32mI (37082) LSV_SCAN:    0.240    |     0.350    | [0m
+[0;32mI (37082) I2C_DEVICES: MCP4725: Writing DAC value 310 (target 0.250V) [0x40 0x13 0x60][0m
+[0;32mI (37092) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 310 = 0.250V)[0m
+[0;32mI (37092) LSV_SCAN: Voltage set to 0.250V (DAC code 310)[0m
+[0;32mI (38092) LSV_SCAN: ADC: A0=128 (0.016V), A1=0 (0.000V), Diff=128 (0.016V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (38092) LSV_SCAN:    0.250    |     0.400    | [0m
+[0;32mI (38102) I2C_DEVICES: MCP4725: Writing DAC value 322 (target 0.259V) [0x40 0x14 0x20][0m
+[0;32mI (38112) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 322 = 0.259V)[0m
+[0;32mI (38112) LSV_SCAN: Voltage set to 0.260V (DAC code 322)[0m
+[0;32mI (39122) LSV_SCAN:    0.260    |     0.400    | [0m
+[0;32mI (39122) I2C_DEVICES: MCP4725: Writing DAC value 335 (target 0.270V) [0x40 0x14 0xF0][0m
+[0;32mI (39132) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 335 = 0.270V)[0m
+[0;32mI (39132) LSV_SCAN: Voltage set to 0.270V (DAC code 335)[0m
+[0;32mI (40132) LSV_SCAN: ADC: A0=144 (0.018V), A1=0 (0.000V), Diff=144 (0.018V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (40132) LSV_SCAN:    0.270    |     0.450    | [0m
+[0;32mI (40142) I2C_DEVICES: MCP4725: Writing DAC value 347 (target 0.280V) [0x40 0x15 0xB0][0m
+[0;32mI (40152) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 347 = 0.280V)[0m
+[0;32mI (40152) LSV_SCAN: Voltage set to 0.280V (DAC code 347)[0m
+[0;32mI (41162) LSV_SCAN:    0.280    |     0.450    | [0m
+[0;32mI (41162) I2C_DEVICES: MCP4725: Writing DAC value 359 (target 0.289V) [0x40 0x16 0x70][0m
+[0;32mI (41172) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 359 = 0.289V)[0m
+[0;32mI (41172) LSV_SCAN: Voltage set to 0.290V (DAC code 359)[0m
+[0;32mI (42172) LSV_SCAN:    0.290    |     0.450    | [0m
+[0;32mI (42172) I2C_DEVICES: MCP4725: Writing DAC value 372 (target 0.300V) [0x40 0x17 0x40][0m
+[0;32mI (42182) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 372 = 0.300V)[0m
+[0;32mI (42182) LSV_SCAN: Voltage set to 0.300V (DAC code 372)[0m
+[0;32mI (43182) LSV_SCAN: ADC: A0=160 (0.020V), A1=0 (0.000V), Diff=160 (0.020V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (43182) LSV_SCAN:    0.300    |     0.500    | Rising[0m
+[0;32mI (43192) I2C_DEVICES: MCP4725: Writing DAC value 384 (target 0.309V) [0x40 0x18 0x00][0m
+[0;32mI (43202) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 384 = 0.309V)[0m
+[0;32mI (43202) LSV_SCAN: Voltage set to 0.310V (DAC code 384)[0m
+[0;32mI (44212) LSV_SCAN:    0.310    |     0.500    | Rising[0m
+[0;32mI (44212) I2C_DEVICES: MCP4725: Writing DAC value 397 (target 0.320V) [0x40 0x18 0xD0][0m
+[0;32mI (44222) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 397 = 0.320V)[0m
+[0;32mI (44222) LSV_SCAN: Voltage set to 0.320V (DAC code 397)[0m
+[0;32mI (45222) LSV_SCAN:    0.320    |     0.500    | Rising[0m
+[0;32mI (45222) I2C_DEVICES: MCP4725: Writing DAC value 409 (target 0.330V) [0x40 0x19 0x90][0m
+[0;32mI (45232) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 409 = 0.330V)[0m
+[0;32mI (45232) LSV_SCAN: Voltage set to 0.330V (DAC code 409)[0m
+[0;32mI (46232) LSV_SCAN: ADC: A0=176 (0.022V), A1=0 (0.000V), Diff=176 (0.022V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (46232) LSV_SCAN:    0.330    |     0.550    | Rising[0m
+[0;32mI (46242) I2C_DEVICES: MCP4725: Writing DAC value 421 (target 0.339V) [0x40 0x1A 0x50][0m
+[0;32mI (46252) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 421 = 0.339V)[0m
+[0;32mI (46252) LSV_SCAN: Voltage set to 0.340V (DAC code 421)[0m
+[0;32mI (47262) LSV_SCAN:    0.340    |     0.550    | Rising[0m
+[0;32mI (47262) I2C_DEVICES: MCP4725: Writing DAC value 434 (target 0.350V) [0x40 0x1B 0x20][0m
+[0;32mI (47272) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 434 = 0.350V)[0m
+[0;32mI (47272) LSV_SCAN: Voltage set to 0.350V (DAC code 434)[0m
+[0;32mI (48272) LSV_SCAN: ADC: A0=192 (0.024V), A1=0 (0.000V), Diff=192 (0.024V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (48272) LSV_SCAN:    0.350    |     0.600    | Rising[0m
+[0;32mI (48282) I2C_DEVICES: MCP4725: Writing DAC value 446 (target 0.359V) [0x40 0x1B 0xE0][0m
+[0;32mI (48292) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 446 = 0.359V)[0m
+[0;32mI (48292) LSV_SCAN: Voltage set to 0.360V (DAC code 446)[0m
+[0;32mI (49302) LSV_SCAN:    0.360    |     0.600    | Rising[0m
+[0;32mI (49302) I2C_DEVICES: MCP4725: Writing DAC value 459 (target 0.370V) [0x40 0x1C 0xB0][0m
+[0;32mI (49312) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 459 = 0.370V)[0m
+[0;32mI (49312) LSV_SCAN: Voltage set to 0.370V (DAC code 459)[0m
+[0;32mI (50312) LSV_SCAN:    0.370    |     0.600    | Rising[0m
+[0;32mI (50312) I2C_DEVICES: MCP4725: Writing DAC value 471 (target 0.380V) [0x40 0x1D 0x70][0m
+[0;32mI (50322) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 471 = 0.380V)[0m
+[0;32mI (50322) LSV_SCAN: Voltage set to 0.380V (DAC code 471)[0m
+[0;32mI (51322) LSV_SCAN: ADC: A0=208 (0.026V), A1=0 (0.000V), Diff=208 (0.026V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (51322) LSV_SCAN:    0.380    |     0.650    | Rising[0m
+[0;32mI (51332) I2C_DEVICES: MCP4725: Writing DAC value 483 (target 0.389V) [0x40 0x1E 0x30][0m
+[0;32mI (51342) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 483 = 0.389V)[0m
+[0;32mI (51342) LSV_SCAN: Voltage set to 0.390V (DAC code 483)[0m
+[0;32mI (52352) LSV_SCAN:    0.390    |     0.650    | Rising[0m
+[0;32mI (52352) I2C_DEVICES: MCP4725: Writing DAC value 496 (target 0.400V) [0x40 0x1F 0x00][0m
+[0;32mI (52362) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 496 = 0.400V)[0m
+[0;32mI (52362) LSV_SCAN: Voltage set to 0.400V (DAC code 496)[0m
+[0;32mI (53362) LSV_SCAN: ADC: A0=208 (0.026V), A1=0 (0.000V), Diff=208 (0.026V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (53362) LSV_SCAN:    0.400    |     0.650    | Rising[0m
+[0;32mI (53372) I2C_DEVICES: MCP4725: Writing DAC value 508 (target 0.409V) [0x40 0x1F 0xC0][0m
+[0;32mI (53392) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 508 = 0.409V)[0m
+[0;32mI (53392) LSV_SCAN: Voltage set to 0.410V (DAC code 508)[0m
+[0;32mI (54392) LSV_SCAN:    0.410    |     0.650    | Rising[0m
+[0;32mI (54392) I2C_DEVICES: MCP4725: Writing DAC value 521 (target 0.420V) [0x40 0x20 0x90][0m
+[0;32mI (54402) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 521 = 0.420V)[0m
+[0;32mI (54402) LSV_SCAN: Voltage set to 0.420V (DAC code 521)[0m
+[0;32mI (55402) LSV_SCAN: ADC: A0=224 (0.028V), A1=0 (0.000V), Diff=224 (0.028V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (55402) LSV_SCAN:    0.420    |     0.700    | Rising[0m
+[0;32mI (55412) I2C_DEVICES: MCP4725: Writing DAC value 533 (target 0.430V) [0x40 0x21 0x50][0m
+[0;32mI (55422) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 533 = 0.430V)[0m
+[0;32mI (55422) LSV_SCAN: Voltage set to 0.430V (DAC code 533)[0m
+[0;32mI (56432) LSV_SCAN:    0.430    |     0.700    | Rising[0m
+[0;32mI (56432) I2C_DEVICES: MCP4725: Writing DAC value 545 (target 0.439V) [0x40 0x22 0x10][0m
+[0;32mI (56442) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 545 = 0.439V)[0m
+[0;32mI (56442) LSV_SCAN: Voltage set to 0.440V (DAC code 545)[0m
+[0;32mI (57442) LSV_SCAN:    0.440    |     0.700    | Rising[0m
+[0;32mI (57442) I2C_DEVICES: MCP4725: Writing DAC value 558 (target 0.450V) [0x40 0x22 0xE0][0m
+[0;32mI (57452) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 558 = 0.450V)[0m
+[0;32mI (57452) LSV_SCAN: Voltage set to 0.450V (DAC code 558)[0m
+[0;32mI (58452) LSV_SCAN: ADC: A0=240 (0.030V), A1=0 (0.000V), Diff=240 (0.030V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (58452) LSV_SCAN:    0.450    |     0.750    | Rising[0m
+[0;32mI (58462) I2C_DEVICES: MCP4725: Writing DAC value 570 (target 0.459V) [0x40 0x23 0xA0][0m
+[0;32mI (58472) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 570 = 0.459V)[0m
+[0;32mI (58472) LSV_SCAN: Voltage set to 0.460V (DAC code 570)[0m
+[0;32mI (59482) LSV_SCAN:    0.460    |     0.750    | Rising[0m
+[0;32mI (59482) I2C_DEVICES: MCP4725: Writing DAC value 583 (target 0.470V) [0x40 0x24 0x70][0m
+[0;32mI (59492) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 583 = 0.470V)[0m
+[0;32mI (59492) LSV_SCAN: Voltage set to 0.470V (DAC code 583)[0m
+[0;32mI (60492) LSV_SCAN:    0.470    |     0.750    | Rising[0m
+[0;32mI (60492) I2C_DEVICES: MCP4725: Writing DAC value 595 (target 0.479V) [0x40 0x25 0x30][0m
+[0;32mI (60502) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 595 = 0.479V)[0m
+[0;32mI (60502) LSV_SCAN: Voltage set to 0.480V (DAC code 595)[0m
+[0;32mI (61502) LSV_SCAN: ADC: A0=256 (0.032V), A1=0 (0.000V), Diff=256 (0.032V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (61502) LSV_SCAN:    0.480    |     0.800    | Rising[0m
+[0;32mI (61512) I2C_DEVICES: MCP4725: Writing DAC value 608 (target 0.490V) [0x40 0x26 0x00][0m
+[0;32mI (61522) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 608 = 0.490V)[0m
+[0;32mI (61522) LSV_SCAN: Voltage set to 0.490V (DAC code 608)[0m
+[0;32mI (62532) LSV_SCAN:    0.490    |     0.800    | Rising[0m
+[0;32mI (62532) I2C_DEVICES: MCP4725: Writing DAC value 620 (target 0.500V) [0x40 0x26 0xC0][0m
+[0;32mI (62542) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 620 = 0.500V)[0m
+[0;32mI (62542) LSV_SCAN: Voltage set to 0.500V (DAC code 620)[0m
+[0;32mI (63542) LSV_SCAN: ADC: A0=256 (0.032V), A1=0 (0.000V), Diff=256 (0.032V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (63542) LSV_SCAN:    0.500    |     0.800    | Rising[0m
+[0;32mI (63552) I2C_DEVICES: MCP4725: Writing DAC value 632 (target 0.509V) [0x40 0x27 0x80][0m
+[0;32mI (63572) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 632 = 0.509V)[0m
+[0;32mI (63572) LSV_SCAN: Voltage set to 0.510V (DAC code 632)[0m
+[0;32mI (64572) LSV_SCAN: ADC: A0=256 (0.032V), A1=0 (0.000V), Diff=272 (0.034V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (64572) LSV_SCAN:    0.510    |     0.850    | Rising[0m
+[0;32mI (64582) I2C_DEVICES: MCP4725: Writing DAC value 645 (target 0.520V) [0x40 0x28 0x50][0m
+[0;32mI (64592) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 645 = 0.520V)[0m
+[0;32mI (64592) LSV_SCAN: Voltage set to 0.520V (DAC code 645)[0m
+[0;32mI (65602) LSV_SCAN:    0.520    |     0.850    | Rising[0m
+[0;32mI (65602) I2C_DEVICES: MCP4725: Writing DAC value 657 (target 0.529V) [0x40 0x29 0x10][0m
+[0;32mI (65612) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 657 = 0.529V)[0m
+[0;32mI (65612) LSV_SCAN: Voltage set to 0.530V (DAC code 657)[0m
+[0;32mI (66612) LSV_SCAN:    0.530    |     0.850    | Rising[0m
+[0;32mI (66612) I2C_DEVICES: MCP4725: Writing DAC value 670 (target 0.540V) [0x40 0x29 0xE0][0m
+[0;32mI (66622) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 670 = 0.540V)[0m
+[0;32mI (66622) LSV_SCAN: Voltage set to 0.540V (DAC code 670)[0m
+[0;32mI (67622) LSV_SCAN:    0.540    |     0.850    | Rising[0m
+[0;32mI (67622) I2C_DEVICES: MCP4725: Writing DAC value 682 (target 0.550V) [0x40 0x2A 0xA0][0m
+[0;32mI (67632) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 682 = 0.550V)[0m
+[0;32mI (67632) LSV_SCAN: Voltage set to 0.550V (DAC code 682)[0m
+[0;32mI (68632) LSV_SCAN: ADC: A0=272 (0.034V), A1=0 (0.000V), Diff=288 (0.036V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (68632) LSV_SCAN:    0.550    |     0.900    | Rising[0m
+[0;32mI (68642) I2C_DEVICES: MCP4725: Writing DAC value 694 (target 0.559V) [0x40 0x2B 0x60][0m
+[0;32mI (68652) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 694 = 0.559V)[0m
+[0;32mI (68652) LSV_SCAN: Voltage set to 0.560V (DAC code 694)[0m
+[0;32mI (69662) LSV_SCAN:    0.560    |     0.900    | Rising[0m
+[0;32mI (69662) I2C_DEVICES: MCP4725: Writing DAC value 707 (target 0.570V) [0x40 0x2C 0x30][0m
+[0;32mI (69672) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 707 = 0.570V)[0m
+[0;32mI (69672) LSV_SCAN: Voltage set to 0.570V (DAC code 707)[0m
+[0;32mI (70672) LSV_SCAN:    0.570    |     0.900    | Rising[0m
+[0;32mI (70672) I2C_DEVICES: MCP4725: Writing DAC value 719 (target 0.579V) [0x40 0x2C 0xF0][0m
+[0;32mI (70682) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 719 = 0.579V)[0m
+[0;32mI (70682) LSV_SCAN: Voltage set to 0.580V (DAC code 719)[0m
+[0;32mI (71682) LSV_SCAN:    0.580    |     0.900    | Rising[0m
+[0;32mI (71682) I2C_DEVICES: MCP4725: Writing DAC value 732 (target 0.590V) [0x40 0x2D 0xC0][0m
+[0;32mI (71692) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 732 = 0.590V)[0m
+[0;32mI (71692) LSV_SCAN: Voltage set to 0.590V (DAC code 732)[0m
+[0;32mI (72692) LSV_SCAN: ADC: A0=304 (0.038V), A1=0 (0.000V), Diff=304 (0.038V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (72692) LSV_SCAN:    0.590    |     0.950    | Rising[0m
+[0;32mI (72702) I2C_DEVICES: MCP4725: Writing DAC value 744 (target 0.600V) [0x40 0x2E 0x80][0m
+[0;32mI (72712) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 744 = 0.600V)[0m
+[0;32mI (72712) LSV_SCAN: Voltage set to 0.600V (DAC code 744)[0m
+[0;32mI (73722) LSV_SCAN: ADC: A0=304 (0.038V), A1=0 (0.000V), Diff=304 (0.038V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (73722) LSV_SCAN:    0.600    |     0.950    | Rising[0m
+[0;32mI (73732) I2C_DEVICES: MCP4725: Writing DAC value 756 (target 0.609V) [0x40 0x2F 0x40][0m
+[0;32mI (73752) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 756 = 0.609V)[0m
+[0;32mI (73752) LSV_SCAN: Voltage set to 0.610V (DAC code 756)[0m
+[0;32mI (74752) LSV_SCAN:    0.610    |     0.950    | Rising[0m
+[0;32mI (74752) I2C_DEVICES: MCP4725: Writing DAC value 769 (target 0.620V) [0x40 0x30 0x10][0m
+[0;32mI (74762) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 769 = 0.620V)[0m
+[0;32mI (74762) LSV_SCAN: Voltage set to 0.620V (DAC code 769)[0m
+[0;32mI (75762) LSV_SCAN:    0.620    |     0.950    | Rising[0m
+[0;32mI (75762) I2C_DEVICES: MCP4725: Writing DAC value 781 (target 0.629V) [0x40 0x30 0xD0][0m
+[0;32mI (75772) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 781 = 0.629V)[0m
+[0;32mI (75772) LSV_SCAN: Voltage set to 0.630V (DAC code 781)[0m
+[0;32mI (76772) LSV_SCAN: ADC: A0=320 (0.040V), A1=0 (0.000V), Diff=320 (0.040V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (76772) LSV_SCAN:    0.630    |     1.000    | ▲ Peak[0m
+[0;32mI (76782) I2C_DEVICES: MCP4725: Writing DAC value 794 (target 0.640V) [0x40 0x31 0xA0][0m
+[0;32mI (76792) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 794 = 0.640V)[0m
+[0;32mI (76792) LSV_SCAN: Voltage set to 0.640V (DAC code 794)[0m
+[0;32mI (77802) LSV_SCAN:    0.640    |     1.000    | ▲ Peak[0m
+[0;32mI (77802) I2C_DEVICES: MCP4725: Writing DAC value 806 (target 0.650V) [0x40 0x32 0x60][0m
+[0;32mI (77812) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 806 = 0.650V)[0m
+[0;32mI (77812) LSV_SCAN: Voltage set to 0.650V (DAC code 806)[0m
+[0;32mI (78812) LSV_SCAN: ADC: A0=320 (0.040V), A1=0 (0.000V), Diff=320 (0.040V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (78812) LSV_SCAN:    0.650    |     1.000    | ▲ Peak[0m
+[0;32mI (78822) I2C_DEVICES: MCP4725: Writing DAC value 818 (target 0.659V) [0x40 0x33 0x20][0m
+[0;32mI (78842) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 818 = 0.659V)[0m
+[0;32mI (78842) LSV_SCAN: Voltage set to 0.660V (DAC code 818)[0m
+[0;32mI (79842) LSV_SCAN: ADC: A0=320 (0.040V), A1=0 (0.000V), Diff=336 (0.042V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (79842) LSV_SCAN:    0.660    |     1.050    | ▲ Peak[0m
+[0;32mI (79852) I2C_DEVICES: MCP4725: Writing DAC value 831 (target 0.670V) [0x40 0x33 0xF0][0m
+[0;32mI (79862) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 831 = 0.670V)[0m
+[0;32mI (79862) LSV_SCAN: Voltage set to 0.670V (DAC code 831)[0m
+[0;32mI (80872) LSV_SCAN:    0.670    |     1.050    | ▲ Peak[0m
+[0;32mI (80872) I2C_DEVICES: MCP4725: Writing DAC value 843 (target 0.679V) [0x40 0x34 0xB0][0m
+[0;32mI (80882) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 843 = 0.679V)[0m
+[0;32mI (80882) LSV_SCAN: Voltage set to 0.680V (DAC code 843)[0m
+[0;32mI (81882) LSV_SCAN:    0.680    |     1.050    | ▲ Peak[0m
+[0;32mI (81882) I2C_DEVICES: MCP4725: Writing DAC value 856 (target 0.690V) [0x40 0x35 0x80][0m
+[0;32mI (81892) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 856 = 0.690V)[0m
+[0;32mI (81892) LSV_SCAN: Voltage set to 0.690V (DAC code 856)[0m
+[0;32mI (82892) LSV_SCAN:    0.690    |     1.050    | ▲ Peak[0m
+[0;32mI (82892) I2C_DEVICES: MCP4725: Writing DAC value 868 (target 0.699V) [0x40 0x36 0x40][0m
+[0;32mI (82902) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 868 = 0.699V)[0m
+[0;32mI (82902) LSV_SCAN: Voltage set to 0.700V (DAC code 868)[0m
+[0;32mI (83902) LSV_SCAN: ADC: A0=336 (0.042V), A1=0 (0.000V), Diff=336 (0.042V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (83902) LSV_SCAN:    0.700    |     1.050    | ▲ Peak[0m
+[0;32mI (83912) I2C_DEVICES: MCP4725: Writing DAC value 881 (target 0.710V) [0x40 0x37 0x10][0m
+[0;32mI (83932) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 881 = 0.710V)[0m
+[0;32mI (83932) LSV_SCAN: Voltage set to 0.710V (DAC code 881)[0m
+[0;32mI (84932) LSV_SCAN: ADC: A0=352 (0.044V), A1=0 (0.000V), Diff=352 (0.044V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (84932) LSV_SCAN:    0.710    |     1.100    | ▲ Peak[0m
+[0;32mI (84942) I2C_DEVICES: MCP4725: Writing DAC value 893 (target 0.720V) [0x40 0x37 0xD0][0m
+[0;32mI (84952) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 893 = 0.720V)[0m
+[0;32mI (84952) LSV_SCAN: Voltage set to 0.720V (DAC code 893)[0m
+[0;32mI (85962) LSV_SCAN:    0.720    |     1.100    | ▲ Peak[0m
+[0;32mI (85962) I2C_DEVICES: MCP4725: Writing DAC value 905 (target 0.729V) [0x40 0x38 0x90][0m
+[0;32mI (85972) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 905 = 0.729V)[0m
+[0;32mI (85972) LSV_SCAN: Voltage set to 0.730V (DAC code 905)[0m
+[0;32mI (86972) LSV_SCAN:    0.730    |     1.100    | ▲ Peak[0m
+[0;32mI (86972) I2C_DEVICES: MCP4725: Writing DAC value 918 (target 0.740V) [0x40 0x39 0x60][0m
+[0;32mI (86982) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 918 = 0.740V)[0m
+[0;32mI (86982) LSV_SCAN: Voltage set to 0.740V (DAC code 918)[0m
+[0;32mI (87982) LSV_SCAN:    0.740    |     1.100    | ▲ Peak[0m
+[0;32mI (87982) I2C_DEVICES: MCP4725: Writing DAC value 930 (target 0.749V) [0x40 0x3A 0x20][0m
+[0;32mI (87992) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 930 = 0.749V)[0m
+[0;32mI (87992) LSV_SCAN: Voltage set to 0.750V (DAC code 930)[0m
+[0;32mI (88992) LSV_SCAN: ADC: A0=352 (0.044V), A1=0 (0.000V), Diff=352 (0.044V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (88992) LSV_SCAN:    0.750    |     1.100    | ▲ Peak[0m
+[0;32mI (89002) I2C_DEVICES: MCP4725: Writing DAC value 943 (target 0.760V) [0x40 0x3A 0xF0][0m
+[0;32mI (89022) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 943 = 0.760V)[0m
+[0;32mI (89022) LSV_SCAN: Voltage set to 0.760V (DAC code 943)[0m
+[0;32mI (90022) LSV_SCAN: ADC: A0=368 (0.046V), A1=0 (0.000V), Diff=368 (0.046V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (90022) LSV_SCAN:    0.760    |     1.150    | ▲ Peak[0m
+[0;32mI (90032) I2C_DEVICES: MCP4725: Writing DAC value 955 (target 0.770V) [0x40 0x3B 0xB0][0m
+[0;32mI (90042) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 955 = 0.770V)[0m
+[0;32mI (90042) LSV_SCAN: Voltage set to 0.770V (DAC code 955)[0m
+[0;32mI (91052) LSV_SCAN:    0.770    |     1.150    | ▲ Peak[0m
+[0;32mI (91052) I2C_DEVICES: MCP4725: Writing DAC value 967 (target 0.779V) [0x40 0x3C 0x70][0m
+[0;32mI (91062) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 967 = 0.779V)[0m
+[0;32mI (91062) LSV_SCAN: Voltage set to 0.780V (DAC code 967)[0m
+[0;32mI (92062) LSV_SCAN:    0.780    |     1.150    | ▲ Peak[0m
+[0;32mI (92062) I2C_DEVICES: MCP4725: Writing DAC value 980 (target 0.790V) [0x40 0x3D 0x40][0m
+[0;32mI (92072) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 980 = 0.790V)[0m
+[0;32mI (92072) LSV_SCAN: Voltage set to 0.790V (DAC code 980)[0m
+[0;32mI (93072) LSV_SCAN:    0.790    |     1.150    | ▲ Peak[0m
+[0;32mI (93072) I2C_DEVICES: MCP4725: Writing DAC value 992 (target 0.799V) [0x40 0x3E 0x00][0m
+[0;32mI (93082) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 992 = 0.799V)[0m
+[0;32mI (93082) LSV_SCAN: Voltage set to 0.800V (DAC code 992)[0m
+[0;32mI (94082) LSV_SCAN: ADC: A0=368 (0.046V), A1=0 (0.000V), Diff=368 (0.046V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (94082) LSV_SCAN:    0.800    |     1.150    | ▲ Peak[0m
+[0;32mI (94092) I2C_DEVICES: MCP4725: Writing DAC value 1005 (target 0.810V) [0x40 0x3E 0xD0][0m
+[0;32mI (94112) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1005 = 0.810V)[0m
+[0;32mI (94112) LSV_SCAN: Voltage set to 0.810V (DAC code 1005)[0m
+[0;32mI (95112) LSV_SCAN: ADC: A0=368 (0.046V), A1=0 (0.000V), Diff=384 (0.048V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (95112) LSV_SCAN:    0.810    |     1.200    | ▲ Peak[0m
+[0;32mI (95122) I2C_DEVICES: MCP4725: Writing DAC value 1017 (target 0.820V) [0x40 0x3F 0x90][0m
+[0;32mI (95132) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1017 = 0.820V)[0m
+[0;32mI (95132) LSV_SCAN: Voltage set to 0.820V (DAC code 1017)[0m
+[0;32mI (96142) LSV_SCAN:    0.820    |     1.200    | ▲ Peak[0m
+[0;32mI (96142) I2C_DEVICES: MCP4725: Writing DAC value 1029 (target 0.829V) [0x40 0x40 0x50][0m
+[0;32mI (96152) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1029 = 0.829V)[0m
+[0;32mI (96152) LSV_SCAN: Voltage set to 0.830V (DAC code 1029)[0m
+[0;32mI (97152) LSV_SCAN:    0.830    |     1.200    | ▲ Peak[0m
+[0;32mI (97152) I2C_DEVICES: MCP4725: Writing DAC value 1042 (target 0.840V) [0x40 0x41 0x20][0m
+[0;32mI (97162) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1042 = 0.840V)[0m
+[0;32mI (97162) LSV_SCAN: Voltage set to 0.840V (DAC code 1042)[0m
+[0;32mI (98162) LSV_SCAN:    0.840    |     1.200    | ▲ Peak[0m
+[0;32mI (98162) I2C_DEVICES: MCP4725: Writing DAC value 1054 (target 0.849V) [0x40 0x41 0xE0][0m
+[0;32mI (98172) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1054 = 0.849V)[0m
+[0;32mI (98172) LSV_SCAN: Voltage set to 0.850V (DAC code 1054)[0m
+[0;32mI (99172) LSV_SCAN: ADC: A0=400 (0.050V), A1=0 (0.000V), Diff=384 (0.048V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (99172) LSV_SCAN:    0.850    |     1.200    | ▲ Peak[0m
+[0;32mI (99182) I2C_DEVICES: MCP4725: Writing DAC value 1067 (target 0.860V) [0x40 0x42 0xB0][0m
+[0;32mI (99202) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1067 = 0.860V)[0m
+[0;32mI (99202) LSV_SCAN: Voltage set to 0.860V (DAC code 1067)[0m
+[0;32mI (100202) LSV_SCAN: ADC: A0=400 (0.050V), A1=0 (0.000V), Diff=400 (0.050V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (100202) LSV_SCAN:    0.860    |     1.250    | ▲ Peak[0m
+[0;32mI (100212) I2C_DEVICES: MCP4725: Writing DAC value 1079 (target 0.870V) [0x40 0x43 0x70][0m
+[0;32mI (100232) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1079 = 0.870V)[0m
+[0;32mI (100232) LSV_SCAN: Voltage set to 0.870V (DAC code 1079)[0m
+[0;32mI (101232) LSV_SCAN:    0.870    |     1.250    | ▲ Peak[0m
+[0;32mI (101232) I2C_DEVICES: MCP4725: Writing DAC value 1091 (target 0.879V) [0x40 0x44 0x30][0m
+[0;32mI (101242) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1091 = 0.879V)[0m
+[0;32mI (101242) LSV_SCAN: Voltage set to 0.880V (DAC code 1091)[0m
+[0;32mI (102242) LSV_SCAN:    0.880    |     1.250    | ▲ Peak[0m
+[0;32mI (102242) I2C_DEVICES: MCP4725: Writing DAC value 1104 (target 0.890V) [0x40 0x45 0x00][0m
+[0;32mI (102252) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1104 = 0.890V)[0m
+[0;32mI (102252) LSV_SCAN: Voltage set to 0.890V (DAC code 1104)[0m
+[0;32mI (103252) LSV_SCAN:    0.890    |     1.250    | ▲ Peak[0m
+[0;32mI (103252) I2C_DEVICES: MCP4725: Writing DAC value 1116 (target 0.899V) [0x40 0x45 0xC0][0m
+[0;32mI (103262) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1116 = 0.899V)[0m
+[0;32mI (103262) LSV_SCAN: Voltage set to 0.900V (DAC code 1116)[0m
+[0;32mI (104262) LSV_SCAN: ADC: A0=400 (0.050V), A1=0 (0.000V), Diff=416 (0.052V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (104262) LSV_SCAN:    0.900    |     1.300    | ▲ Peak[0m
+[0;32mI (104272) I2C_DEVICES: MCP4725: Writing DAC value 1129 (target 0.910V) [0x40 0x46 0x90][0m
+[0;32mI (104292) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1129 = 0.910V)[0m
+[0;32mI (104292) LSV_SCAN: Voltage set to 0.910V (DAC code 1129)[0m
+[0;32mI (105292) LSV_SCAN:    0.910    |     1.300    | ▲ Peak[0m
+[0;32mI (105292) I2C_DEVICES: MCP4725: Writing DAC value 1141 (target 0.919V) [0x40 0x47 0x50][0m
+[0;32mI (105302) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1141 = 0.919V)[0m
+[0;32mI (105302) LSV_SCAN: Voltage set to 0.920V (DAC code 1141)[0m
+[0;32mI (106302) LSV_SCAN:    0.920    |     1.300    | ▲ Peak[0m
+[0;32mI (106302) I2C_DEVICES: MCP4725: Writing DAC value 1154 (target 0.930V) [0x40 0x48 0x20][0m
+[0;32mI (106312) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1154 = 0.930V)[0m
+[0;32mI (106312) LSV_SCAN: Voltage set to 0.930V (DAC code 1154)[0m
+[0;32mI (107312) LSV_SCAN:    0.930    |     1.300    | ▲ Peak[0m
+[0;32mI (107312) I2C_DEVICES: MCP4725: Writing DAC value 1166 (target 0.940V) [0x40 0x48 0xE0][0m
+[0;32mI (107322) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1166 = 0.940V)[0m
+[0;32mI (107322) LSV_SCAN: Voltage set to 0.940V (DAC code 1166)[0m
+[0;32mI (108322) LSV_SCAN:    0.940    |     1.300    | ▲ Peak[0m
+[0;32mI (108322) I2C_DEVICES: MCP4725: Writing DAC value 1178 (target 0.949V) [0x40 0x49 0xA0][0m
+[0;32mI (108332) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1178 = 0.949V)[0m
+[0;32mI (108332) LSV_SCAN: Voltage set to 0.950V (DAC code 1178)[0m
+[0;32mI (109332) LSV_SCAN: ADC: A0=416 (0.052V), A1=0 (0.000V), Diff=416 (0.052V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (109332) LSV_SCAN:    0.950    |     1.300    | ▲ Peak[0m
+[0;32mI (109342) I2C_DEVICES: MCP4725: Writing DAC value 1191 (target 0.960V) [0x40 0x4A 0x70][0m
+[0;32mI (109362) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1191 = 0.960V)[0m
+[0;32mI (109362) LSV_SCAN: Voltage set to 0.960V (DAC code 1191)[0m
+[0;32mI (110362) LSV_SCAN: ADC: A0=432 (0.054V), A1=0 (0.000V), Diff=432 (0.054V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (110362) LSV_SCAN:    0.960    |     1.350    | ▲ Peak[0m
+[0;32mI (110372) I2C_DEVICES: MCP4725: Writing DAC value 1203 (target 0.969V) [0x40 0x4B 0x30][0m
+[0;32mI (110392) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1203 = 0.969V)[0m
+[0;32mI (110392) LSV_SCAN: Voltage set to 0.970V (DAC code 1203)[0m
+[0;32mI (111392) LSV_SCAN:    0.970    |     1.350    | ▲ Peak[0m
+[0;32mI (111392) I2C_DEVICES: MCP4725: Writing DAC value 1216 (target 0.980V) [0x40 0x4C 0x00][0m
+[0;32mI (111402) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1216 = 0.980V)[0m
+[0;32mI (111402) LSV_SCAN: Voltage set to 0.980V (DAC code 1216)[0m
+[0;32mI (112402) LSV_SCAN:    0.980    |     1.350    | ▲ Peak[0m
+[0;32mI (112402) I2C_DEVICES: MCP4725: Writing DAC value 1228 (target 0.990V) [0x40 0x4C 0xC0][0m
+[0;32mI (112412) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1228 = 0.990V)[0m
+[0;32mI (112412) LSV_SCAN: Voltage set to 0.990V (DAC code 1228)[0m
+[0;32mI (113412) LSV_SCAN:    0.990    |     1.350    | ▲ Peak[0m
+[0;32mI (113412) I2C_DEVICES: MCP4725: Writing DAC value 1240 (target 0.999V) [0x40 0x4D 0x80][0m
+[0;32mI (113422) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1240 = 0.999V)[0m
+[0;32mI (113422) LSV_SCAN: Voltage set to 1.000V (DAC code 1240)[0m
+[0;32mI (114422) LSV_SCAN: ADC: A0=432 (0.054V), A1=0 (0.000V), Diff=448 (0.056V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (114422) LSV_SCAN:    1.000    |     1.400    | ▲ Peak[0m
+[0;32mI (114432) I2C_DEVICES: MCP4725: Writing DAC value 1253 (target 1.010V) [0x40 0x4E 0x50][0m
+[0;32mI (114452) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1253 = 1.010V)[0m
+[0;32mI (114452) LSV_SCAN: Voltage set to 1.010V (DAC code 1253)[0m
+[0;32mI (115452) LSV_SCAN:    1.010    |     1.400    | ▲ Peak[0m
+[0;32mI (115452) I2C_DEVICES: MCP4725: Writing DAC value 1265 (target 1.019V) [0x40 0x4F 0x10][0m
+[0;32mI (115462) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1265 = 1.019V)[0m
+[0;32mI (115462) LSV_SCAN: Voltage set to 1.020V (DAC code 1265)[0m
+[0;32mI (116462) LSV_SCAN:    1.020    |     1.400    | ▲ Peak[0m
+[0;32mI (116462) I2C_DEVICES: MCP4725: Writing DAC value 1278 (target 1.030V) [0x40 0x4F 0xE0][0m
+[0;32mI (116472) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1278 = 1.030V)[0m
+[0;32mI (116472) LSV_SCAN: Voltage set to 1.030V (DAC code 1278)[0m
+[0;32mI (117472) LSV_SCAN:    1.030    |     1.400    | ▲ Peak[0m
+[0;32mI (117472) I2C_DEVICES: MCP4725: Writing DAC value 1290 (target 1.040V) [0x40 0x50 0xA0][0m
+[0;32mI (117482) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1290 = 1.040V)[0m
+[0;32mI (117482) LSV_SCAN: Voltage set to 1.040V (DAC code 1290)[0m
+[0;32mI (118482) LSV_SCAN:    1.040    |     1.400    | ▲ Peak[0m
+[0;32mI (118482) I2C_DEVICES: MCP4725: Writing DAC value 1302 (target 1.049V) [0x40 0x51 0x60][0m
+[0;32mI (118492) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1302 = 1.049V)[0m
+[0;32mI (118492) LSV_SCAN: Voltage set to 1.050V (DAC code 1302)[0m
+[0;32mI (119492) LSV_SCAN: ADC: A0=448 (0.056V), A1=0 (0.000V), Diff=448 (0.056V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (119492) LSV_SCAN:    1.050    |     1.400    | ▲ Peak[0m
+[0;32mI (119502) I2C_DEVICES: MCP4725: Writing DAC value 1315 (target 1.060V) [0x40 0x52 0x30][0m
+[0;32mI (119522) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1315 = 1.060V)[0m
+[0;32mI (119522) LSV_SCAN: Voltage set to 1.060V (DAC code 1315)[0m
+[0;32mI (120522) LSV_SCAN:    1.060    |     1.400    | ▲ Peak[0m
+[0;32mI (120522) I2C_DEVICES: MCP4725: Writing DAC value 1327 (target 1.069V) [0x40 0x52 0xF0][0m
+[0;32mI (120532) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1327 = 1.069V)[0m
+[0;32mI (120532) LSV_SCAN: Voltage set to 1.070V (DAC code 1327)[0m
+[0;32mI (121532) LSV_SCAN: ADC: A0=448 (0.056V), A1=0 (0.000V), Diff=464 (0.058V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (121532) LSV_SCAN:    1.070    |     1.450    | ▲ Peak[0m
+[0;32mI (121542) I2C_DEVICES: MCP4725: Writing DAC value 1340 (target 1.080V) [0x40 0x53 0xC0][0m
+[0;32mI (121562) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1340 = 1.080V)[0m
+[0;32mI (121562) LSV_SCAN: Voltage set to 1.080V (DAC code 1340)[0m
+[0;32mI (122562) LSV_SCAN:    1.080    |     1.450    | ▲ Peak[0m
+[0;32mI (122562) I2C_DEVICES: MCP4725: Writing DAC value 1352 (target 1.090V) [0x40 0x54 0x80][0m
+[0;32mI (122572) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1352 = 1.090V)[0m
+[0;32mI (122572) LSV_SCAN: Voltage set to 1.090V (DAC code 1352)[0m
+[0;32mI (123572) LSV_SCAN:    1.090    |     1.450    | ▲ Peak[0m
+[0;32mI (123572) I2C_DEVICES: MCP4725: Writing DAC value 1364 (target 1.099V) [0x40 0x55 0x40][0m
+[0;32mI (123582) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1364 = 1.099V)[0m
+[0;32mI (123582) LSV_SCAN: Voltage set to 1.100V (DAC code 1364)[0m
+[0;32mI (124582) LSV_SCAN: ADC: A0=464 (0.058V), A1=0 (0.000V), Diff=464 (0.058V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (124582) LSV_SCAN:    1.100    |     1.450    | ▲ Peak[0m
+[0;32mI (124592) I2C_DEVICES: MCP4725: Writing DAC value 1377 (target 1.110V) [0x40 0x56 0x10][0m
+[0;32mI (124612) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1377 = 1.110V)[0m
+[0;32mI (124612) LSV_SCAN: Voltage set to 1.110V (DAC code 1377)[0m
+[0;32mI (125612) LSV_SCAN:    1.110    |     1.450    | ▲ Peak[0m
+[0;32mI (125612) I2C_DEVICES: MCP4725: Writing DAC value 1389 (target 1.119V) [0x40 0x56 0xD0][0m
+[0;32mI (125622) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1389 = 1.119V)[0m
+[0;32mI (125622) LSV_SCAN: Voltage set to 1.120V (DAC code 1389)[0m
+[0;32mI (126622) LSV_SCAN:    1.120    |     1.450    | ▲ Peak[0m
+[0;32mI (126622) I2C_DEVICES: MCP4725: Writing DAC value 1402 (target 1.130V) [0x40 0x57 0xA0][0m
+[0;32mI (126632) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1402 = 1.130V)[0m
+[0;32mI (126632) LSV_SCAN: Voltage set to 1.130V (DAC code 1402)[0m
+[0;32mI (127632) LSV_SCAN:    1.130    |     1.450    | ▲ Peak[0m
+[0;32mI (127632) I2C_DEVICES: MCP4725: Writing DAC value 1414 (target 1.139V) [0x40 0x58 0x60][0m
+[0;32mI (127642) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1414 = 1.139V)[0m
+[0;32mI (127642) LSV_SCAN: Voltage set to 1.140V (DAC code 1414)[0m
+[0;32mI (128642) LSV_SCAN:    1.140    |     1.450    | ▲ Peak[0m
+[0;32mI (128642) I2C_DEVICES: MCP4725: Writing DAC value 1427 (target 1.150V) [0x40 0x59 0x30][0m
+[0;32mI (128652) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1427 = 1.150V)[0m
+[0;32mI (128652) LSV_SCAN: Voltage set to 1.150V (DAC code 1427)[0m
+[0;32mI (129652) LSV_SCAN: ADC: A0=480 (0.060V), A1=0 (0.000V), Diff=480 (0.060V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (129652) LSV_SCAN:    1.150    |     1.500    | ▲ Peak[0m
+[0;32mI (129662) I2C_DEVICES: MCP4725: Writing DAC value 1439 (target 1.160V) [0x40 0x59 0xF0][0m
+[0;32mI (129682) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1439 = 1.160V)[0m
+[0;32mI (129682) LSV_SCAN: Voltage set to 1.160V (DAC code 1439)[0m
+[0;32mI (130682) LSV_SCAN:    1.160    |     1.500    | ▲ Peak[0m
+[0;32mI (130682) I2C_DEVICES: MCP4725: Writing DAC value 1451 (target 1.169V) [0x40 0x5A 0xB0][0m
+[0;32mI (130692) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1451 = 1.169V)[0m
+[0;32mI (130692) LSV_SCAN: Voltage set to 1.170V (DAC code 1451)[0m
+[0;32mI (131692) LSV_SCAN:    1.170    |     1.500    | ▲ Peak[0m
+[0;32mI (131692) I2C_DEVICES: MCP4725: Writing DAC value 1464 (target 1.180V) [0x40 0x5B 0x80][0m
+[0;32mI (131702) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1464 = 1.180V)[0m
+[0;32mI (131702) LSV_SCAN: Voltage set to 1.180V (DAC code 1464)[0m
+[0;32mI (132702) LSV_SCAN:    1.180    |     1.500    | ▲ Peak[0m
+[0;32mI (132702) I2C_DEVICES: MCP4725: Writing DAC value 1476 (target 1.189V) [0x40 0x5C 0x40][0m
+[0;32mI (132712) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1476 = 1.189V)[0m
+[0;32mI (132712) LSV_SCAN: Voltage set to 1.190V (DAC code 1476)[0m
+[0;32mI (133712) LSV_SCAN: ADC: A0=496 (0.062V), A1=0 (0.000V), Diff=496 (0.062V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (133712) LSV_SCAN:    1.190    |     1.550    | ▲ Peak[0m
+[0;32mI (133722) I2C_DEVICES: MCP4725: Writing DAC value 1489 (target 1.200V) [0x40 0x5D 0x10][0m
+[0;32mI (133742) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1489 = 1.200V)[0m
+[0;32mI (133742) LSV_SCAN: Voltage set to 1.200V (DAC code 1489)[0m
+[0;32mI (134742) LSV_SCAN: ADC: A0=496 (0.062V), A1=0 (0.000V), Diff=496 (0.062V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (134742) LSV_SCAN:    1.200    |     1.550    | ▲ Peak[0m
+[0;32mI (134752) I2C_DEVICES: MCP4725: Writing DAC value 1501 (target 1.210V) [0x40 0x5D 0xD0][0m
+[0;32mI (134772) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1501 = 1.210V)[0m
+[0;32mI (134772) LSV_SCAN: Voltage set to 1.210V (DAC code 1501)[0m
+[0;32mI (135772) LSV_SCAN:    1.210    |     1.550    | ▲ Peak[0m
+[0;32mI (135772) I2C_DEVICES: MCP4725: Writing DAC value 1513 (target 1.219V) [0x40 0x5E 0x90][0m
+[0;32mI (135782) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1513 = 1.219V)[0m
+[0;32mI (135782) LSV_SCAN: Voltage set to 1.220V (DAC code 1513)[0m
+[0;32mI (136782) LSV_SCAN:    1.220    |     1.550    | ▲ Peak[0m
+[0;32mI (136782) I2C_DEVICES: MCP4725: Writing DAC value 1526 (target 1.230V) [0x40 0x5F 0x60][0m
+[0;32mI (136792) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1526 = 1.230V)[0m
+[0;32mI (136792) LSV_SCAN: Voltage set to 1.230V (DAC code 1526)[0m
+[0;32mI (137792) LSV_SCAN:    1.230    |     1.550    | ▲ Peak[0m
+[0;32mI (137792) I2C_DEVICES: MCP4725: Writing DAC value 1538 (target 1.239V) [0x40 0x60 0x20][0m
+[0;32mI (137802) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1538 = 1.239V)[0m
+[0;32mI (137802) LSV_SCAN: Voltage set to 1.240V (DAC code 1538)[0m
+[0;32mI (138802) LSV_SCAN:    1.240    |     1.550    | ▲ Peak[0m
+[0;32mI (138802) I2C_DEVICES: MCP4725: Writing DAC value 1551 (target 1.250V) [0x40 0x60 0xF0][0m
+[0;32mI (138812) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1551 = 1.250V)[0m
+[0;32mI (138812) LSV_SCAN: Voltage set to 1.250V (DAC code 1551)[0m
+[0;32mI (139812) LSV_SCAN: ADC: A0=496 (0.062V), A1=0 (0.000V), Diff=496 (0.062V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (139812) LSV_SCAN:    1.250    |     1.550    | ▲ Peak[0m
+[0;32mI (139822) I2C_DEVICES: MCP4725: Writing DAC value 1563 (target 1.260V) [0x40 0x61 0xB0][0m
+[0;32mI (139842) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1563 = 1.260V)[0m
+[0;32mI (139842) LSV_SCAN: Voltage set to 1.260V (DAC code 1563)[0m
+[0;32mI (140842) LSV_SCAN: ADC: A0=512 (0.064V), A1=0 (0.000V), Diff=512 (0.064V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (140842) LSV_SCAN:    1.260    |     1.600    | ▲ Peak[0m
+[0;32mI (140852) I2C_DEVICES: MCP4725: Writing DAC value 1575 (target 1.269V) [0x40 0x62 0x70][0m
+[0;32mI (140872) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1575 = 1.269V)[0m
+[0;32mI (140872) LSV_SCAN: Voltage set to 1.270V (DAC code 1575)[0m
+[0;32mI (141872) LSV_SCAN:    1.270    |     1.600    | ▲ Peak[0m
+[0;32mI (141872) I2C_DEVICES: MCP4725: Writing DAC value 1588 (target 1.280V) [0x40 0x63 0x40][0m
+[0;32mI (141882) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1588 = 1.280V)[0m
+[0;32mI (141882) LSV_SCAN: Voltage set to 1.280V (DAC code 1588)[0m
+[0;32mI (142882) LSV_SCAN:    1.280    |     1.600    | ▲ Peak[0m
+[0;32mI (142882) I2C_DEVICES: MCP4725: Writing DAC value 1600 (target 1.289V) [0x40 0x64 0x00][0m
+[0;32mI (142892) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1600 = 1.289V)[0m
+[0;32mI (142892) LSV_SCAN: Voltage set to 1.290V (DAC code 1600)[0m
+[0;32mI (143892) LSV_SCAN:    1.290    |     1.600    | ▲ Peak[0m
+[0;32mI (143892) I2C_DEVICES: MCP4725: Writing DAC value 1613 (target 1.300V) [0x40 0x64 0xD0][0m
+[0;32mI (143902) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1613 = 1.300V)[0m
+[0;32mI (143902) LSV_SCAN: Voltage set to 1.300V (DAC code 1613)[0m
+[0;32mI (144902) LSV_SCAN: ADC: A0=512 (0.064V), A1=0 (0.000V), Diff=528 (0.066V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (144902) LSV_SCAN:    1.300    |     1.650    | ▲ Peak[0m
+[0;32mI (144912) I2C_DEVICES: MCP4725: Writing DAC value 1625 (target 1.310V) [0x40 0x65 0x90][0m
+[0;32mI (144932) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1625 = 1.310V)[0m
+[0;32mI (144932) LSV_SCAN: Voltage set to 1.310V (DAC code 1625)[0m
+[0;32mI (145932) LSV_SCAN:    1.310    |     1.650    | ▲ Peak[0m
+[0;32mI (145932) I2C_DEVICES: MCP4725: Writing DAC value 1637 (target 1.319V) [0x40 0x66 0x50][0m
+[0;32mI (145942) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1637 = 1.319V)[0m
+[0;32mI (145942) LSV_SCAN: Voltage set to 1.320V (DAC code 1637)[0m
+[0;32mI (146942) LSV_SCAN:    1.320    |     1.650    | ▲ Peak[0m
+[0;32mI (146942) I2C_DEVICES: MCP4725: Writing DAC value 1650 (target 1.330V) [0x40 0x67 0x20][0m
+[0;32mI (146952) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1650 = 1.330V)[0m
+[0;32mI (146952) LSV_SCAN: Voltage set to 1.330V (DAC code 1650)[0m
+[0;32mI (147952) LSV_SCAN:    1.330    |     1.650    | ▲ Peak[0m
+[0;32mI (147952) I2C_DEVICES: MCP4725: Writing DAC value 1662 (target 1.339V) [0x40 0x67 0xE0][0m
+[0;32mI (147962) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1662 = 1.339V)[0m
+[0;32mI (147962) LSV_SCAN: Voltage set to 1.340V (DAC code 1662)[0m
+[0;32mI (148962) LSV_SCAN:    1.340    |     1.650    | ▲ Peak[0m
+[0;32mI (148962) I2C_DEVICES: MCP4725: Writing DAC value 1675 (target 1.350V) [0x40 0x68 0xB0][0m
+[0;32mI (148972) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1675 = 1.350V)[0m
+[0;32mI (148972) LSV_SCAN: Voltage set to 1.350V (DAC code 1675)[0m
+[0;32mI (149972) LSV_SCAN: ADC: A0=528 (0.066V), A1=0 (0.000V), Diff=528 (0.066V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (149972) LSV_SCAN:    1.350    |     1.650    | ▲ Peak[0m
+[0;32mI (149982) I2C_DEVICES: MCP4725: Writing DAC value 1687 (target 1.359V) [0x40 0x69 0x70][0m
+[0;32mI (150002) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1687 = 1.359V)[0m
+[0;32mI (150002) LSV_SCAN: Voltage set to 1.360V (DAC code 1687)[0m
+[0;32mI (151002) LSV_SCAN:    1.360    |     1.650    | ▲ Peak[0m
+[0;32mI (151002) I2C_DEVICES: MCP4725: Writing DAC value 1700 (target 1.370V) [0x40 0x6A 0x40][0m
+[0;32mI (151012) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1700 = 1.370V)[0m
+[0;32mI (151012) LSV_SCAN: Voltage set to 1.370V (DAC code 1700)[0m
+[0;32mI (152012) LSV_SCAN:    1.370    |     1.650    | ▲ Peak[0m
+[0;32mI (152012) I2C_DEVICES: MCP4725: Writing DAC value 1712 (target 1.380V) [0x40 0x6B 0x00][0m
+[0;32mI (152022) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1712 = 1.380V)[0m
+[0;32mI (152022) LSV_SCAN: Voltage set to 1.380V (DAC code 1712)[0m
+[0;32mI (153022) LSV_SCAN: ADC: A0=544 (0.068V), A1=0 (0.000V), Diff=544 (0.068V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (153022) LSV_SCAN:    1.380    |     1.700    | ▲ Peak[0m
+[0;32mI (153032) I2C_DEVICES: MCP4725: Writing DAC value 1724 (target 1.389V) [0x40 0x6B 0xC0][0m
+[0;32mI (153052) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1724 = 1.389V)[0m
+[0;32mI (153052) LSV_SCAN: Voltage set to 1.390V (DAC code 1724)[0m
+[0;32mI (154052) LSV_SCAN:    1.390    |     1.700    | ▲ Peak[0m
+[0;32mI (154052) I2C_DEVICES: MCP4725: Writing DAC value 1737 (target 1.400V) [0x40 0x6C 0x90][0m
+[0;32mI (154062) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1737 = 1.400V)[0m
+[0;32mI (154062) LSV_SCAN: Voltage set to 1.400V (DAC code 1737)[0m
+[0;32mI (155062) LSV_SCAN: ADC: A0=544 (0.068V), A1=0 (0.000V), Diff=544 (0.068V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (155062) LSV_SCAN:    1.400    |     1.700    | ▲ Peak[0m
+[0;32mI (155072) I2C_DEVICES: MCP4725: Writing DAC value 1749 (target 1.409V) [0x40 0x6D 0x50][0m
+[0;32mI (155092) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1749 = 1.409V)[0m
+[0;32mI (155092) LSV_SCAN: Voltage set to 1.410V (DAC code 1749)[0m
+[0;32mI (156092) LSV_SCAN:    1.410    |     1.700    | ▲ Peak[0m
+[0;32mI (156092) I2C_DEVICES: MCP4725: Writing DAC value 1762 (target 1.420V) [0x40 0x6E 0x20][0m
+[0;32mI (156102) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1762 = 1.420V)[0m
+[0;32mI (156102) LSV_SCAN: Voltage set to 1.420V (DAC code 1762)[0m
+[0;32mI (157102) LSV_SCAN:    1.420    |     1.700    | ▲ Peak[0m
+[0;32mI (157102) I2C_DEVICES: MCP4725: Writing DAC value 1774 (target 1.430V) [0x40 0x6E 0xE0][0m
+[0;32mI (157112) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1774 = 1.430V)[0m
+[0;32mI (157112) LSV_SCAN: Voltage set to 1.430V (DAC code 1774)[0m
+[0;32mI (158112) LSV_SCAN:    1.430    |     1.700    | ▲ Peak[0m
+[0;32mI (158112) I2C_DEVICES: MCP4725: Writing DAC value 1786 (target 1.439V) [0x40 0x6F 0xA0][0m
+[0;32mI (158122) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1786 = 1.439V)[0m
+[0;32mI (158122) LSV_SCAN: Voltage set to 1.440V (DAC code 1786)[0m
+[0;32mI (159122) LSV_SCAN: ADC: A0=544 (0.068V), A1=0 (0.000V), Diff=560 (0.070V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (159122) LSV_SCAN:    1.440    |     1.750    | ▲ Peak[0m
+[0;32mI (159132) I2C_DEVICES: MCP4725: Writing DAC value 1799 (target 1.450V) [0x40 0x70 0x70][0m
+[0;32mI (159152) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1799 = 1.450V)[0m
+[0;32mI (159152) LSV_SCAN: Voltage set to 1.450V (DAC code 1799)[0m
+[0;32mI (160152) LSV_SCAN: ADC: A0=560 (0.070V), A1=0 (0.000V), Diff=560 (0.070V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (160152) LSV_SCAN:    1.450    |     1.750    | ▲ Peak[0m
+[0;32mI (160162) I2C_DEVICES: MCP4725: Writing DAC value 1811 (target 1.459V) [0x40 0x71 0x30][0m
+[0;32mI (160182) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1811 = 1.459V)[0m
+[0;32mI (160182) LSV_SCAN: Voltage set to 1.460V (DAC code 1811)[0m
+[0;32mI (161182) LSV_SCAN:    1.460    |     1.750    | ▲ Peak[0m
+[0;32mI (161182) I2C_DEVICES: MCP4725: Writing DAC value 1824 (target 1.470V) [0x40 0x72 0x00][0m
+[0;32mI (161192) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1824 = 1.470V)[0m
+[0;32mI (161192) LSV_SCAN: Voltage set to 1.470V (DAC code 1824)[0m
+[0;32mI (162192) LSV_SCAN:    1.470    |     1.750    | ▲ Peak[0m
+[0;32mI (162192) I2C_DEVICES: MCP4725: Writing DAC value 1836 (target 1.480V) [0x40 0x72 0xC0][0m
+[0;32mI (162202) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1836 = 1.480V)[0m
+[0;32mI (162202) LSV_SCAN: Voltage set to 1.480V (DAC code 1836)[0m
+[0;32mI (163202) LSV_SCAN:    1.480    |     1.750    | ▲ Peak[0m
+[0;32mI (163202) I2C_DEVICES: MCP4725: Writing DAC value 1848 (target 1.489V) [0x40 0x73 0x80][0m
+[0;32mI (163212) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1848 = 1.489V)[0m
+[0;32mI (163212) LSV_SCAN: Voltage set to 1.490V (DAC code 1848)[0m
+[0;32mI (164212) LSV_SCAN:    1.490    |     1.750    | ▲ Peak[0m
+[0;32mI (164212) I2C_DEVICES: MCP4725: Writing DAC value 1861 (target 1.500V) [0x40 0x74 0x50][0m
+[0;32mI (164222) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1861 = 1.500V)[0m
+[0;32mI (164222) LSV_SCAN: Voltage set to 1.500V (DAC code 1861)[0m
+[0;32mI (165222) LSV_SCAN: ADC: A0=560 (0.070V), A1=0 (0.000V), Diff=560 (0.070V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (165222) LSV_SCAN:    1.500    |     1.750    | ▲ Peak[0m
+[0;32mI (165232) I2C_DEVICES: MCP4725: Writing DAC value 1873 (target 1.509V) [0x40 0x75 0x10][0m
+[0;32mI (165252) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1873 = 1.509V)[0m
+[0;32mI (165252) LSV_SCAN: Voltage set to 1.510V (DAC code 1873)[0m
+[0;32mI (166252) LSV_SCAN:    1.510    |     1.750    | ▲ Peak[0m
+[0;32mI (166252) I2C_DEVICES: MCP4725: Writing DAC value 1886 (target 1.520V) [0x40 0x75 0xE0][0m
+[0;32mI (166262) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1886 = 1.520V)[0m
+[0;32mI (166262) LSV_SCAN: Voltage set to 1.520V (DAC code 1886)[0m
+[0;32mI (167262) LSV_SCAN: ADC: A0=576 (0.072V), A1=0 (0.000V), Diff=576 (0.072V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (167262) LSV_SCAN:    1.520    |     1.800    | ▲ Peak[0m
+[0;32mI (167272) I2C_DEVICES: MCP4725: Writing DAC value 1898 (target 1.530V) [0x40 0x76 0xA0][0m
+[0;32mI (167292) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1898 = 1.530V)[0m
+[0;32mI (167292) LSV_SCAN: Voltage set to 1.530V (DAC code 1898)[0m
+[0;32mI (168292) LSV_SCAN:    1.530    |     1.800    | ▲ Peak[0m
+[0;32mI (168292) I2C_DEVICES: MCP4725: Writing DAC value 1910 (target 1.539V) [0x40 0x77 0x60][0m
+[0;32mI (168302) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1910 = 1.539V)[0m
+[0;32mI (168302) LSV_SCAN: Voltage set to 1.540V (DAC code 1910)[0m
+[0;32mI (169302) LSV_SCAN:    1.540    |     1.800    | ▲ Peak[0m
+[0;32mI (169302) I2C_DEVICES: MCP4725: Writing DAC value 1923 (target 1.550V) [0x40 0x78 0x30][0m
+[0;32mI (169312) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1923 = 1.550V)[0m
+[0;32mI (169312) LSV_SCAN: Voltage set to 1.550V (DAC code 1923)[0m
+[0;32mI (170312) LSV_SCAN: ADC: A0=576 (0.072V), A1=0 (0.000V), Diff=576 (0.072V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (170312) LSV_SCAN:    1.550    |     1.800    | ▲ Peak[0m
+[0;32mI (170322) I2C_DEVICES: MCP4725: Writing DAC value 1935 (target 1.559V) [0x40 0x78 0xF0][0m
+[0;32mI (170342) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1935 = 1.559V)[0m
+[0;32mI (170342) LSV_SCAN: Voltage set to 1.560V (DAC code 1935)[0m
+[0;32mI (171342) LSV_SCAN:    1.560    |     1.800    | ▲ Peak[0m
+[0;32mI (171342) I2C_DEVICES: MCP4725: Writing DAC value 1948 (target 1.570V) [0x40 0x79 0xC0][0m
+[0;32mI (171352) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1948 = 1.570V)[0m
+[0;32mI (171352) LSV_SCAN: Voltage set to 1.570V (DAC code 1948)[0m
+[0;32mI (172352) LSV_SCAN:    1.570    |     1.800    | ▲ Peak[0m
+[0;32mI (172352) I2C_DEVICES: MCP4725: Writing DAC value 1960 (target 1.579V) [0x40 0x7A 0x80][0m
+[0;32mI (172362) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1960 = 1.579V)[0m
+[0;32mI (172362) LSV_SCAN: Voltage set to 1.580V (DAC code 1960)[0m
+[0;32mI (173362) LSV_SCAN: ADC: A0=576 (0.072V), A1=0 (0.000V), Diff=592 (0.074V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (173362) LSV_SCAN:    1.580    |     1.850    | ▲ Peak[0m
+[0;32mI (173372) I2C_DEVICES: MCP4725: Writing DAC value 1973 (target 1.590V) [0x40 0x7B 0x50][0m
+[0;32mI (173392) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1973 = 1.590V)[0m
+[0;32mI (173392) LSV_SCAN: Voltage set to 1.590V (DAC code 1973)[0m
+[0;32mI (174392) LSV_SCAN:    1.590    |     1.850    | ▲ Peak[0m
+[0;32mI (174392) I2C_DEVICES: MCP4725: Writing DAC value 1985 (target 1.600V) [0x40 0x7C 0x10][0m
+[0;32mI (174402) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1985 = 1.600V)[0m
+[0;32mI (174402) LSV_SCAN: Voltage set to 1.600V (DAC code 1985)[0m
+[0;32mI (175402) LSV_SCAN: ADC: A0=592 (0.074V), A1=0 (0.000V), Diff=592 (0.074V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (175402) LSV_SCAN:    1.600    |     1.850    | ▲ Peak[0m
+[0;32mI (175412) I2C_DEVICES: MCP4725: Writing DAC value 1997 (target 1.609V) [0x40 0x7C 0xD0][0m
+[0;32mI (175432) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 1997 = 1.609V)[0m
+[0;32mI (175432) LSV_SCAN: Voltage set to 1.610V (DAC code 1997)[0m
+[0;32mI (176432) LSV_SCAN:    1.610    |     1.850    | ▲ Peak[0m
+[0;32mI (176432) I2C_DEVICES: MCP4725: Writing DAC value 2010 (target 1.620V) [0x40 0x7D 0xA0][0m
+[0;32mI (176442) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 2010 = 1.620V)[0m
+[0;32mI (176442) LSV_SCAN: Voltage set to 1.620V (DAC code 2010)[0m
+[0;32mI (177442) LSV_SCAN:    1.620    |     1.850    | ▲ Peak[0m
+[0;32mI (177442) I2C_DEVICES: MCP4725: Writing DAC value 2022 (target 1.629V) [0x40 0x7E 0x60][0m
+[0;32mI (177452) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 2022 = 1.629V)[0m
+[0;32mI (177452) LSV_SCAN: Voltage set to 1.630V (DAC code 2022)[0m
+[0;32mI (178452) LSV_SCAN:    1.630    |     1.850    | ▲ Peak[0m
+[0;32mI (178452) I2C_DEVICES: MCP4725: Writing DAC value 2035 (target 1.640V) [0x40 0x7F 0x30][0m
+[0;32mI (178462) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 2035 = 1.640V)[0m
+[0;32mI (178462) LSV_SCAN: Voltage set to 1.640V (DAC code 2035)[0m
+[0;32mI (179462) LSV_SCAN:    1.640    |     1.850    | ▲ Peak[0m
+[0;32mI (179462) I2C_DEVICES: MCP4725: Writing DAC value 2047 (target 1.650V) [0x40 0x7F 0xF0][0m
+[0;32mI (179472) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 2047 = 1.650V)[0m
+[0;32mI (179472) LSV_SCAN: Voltage set to 1.650V (DAC code 2047)[0m
+[0;32mI (180472) LSV_SCAN: ADC: A0=592 (0.074V), A1=0 (0.000V), Diff=592 (0.074V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (180472) LSV_SCAN:    1.650    |     1.850    | ▲ Peak[0m
+[0;32mI (180482) I2C_DEVICES: MCP4725: Writing DAC value 2059 (target 1.659V) [0x40 0x80 0xB0][0m
+[0;32mI (180502) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 2059 = 1.659V)[0m
+[0;32mI (180502) LSV_SCAN: Voltage set to 1.660V (DAC code 2059)[0m
+[0;32mI (181502) LSV_SCAN:    1.660    |     1.850    | ▲ Peak[0m
+[0;32mI (181502) I2C_DEVICES: MCP4725: Writing DAC value 2072 (target 1.670V) [0x40 0x81 0x80][0m
+[0;32mI (181512) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 2072 = 1.670V)[0m
+[0;32mI (181512) LSV_SCAN: Voltage set to 1.670V (DAC code 2072)[0m
+[0;32mI (182512) LSV_SCAN: ADC: A0=608 (0.076V), A1=0 (0.000V), Diff=608 (0.076V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (182512) LSV_SCAN:    1.670    |     1.900    | ▲ Peak[0m
+[0;32mI (182522) I2C_DEVICES: MCP4725: Writing DAC value 2084 (target 1.679V) [0x40 0x82 0x40][0m
+[0;32mI (182542) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 2084 = 1.679V)[0m
+[0;32mI (182542) LSV_SCAN: Voltage set to 1.680V (DAC code 2084)[0m
+[0;32mI (183542) LSV_SCAN:    1.680    |     1.900    | ▲ Peak[0m
+[0;32mI (183542) I2C_DEVICES: MCP4725: Writing DAC value 2097 (target 1.690V) [0x40 0x83 0x10][0m
+[0;32mI (183552) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 2097 = 1.690V)[0m
+[0;32mI (183552) LSV_SCAN: Voltage set to 1.690V (DAC code 2097)[0m
+[0;32mI (184552) LSV_SCAN:    1.690    |     1.900    | ▲ Peak[0m
+[0;32mI (184552) I2C_DEVICES: MCP4725: Writing DAC value 2109 (target 1.700V) [0x40 0x83 0xD0][0m
+[0;32mI (184562) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 2109 = 1.700V)[0m
+[0;32mI (184562) LSV_SCAN: Voltage set to 1.700V (DAC code 2109)[0m
+[0;32mI (185562) LSV_SCAN: ADC: A0=608 (0.076V), A1=0 (0.000V), Diff=608 (0.076V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (185562) LSV_SCAN:    1.700    |     1.900    | ▲ Peak[0m
+[0;32mI (185572) I2C_DEVICES: MCP4725: Writing DAC value 2121 (target 1.709V) [0x40 0x84 0x90][0m
+[0;32mI (185592) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 2121 = 1.709V)[0m
+[0;32mI (185592) LSV_SCAN: Voltage set to 1.710V (DAC code 2121)[0m
+[0;32mI (186592) LSV_SCAN:    1.710    |     1.900    | ▲ Peak[0m
+[0;32mI (186592) I2C_DEVICES: MCP4725: Writing DAC value 2134 (target 1.720V) [0x40 0x85 0x60][0m
+[0;32mI (186602) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 2134 = 1.720V)[0m
+[0;32mI (186602) LSV_SCAN: Voltage set to 1.720V (DAC code 2134)[0m
+[0;32mI (187602) LSV_SCAN:    1.720    |     1.900    | ▲ Peak[0m
+[0;32mI (187602) I2C_DEVICES: MCP4725: Writing DAC value 2146 (target 1.729V) [0x40 0x86 0x20][0m
+[0;32mI (187612) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 2146 = 1.729V)[0m
+[0;32mI (187612) LSV_SCAN: Voltage set to 1.730V (DAC code 2146)[0m
+[0;32mI (188612) LSV_SCAN:    1.730    |     1.900    | ▲ Peak[0m
+[0;32mI (188612) I2C_DEVICES: MCP4725: Writing DAC value 2159 (target 1.740V) [0x40 0x86 0xF0][0m
+[0;32mI (188622) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 2159 = 1.740V)[0m
+[0;32mI (188622) LSV_SCAN: Voltage set to 1.740V (DAC code 2159)[0m
+[0;32mI (189622) LSV_SCAN: ADC: A0=624 (0.078V), A1=0 (0.000V), Diff=624 (0.078V) ✓ ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (189622) LSV_SCAN:    1.740    |     1.950    | ▲ Peak[0m
+[0;32mI (189632) I2C_DEVICES: MCP4725: Writing DAC value 2171 (target 1.750V) [0x40 0x87 0xB0][0m
+[0;32mI (189652) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 2171 = 1.750V)[0m
+[0;32mI (189652) LSV_SCAN: Voltage set to 1.750V (DAC code 2171)[0m
+[0;32mI (190652) LSV_SCAN: ADC: A0=624 (0.078V), A1=0 (0.000V), Diff=624 (0.078V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (190652) LSV_SCAN:    1.750    |     1.950    | ▲ Peak[0m
+[0;32mI (190662) I2C_DEVICES: MCP4725: Writing DAC value 2183 (target 1.759V) [0x40 0x88 0x70][0m
+[0;32mI (190682) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 2183 = 1.759V)[0m
+[0;32mI (190682) LSV_SCAN: Voltage set to 1.760V (DAC code 2183)[0m
+[0;32mI (191682) LSV_SCAN:    1.760    |     1.950    | ▲ Peak[0m
+[0;32mI (191682) I2C_DEVICES: MCP4725: Writing DAC value 2196 (target 1.770V) [0x40 0x89 0x40][0m
+[0;32mI (191692) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 2196 = 1.770V)[0m
+[0;32mI (191692) LSV_SCAN: Voltage set to 1.770V (DAC code 2196)[0m
+[0;32mI (192692) LSV_SCAN:    1.770    |     1.950    | ▲ Peak[0m
+[0;32mI (192692) I2C_DEVICES: MCP4725: Writing DAC value 2208 (target 1.779V) [0x40 0x8A 0x00][0m
+[0;32mI (192702) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 2208 = 1.779V)[0m
+[0;32mI (192702) LSV_SCAN: Voltage set to 1.780V (DAC code 2208)[0m
+[0;32mI (193702) LSV_SCAN:    1.780    |     1.950    | ▲ Peak[0m
+[0;32mI (193702) I2C_DEVICES: MCP4725: Writing DAC value 2221 (target 1.790V) [0x40 0x8A 0xD0][0m
+[0;32mI (193712) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 2221 = 1.790V)[0m
+[0;32mI (193712) LSV_SCAN: Voltage set to 1.790V (DAC code 2221)[0m
+[0;32mI (194712) LSV_SCAN:    1.790    |     1.950    | ▲ Peak[0m
+[0;32mI (194712) I2C_DEVICES: MCP4725: Writing DAC value 2233 (target 1.799V) [0x40 0x8B 0x90][0m
+[0;32mI (194722) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 2233 = 1.799V)[0m
+[0;32mI (194722) LSV_SCAN: Voltage set to 1.800V (DAC code 2233)[0m
+[0;32mI (195722) LSV_SCAN: ADC: A0=624 (0.078V), A1=0 (0.000V), Diff=624 (0.078V) ⚠ SAME ⚠⚠⚠ OP-AMP SATURATED! ⚠⚠⚠[0m
+[0;32mI (195722) LSV_SCAN:    1.800    |     1.950    | ▲ Peak[0m
+[0;32mI (195732) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (195742) LSV_SCAN: MAX CURRENT: 28.900 µA at 0.000V[0m
+[0;32mI (195752) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;32mI (195762) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 0 = 0.000V)[0m
+[0;32mI (195762) LSV_SCAN: Voltage set to 0.000V (DAC code 0)[0m
+[0;32mI (195872) LSV_SCAN: ────────────────────────────────────────[0m
+[0;32mI (195872) LSV_SCAN: Scan complete - 181 data points collected[0m
+[0;32mI (195872) LSV_SCAN: ════════════════════════════════════════
+[0m
+[0;32mI (195892) PEAK_ANALYSIS: ═══════════════════════════════════════[0m
+[0;32mI (195902) PEAK_ANALYSIS: PEAK ANALYSIS[0m
+[0;32mI (195912) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (195922) PEAK_ANALYSIS: Scanning for copper peak (0.00V to 0.25V):[0m
+[0;32mI (195932) PEAK_ANALYSIS: ✓ COPPER detected: 28.900 µA peak at 0.000V[0m
+[0;32mI (195932) PEAK_ANALYSIS:   → ⚠️  VERY LARGE PEAK - May be pure copper!
+[0m
+[0;32mI (195942) PEAK_ANALYSIS: Scanning for silver peak (0.30V to 0.55V):[0m
+[0;32mI (195952) PEAK_ANALYSIS: ✓ SILVER detected: 0.900 µA peak at 0.550V[0m
+[0;32mI (195962) PEAK_ANALYSIS:   → Indicates silver-containing alloy
+[0m
+[0;32mI (195962) PEAK_ANALYSIS: ───────────────────────────────────────[0m
+[0;32mI (195982) PEAK_ANALYSIS: Total peaks detected: 2[0m
+[0;32mI (195982) PEAK_ANALYSIS: Combined peak magnitude: 29.800 µA[0m
+[0;32mI (195992) PEAK_ANALYSIS: ═══════════════════════════════════════
+[0m
+[0;32mI (196002) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (196022) KARAT_ESTIMATION: KARAT ESTIMATION[0m
+[0;32mI (196022) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (196032) KARAT_ESTIMATION: Total peak magnitude: 29.800 µA[0m
+[0;32mI (196042) KARAT_ESTIMATION: Copper peak: 28.900 µA (detected: YES)[0m
+[0;32mI (196052) KARAT_ESTIMATION: Silver peak: 0.900 µA (detected: YES)
+[0m
+[0;32mI (196062) KARAT_ESTIMATION: ───────────────────────────────────────[0m
+[0;32mI (196072) KARAT_ESTIMATION: ESTIMATION RESULTS[0m
+[0;32mI (196072) KARAT_ESTIMATION: ───────────────────────────────────────
+[0m
+[0;32mI (196092) KARAT_ESTIMATION: Estimated purity: 14K (58.3% gold)[0m
+[0;32mI (196092) KARAT_ESTIMATION: Classification: Lower Purity Gold[0m
+[0;32mI (196102) KARAT_ESTIMATION: Confidence level: 85%
+[0m
+[0;32mI (196112) KARAT_ESTIMATION: Reasoning:[0m
+[0;32mI (196112) KARAT_ESTIMATION:   Large alloy peaks (29.80 µA total) indicate[0m
+[0;32mI (196122) KARAT_ESTIMATION:   ~41.7% alloy content, consistent with 14K gold[0m
+[0;32mI (196132) KARAT_ESTIMATION:   or lower.
+[0m
+[0;32mI (196132) KARAT_ESTIMATION: ═══════════════════════════════════════[0m
+[0;32mI (196152) KARAT_ESTIMATION: ⚠️  IMPORTANT NOTE:[0m
+[0;32mI (196152) KARAT_ESTIMATION: This is an ESTIMATED purity based on typical[0m
+[0;32mI (196162) KARAT_ESTIMATION: alloy compositions. For accurate determination,[0m
+[0;32mI (196172) KARAT_ESTIMATION: calibrate with known gold standards.[0m
+[0;32mI (196172) KARAT_ESTIMATION: ═══════════════════════════════════════
+[0m
+[0;32mI (196192) I2C_DEVICES: MCP4725: Writing DAC value 0 (target 0.000V) [0x40 0x00 0x00][0m
+[0;32mI (196212) I2C_DEVICES: MCP4725: Write verified ✓ (readback: 0 = 0.000V)[0m
+[0;32mI (196212) LSV_SCAN: Voltage set to 0.000V (DAC code 0)[0m
+[0;32mI (196312) MAIN: 
+╔═══════════════════════════════════════════════════════════╗[0m
+[0;32mI (196312) MAIN: ║  SCAN COMPLETE                                            ║[0m
+[0;32mI (196322) MAIN: ╚═══════════════════════════════════════════════════════════╝[0m
+[0;32mI (196342) MAIN: 
+Next scan in 6 seconds...[0m
+[0;32mI (196342) MAIN: (You may remove/replace sample between scans)
+[0m
+[0;32mI (196352) MAIN: ════════════════════════════════════════════════════════════
+
+[0m

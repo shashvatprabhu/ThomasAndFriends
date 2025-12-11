@@ -17,6 +17,18 @@ static const char *TAG = "ADS1115";
 // I2C LOW-LEVEL FUNCTIONS
 // ═══════════════════════════════════════════════════════════════════════════
 
+// Lightweight probe to see if a device ACKs at a given address.
+static esp_err_t ads1115_probe_address(uint8_t addr) {
+    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, (addr << 1) | I2C_MASTER_WRITE, true);
+    i2c_master_stop(cmd);
+    esp_err_t ret = i2c_master_cmd_begin(
+        I2C_MASTER_NUM, cmd, pdMS_TO_TICKS(I2C_MASTER_TIMEOUT_MS));
+    i2c_cmd_link_delete(cmd);
+    return ret;
+}
+
 static esp_err_t ads1115_write_register(uint8_t reg, uint16_t value) {
     uint8_t data[3];
     data[0] = reg;
@@ -97,6 +109,15 @@ esp_err_t ads1115_init(void) {
 
     ESP_LOGI(TAG, "I2C initialized on GPIO%d (SDA) and GPIO%d (SCL)",
              I2C_MASTER_SDA_IO, I2C_MASTER_SCL_IO);
+
+    // Scan the possible ADS1115 addresses (0x48–0x4B) for quick wiring checks.
+    for (uint8_t addr = 0x48; addr <= 0x4B; addr++) {
+        if (ads1115_probe_address(addr) == ESP_OK) {
+            ESP_LOGI(TAG, "Device ACKed at 0x%02X", addr);
+        } else {
+            ESP_LOGW(TAG, "No ACK at 0x%02X", addr);
+        }
+    }
 
     // Test communication
     uint16_t config;
