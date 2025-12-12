@@ -2,34 +2,34 @@
 	"sources" : 
 	[
 		{
-			"file" : "/Users/vrushtee/ThomasAndFriends/LSV_FINAL/build/CMakeFiles/bootloader"
+			"file" : "/home/tirth/thomasandfriends/LSV_FINAL/build/CMakeFiles/bootloader"
 		},
 		{
-			"file" : "/Users/vrushtee/ThomasAndFriends/LSV_FINAL/build/CMakeFiles/bootloader.rule"
+			"file" : "/home/tirth/thomasandfriends/LSV_FINAL/build/CMakeFiles/bootloader.rule"
 		},
 		{
-			"file" : "/Users/vrushtee/ThomasAndFriends/LSV_FINAL/build/CMakeFiles/bootloader-complete.rule"
+			"file" : "/home/tirth/thomasandfriends/LSV_FINAL/build/CMakeFiles/bootloader-complete.rule"
 		},
 		{
-			"file" : "/Users/vrushtee/ThomasAndFriends/LSV_FINAL/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+			"file" : "/home/tirth/thomasandfriends/LSV_FINAL/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
 		},
 		{
-			"file" : "/Users/vrushtee/ThomasAndFriends/LSV_FINAL/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+			"file" : "/home/tirth/thomasandfriends/LSV_FINAL/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
 		},
 		{
-			"file" : "/Users/vrushtee/ThomasAndFriends/LSV_FINAL/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+			"file" : "/home/tirth/thomasandfriends/LSV_FINAL/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
 		},
 		{
-			"file" : "/Users/vrushtee/ThomasAndFriends/LSV_FINAL/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+			"file" : "/home/tirth/thomasandfriends/LSV_FINAL/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
 		},
 		{
-			"file" : "/Users/vrushtee/ThomasAndFriends/LSV_FINAL/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+			"file" : "/home/tirth/thomasandfriends/LSV_FINAL/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
 		},
 		{
-			"file" : "/Users/vrushtee/ThomasAndFriends/LSV_FINAL/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+			"file" : "/home/tirth/thomasandfriends/LSV_FINAL/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
 		},
 		{
-			"file" : "/Users/vrushtee/ThomasAndFriends/LSV_FINAL/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+			"file" : "/home/tirth/thomasandfriends/LSV_FINAL/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
 		}
 	],
 	"target" : 

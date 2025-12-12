@@ -1,5 +1,0 @@
-[1/4] cd /home/shashvat/Wall-E/taf/build/esp-idf/esptool_py && /home/shashvat/.espressif/python_env/idf5.1_py3.10_env/bin/python /home/shashvat/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/shashvat/Wall-E/taf/build/partition_table/partition-table.bin /home/shashvat/Wall-E/taf/build/taf.bin
-taf.bin binary size 0xc5160 bytes. Smallest app partition is 0x177000 bytes. 0xb1ea0 bytes (47%) free.
-[2/4] Performing build step for 'bootloader'
-[1/1] cd /home/shashvat/Wall-E/taf/build/bootloader/esp-idf/esptool_py && /home/shashvat/.espressif/python_env/idf5.1_py3.10_env/bin/python /home/shashvat/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/shashvat/Wall-E/taf/build/bootloader/bootloader.bin
-Bootloader binary size 0x68c0 bytes. 0x740 bytes (6%) free.
