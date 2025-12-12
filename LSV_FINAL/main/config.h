@@ -31,7 +31,7 @@
 // ═══════════════════════════════════════════════════════════════════════════
 
 #define START_VOLTAGE               0.0f
-#define END_VOLTAGE                 1.8f    // Limited to LM358 input range
+#define END_VOLTAGE                 1.2f
 #define STEP_SIZE                   0.01f
 #define SETTLE_TIME_MS              1000
 #define SCAN_INTERVAL_MS            6000
@@ -41,13 +41,18 @@
 // CALIBRATION CONSTANTS
 // ═══════════════════════════════════════════════════════════════════════════
 
-#define R_FEEDBACK                  40000.0f    // 40kΩ (actual measured value, adjust if different)
+#define R_FEEDBACK                  50000.0f    // 50kΩ (measured)
 #define DAC_RESOLUTION              4095        // 12-bit
 #define DAC_VREF                    3.3f
+// If you added a mid-supply reference (divider) for the TIA, put its voltage here.
+// We will sweep the DAC around this bias: DAC = CELL_BIAS_V + sweep_voltage
+#define CELL_BIAS_V                 1.65f
 
 // ADS1115 Configuration
-#define ADS1115_GAIN_TWO            0x0200      // ±4.096V range (was incorrectly labeled 2.048V)
-#define ADS1115_MAX_VOLTAGE         4.096f      // Must match actual PGA setting
+// NOTE: ADS1115_PGA_2_048V (0x0200) = ±2.048V full-scale (not ±4.096V).
+#define ADS1115_GAIN_TWO            0x0200      // (kept for compatibility; PGA bits in i2c_devices.h are the source of truth)
+#define ADS1115_MAX_VOLTAGE         2.048f      // Must match ADS1115_PGA_2_048V
+
 
 // ═══════════════════════════════════════════════════════════════════════════
 // PEAK DETECTION
